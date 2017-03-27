@@ -2,9 +2,7 @@
 !/.bashrc
 !/.extend.bashrc
 !/.gitignore
-!/.xinput
 !/.xprofile
-!/.Xmodmap
 !/.Xresources
 !/.extend.Xresources
 
@@ -16,13 +14,21 @@
 /.config/Code/User/*
 !/.config/Code/User/settings.json
 
-!/.i3
-/.i3/*
-!/.i3/config
-
 !/.githooks
 /.githooks/*
 !/.githooks/post-merge
+
+!/.hostname_configs
+/.hostname_configs/*
+!/.hostname_configs/jared-laptop
+/.hostname_configs/jared-laptop/*
+!/.hostname_configs/jared-laptop/.xinput
+!/.hostname_configs/jared-laptop/.Xmodmap
+
+
+!/.i3
+/.i3/*
+!/.i3/config
 
 !/.vscode
 /.vscode/*

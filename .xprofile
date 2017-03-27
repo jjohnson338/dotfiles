@@ -1,9 +1,15 @@
 #!/bin/sh
 #
 
+#capture hostname
+hostname="$(hostname)"
+
+if [ $hostname = "jared-laptop" ]; then
+    userxinput=$HOME/.hostname_configs/jared-laptop/.xinput
+    usermodmap=$HOME/.hostname_configs/jared-laptop/.Xmodmap
+fi
+
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-userxinput=$HOME/.xinput
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
