@@ -3,6 +3,7 @@
 !/.xprofile
 !/.xinput
 !/.Xmodmap
+!/.bashrc
 
 !/.i3
 /.i3/*
