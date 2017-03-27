@@ -8,9 +8,9 @@
     "editor.fontLigatures": true,    
     "editor.renderIndentGuides": true,
 
-    //http    
+    //workbench    
     "workbench.colorTheme": "Material Theme",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "material-icon-theme",    
 
     //telemetry
     "telemetry.enableTelemetry": false,
