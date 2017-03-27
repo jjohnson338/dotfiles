@@ -4,6 +4,7 @@
 !/.xinput
 !/.Xmodmap
 !/.bashrc
+!/.extend.bashrc
 
 !/.config
 /.config/*
