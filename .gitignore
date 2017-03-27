@@ -5,10 +5,6 @@
 !/.Xmodmap
 !/.bashrc
 
-!/.i3
-/.i3/*
-!/.i3/config
-
 !/.config
 /.config/*
 !/.config/Code
@@ -17,6 +13,14 @@
 /.config/Code/User/*
 !/.config/Code/User/settings.json
 
+!/.i3
+/.i3/*
+!/.i3/config
+
+!/.githooks
+/.githooks/*
+!/.githooks/post-merge
+
 !/.vscode
 /.vscode/*
-/.vscode/extensions
+!/.vscode/install_extensions.js
