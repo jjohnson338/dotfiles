@@ -7,3 +7,11 @@
 !/.i3
 /.i3/*
 !/.i3/config
+
+!/.config
+/.config/*
+!/.config/Code
+/.config/Code/*
+!/.config/Code/User
+/.config/Code/User/*
+!/.config/Code/User/settings.json
