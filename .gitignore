@@ -1,10 +1,12 @@
 /*
-!/.gitignore
-!/.xprofile
-!/.xinput
-!/.Xmodmap
 !/.bashrc
 !/.extend.bashrc
+!/.gitignore
+!/.xinput
+!/.xprofile
+!/.Xmodmap
+!/.Xresources
+!/.extend.Xresources
 
 !/.config
 /.config/*
