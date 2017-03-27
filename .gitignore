@@ -1,5 +1,7 @@
 /*
 !/.gitignore
+!/.xinitrc
+!/.Xmodmap
 
 !/.i3
 /.i3/*

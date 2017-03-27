@@ -353,6 +353,3 @@ exec_always --no-startup-id fix_xcursor
 #Touchpad Settings
 exec xinput set-prop "ELAN1300:00 04F3:3028 Touchpad" "libinput Tapping Enabled" 1
 exec xinput set-prop "ELAN1300:00 04F3:3028 Touchpad" "libinput Natural Scrolling Enabled" 1
-
-#Keyboard Settings
-exec xmodmap -e "keycode 135 = Insert"
