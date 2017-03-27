@@ -1,6 +1,7 @@
 /*
 !/.gitignore
-!/.xinitrc
+!/.xprofile
+!/.xinput
 !/.Xmodmap
 
 !/.i3

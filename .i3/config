@@ -349,7 +349,3 @@ exec --no-startup-id messengerfordesktop
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id gpmdp
 exec_always --no-startup-id fix_xcursor
-
-#Touchpad Settings
-exec xinput set-prop "ELAN1300:00 04F3:3028 Touchpad" "libinput Tapping Enabled" 1
-exec xinput set-prop "ELAN1300:00 04F3:3028 Touchpad" "libinput Natural Scrolling Enabled" 1
