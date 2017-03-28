@@ -13,6 +13,7 @@
 !/.config/Code/User
 /.config/Code/User/*
 !/.config/Code/User/settings.json
+!/.config/Code/User/keybindings.json
 
 !/.githooks
 /.githooks/*
