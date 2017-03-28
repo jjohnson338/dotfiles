@@ -41,3 +41,4 @@ const notInstalledDesiredExtensions = desiredExtensions.map((y) => {
 for(let extension in notInstalledDesiredExtensions) {    
     execSync(`code --install-extension ${notInstalledDesiredExtensions[extension]}`);
 }
+console.log("VSCode extensions are up to date");
