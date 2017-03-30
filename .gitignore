@@ -25,6 +25,9 @@
 /.hostname_configs/jared-laptop/*
 !/.hostname_configs/jared-laptop/.xinput
 !/.hostname_configs/jared-laptop/.Xmodmap
+!/.hostname_configs/jared-desktop
+/.hostname_configs/jared-desktop/*
+!/.hostname_configs/jared-desktop/.xrandr
 
 
 !/.i3

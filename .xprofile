@@ -7,6 +7,8 @@ hostname="$(hostname)"
 if [ $hostname = "jared-laptop" ]; then
     userxinput=$HOME/.hostname_configs/jared-laptop/.xinput
     usermodmap=$HOME/.hostname_configs/jared-laptop/.Xmodmap
+elif [ $hostname = "jared-desktop" ]; then
+    userxrandr=$HOME/.hostname_configs/jared-desktop/.xrandr
 fi
 
 userresources=$HOME/.Xresources
@@ -21,6 +23,10 @@ fi
 
 if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
+fi
+
+if [ -f "$userxrandr" ]; then
+	source "$userxrandr"
 fi
 
 if [ -f "$userresources" ]; then
