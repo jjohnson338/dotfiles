@@ -125,8 +125,10 @@ alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color
 alias mirrors='sudo pacman-mirrors -g'
 alias printer='system-config-printer'
 alias update='yaourt -Syua'
-alias gp='git push'
+#git commands
+alias gpsh='git push'
+alias gp='git pull'
+alias gpre='git pull --rebase'
 alias gs='git status'
-alias gca='git add * && git commit -m '
 alias vssh='vagrant ssh'
 alias vup='vagrant destroy -f && vagrant up'
