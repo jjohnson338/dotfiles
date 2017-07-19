@@ -344,7 +344,6 @@ exec --no-startup-id clipit
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id owncloud
-exec --no-startup-id keepass
 exec --no-startup-id code
 exec --no-startup-id messengerfordesktop
 exec --no-startup-id firefox
