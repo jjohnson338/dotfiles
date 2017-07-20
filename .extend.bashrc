@@ -108,6 +108,27 @@ ex ()
   fi
 }
 
+SSH_ENV="$HOME/.ssh/environment"
+function start_agent {
+        echo "Initialising new SSH agent..."
+        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+        echo succeeded
+        chmod 600 "${SSH_ENV}"
+        . "${SSH_ENV}" > /dev/null
+        /usr/bin/ssh-add -t 432000 ;
+}
+
+if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+                start_agent;
+        }
+else
+        start_agent;
+fi
+
+
+
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
