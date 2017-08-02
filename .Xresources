@@ -15,8 +15,8 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*background: #2b2b2b
-XTerm*foreground: #e7e7e7
+XTerm*background: #e0e0e0
+XTerm*foreground: #2c2c2c
 XTerm*pointerColor: #BF55EC
 XTerm*faceName: Fixed
-XTerm*faceSize: 14
+XTerm*faceSize: 10
