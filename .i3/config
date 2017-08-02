@@ -282,7 +282,7 @@
         ## screenshot mode end
 
         ## i3 mode start
-        bindsym $mod+i $mode_i3
+        bindsym $mod+i mode $mode_i3
         set $mode_i3 "i3: (r)estart re(l)oad"
         mode $mode_i3 {
                 bindsym r restart
