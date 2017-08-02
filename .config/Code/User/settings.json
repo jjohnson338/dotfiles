@@ -1,21 +1,22 @@
 // Place your settings in this file to overwrite the default settings
-{ 
+{
     //editor
     "editor.scrollBeyondLastLine": false,
     "editor.cursorBlinking": "expand",
     "editor.fontFamily": "Fira Code",
     "editor.fontSize": 14,
-    "editor.fontLigatures": true,    
+    "editor.fontLigatures": true,
     "editor.renderIndentGuides": true,
+    "editor.minimap.enabled": false,
 
     //files
     "files.trimTrailingWhitespace": true,
 
-    //workbench    
+    //workbench
     "workbench.colorTheme": "Material Theme",
-    "workbench.iconTheme": "material-icon-theme",    
+    "workbench.iconTheme": "material-icon-theme",
 
     //telemetry
     "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false    
+    "telemetry.enableCrashReporter": false
 }
