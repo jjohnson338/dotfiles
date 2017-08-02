@@ -25,17 +25,17 @@
                 strip_workspace_numbers yes
 
                 colors {
-        #       background $transparent
-                background #2B2C2B
-                statusline #F9FAF9
-                separator  #BF55EC
+                #       background $transparent
+                        background #2B2C2B
+                        statusline #F9FAF9
+                        separator  #BF55EC
 
-        #                                  border  backgr. text
-                focused_workspace  #F9FAF9 #BF55EC #FFFFFF
-                active_workspace   #595B5B #353836 #FDF6E3
-                inactive_workspace #595B5B #353836 #EEE8D5
-                urgent_workspace   #16A085 #F1C40F #34495E
-        }
+                #                          border  backgr. text
+                        focused_workspace  #F9FAF9 #BF55EC #FFFFFF
+                        active_workspace   #595B5B #353836 #FDF6E3
+                        inactive_workspace #595B5B #353836 #EEE8D5
+                        urgent_workspace   #16A085 #F1C40F #34495E
+                }
         }
 
         # Theme colors
@@ -132,7 +132,6 @@
         # hide/unhide i3status bar
         bindsym $mod+m bar mode toggle
 
-
         # switch to workspace
         bindsym $mod+1 workspace $ws1
         bindsym $mod+2 workspace $ws2
@@ -227,24 +226,23 @@
 
 ## /APPLICATION KEYBINDINGS ##################################################################################################################################
 
-
 ## MODES #####################################################################################################################################################
 
         # Set shut down, restart and locking features
         bindsym $mod+0 mode "$mode_system"
         set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
         mode "$mode_system" {
-        bindsym l exec --no-startup-id i3exit lock, mode "default"
-        bindsym s exec --no-startup-id i3exit suspend, mode "default"
-        bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-        bindsym e exec --no-startup-id i3exit logout, mode "default"
-        bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-        bindsym r exec --no-startup-id i3exit reboot, mode "default"
-        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+                bindsym l exec --no-startup-id i3exit lock, mode "default"
+                bindsym s exec --no-startup-id i3exit suspend, mode "default"
+                bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+                bindsym e exec --no-startup-id i3exit logout, mode "default"
+                bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+                bindsym r exec --no-startup-id i3exit reboot, mode "default"
+                bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
-        # exit system mode: "Enter" or "Escape"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+                # exit system mode: "Enter" or "Escape"
+                bindsym Return mode "default"
+                bindsym Escape mode "default"
         }
 
         # Resize window (you can also use the mouse for that)
@@ -299,61 +297,59 @@
 
         set $mode_misc "s=splits t=layouts f=floats p=focus-parent c=focus-child"
         mode $mode_misc {
-        bindsym s mode $mode_split
-        bindsym t mode $mode_layout
-        bindsym f mode $mode_float
-        bindsym p focus parent ; mode "default"
-        bindsym c focus child  ; mode "default"
+                bindsym s mode $mode_split
+                bindsym t mode $mode_layout
+                bindsym f mode $mode_float
+                bindsym p focus parent ; mode "default"
+                bindsym c focus child  ; mode "default"
 
-        bindsym Escape mode "default"
+                bindsym Escape mode "default"
         }
 
         set $mode_split "Split: h=horizontal v=vertical"
         mode $mode_split {
-        bindsym h split h ; mode "default"
-        bindsym v split v ; mode "default"
+                bindsym h split h ; mode "default"
+                bindsym v split v ; mode "default"
 
-        bindsym Escape mode "default"
+                bindsym Escape mode "default"
         }
 
         set $mode_layout "Layout: s=stacking t=tabbed e=toggle-split f=fullscreen"
         mode $mode_layout {
-        bindsym s layout stacking     ; mode "default"
-        bindsym t layout tabbed       ; mode "default"
-        bindsym e layout toggle split ; mode "default"
-        bindsym e fullscreen toggle   ; mode "default"
+                bindsym s layout stacking     ; mode "default"
+                bindsym t layout tabbed       ; mode "default"
+                bindsym e layout toggle split ; mode "default"
+                bindsym e fullscreen toggle   ; mode "default"
 
-        bindsym Escape mode "default"
+                bindsym Escape mode "default"
         }
 
         set $mode_float "Float: l=toggle-float t=toggle-float-tile-focus"
         mode $mode_float {
-        bindsym l floating toggle   ; mode "default"
-        bindsym t focus mode_toggle ; mode "default"
+                bindsym l floating toggle   ; mode "default"
+                bindsym t focus mode_toggle ; mode "default"
 
-        bindsym Escape mode "default"
+                bindsym Escape mode "default"
         }
         ## misc mode end
 
 ## /MODES #####################################################################################################################################################
 
-
-
 ## AUTOSTART APPLICATIONS ######################################################################################################################################
-exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-# exec --no-startup-id pamac-tray
-# exec --no-startup-id clipit
-#exec --no-startup-id blueman
-#exec --no-startup-id xautolock -time 10 -locker blurlock
-exec --no-startup-id enpass
-exec --no-startup-id code
-exec --no-startup-id messengerfordesktop
-exec --no-startup-id firefox
-#exec --no-startup-id gpmdp
-exec_always --no-startup-id fix_xcursor
+        exec --no-startup-id pulseaudio
+        exec --no-startup-id pa-applet
+        exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+        exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+        exec --no-startup-id nm-applet
+        exec --no-startup-id xfce4-power-manager
+        # exec --no-startup-id pamac-tray
+        # exec --no-startup-id clipit
+        #exec --no-startup-id blueman
+        #exec --no-startup-id xautolock -time 10 -locker blurlock
+        exec --no-startup-id enpass
+        exec --no-startup-id code
+        exec --no-startup-id messengerfordesktop
+        exec --no-startup-id firefox
+        #exec --no-startup-id gpmdp
+        exec_always --no-startup-id fix_xcursor
 ## /AUTOSTART APPLICATIONS #####################################################################################################################################
