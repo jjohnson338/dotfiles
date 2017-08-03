@@ -273,9 +273,9 @@
         bindsym Print mode $mode_scrot
         set $mode_scrot "a=whole screen s=selection w=window"
         mode $mode_scrot {
-                bindsym a exec --no-startup-id i3-scrot
-                bindsym s --release exec --no-startup-id i3-scrot -s
-                bindsym w --release exec --no-startup-id i3-scrot -w
+                bindsym a exec --no-startup-id i3-scrot ; mode "default"
+                bindsym s --release exec --no-startup-id i3-scrot -s ; mode "default"
+                bindsym w --release exec --no-startup-id i3-scrot -w ; mode "default"
                 bindsym Return mode "default"
                 bindsym Escape mode "default"
         }
