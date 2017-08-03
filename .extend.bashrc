@@ -116,7 +116,8 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 export EDITOR=/usr/bin/code
 
 # fix "xdg-open fork-bomb" export your preferred browser from here
-export BROWSER=/usr/bin/google-chrome-stable
+export BROWSER=/usr/bin/firefox
+export TERMINAL=/usr/bin/xterm
 
 alias con='code $HOME/.i3/config'
 alias comp='code $HOME/.config/compton.conf'
