@@ -92,7 +92,7 @@
         floating_modifier $mod
 
         # kill focused window
-        bindsym $mod+Shift+q kill
+        bindsym $mod+k kill
 
         # change focus
         bindsym $mod+Left focus left
