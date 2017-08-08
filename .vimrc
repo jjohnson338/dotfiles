@@ -70,6 +70,8 @@ set guioptions=agit
 set guifont=Fira\ Code:h12
 
 " Nerdtree options
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
 map <Leader>n :tabnew<CR>
