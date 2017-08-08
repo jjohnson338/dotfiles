@@ -92,7 +92,7 @@
         floating_modifier $mod
 
         # kill focused window
-        bindsym $mod+BackSpace kill
+        bindsym $mod+Space+k kill
 
         # change focus
         bindsym $mod+h focus left
@@ -338,7 +338,7 @@
         exec --no-startup-id blueman
         #exec --no-startup-id xautolock -time 10 -locker blurlock
         exec --no-startup-id enpass
-        exec --no-startup-id code
+        # exec --no-startup-id code
         exec --no-startup-id messengerfordesktop
         exec --no-startup-id firefox
         #exec --no-startup-id gpmdp
