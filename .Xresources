@@ -44,7 +44,7 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 XTerm*faceName: Fixed
-XTerm*faceSize: 10
+XTerm*faceSize: 12
 XTerm*selectToClipboard: true
 
 ! State:            'bg'        'fg'        'bgalt'     'hlbg'      'hlfg'

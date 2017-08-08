@@ -26,14 +26,13 @@ Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
 Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 
 " Themes
-Plug 'tpope/vim-vividchalk'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
 let mapleader=" "
 let g:NERDTreeDirArrows = 0
 let g:jsx_ext_required = 0
-set colorcolumn=81
 set background=dark       "make sure vim knows bg is dark
 set showmode              "display current mode
 set showcmd               "display partially typed commands
@@ -57,7 +56,7 @@ set shiftwidth=2
 set tabstop=2
 
 " Don't complain if the colorscheme isn't set
-silent! colorscheme vividchalk
+silent! colorscheme onedark 
 
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
