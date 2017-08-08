@@ -5,7 +5,6 @@ set nocompatible
 " Automatically installs the plugin manager if it doesn't exist, and installs
 " all plugins after that.
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/0.9.0/plug.vim
 	autocmd VimEnter * PlugUpdate
 endif
 
@@ -90,4 +89,3 @@ autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
 \   exe "normal! g'\"" |
 \ endif
-
