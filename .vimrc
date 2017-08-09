@@ -12,8 +12,10 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'godlygeek/tabular'
+Plug 'w0rp/ale'
 
 " Syntax
 Plug 'pearofducks/ansible-vim'
@@ -73,6 +75,10 @@ set guifont=Fira\ Code:h12
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
+
+" Linting
+let g:airline#extensions#ale#enabled=1
+let g:ale_sign_column_always = 1
 
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
