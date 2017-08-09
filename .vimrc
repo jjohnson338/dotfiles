@@ -1,12 +1,7 @@
 " Tell Vim as early as possible not to try to emulate vi
 set nocompatible
 
-
-" Automatically installs the plugin manager if it doesn't exist, and installs
-" all plugins after that.
-if empty(glob('~/.vim/autoload/plug.vim'))
-	autocmd VimEnter * PlugUpdate
-endif
+" To update Plugins :PlugUpdate
 
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
