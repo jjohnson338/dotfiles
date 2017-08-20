@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'
+Plug 'jiangmiao/auto-pairs'
 
 " Syntax
 Plug 'pearofducks/ansible-vim'
@@ -33,6 +34,7 @@ set background=dark       "make sure vim knows bg is dark
 set showmode              "display current mode
 set showcmd               "display partially typed commands
 set nowrap                "dont wrap long lines
+set noswapfile            "turn off swap files
 set shiftround            "Round indent to multiple of 'shiftwidth'
 set ruler                 "turn of position on bottom
 set number                "turn on line numbers

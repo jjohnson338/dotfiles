@@ -14,6 +14,9 @@
 /.config/Code/User/*
 !/.config/Code/User/settings.json
 !/.config/Code/User/keybindings.json
+!/.config/dunst
+/.config/dunst/*
+!/.config/dunst/dunstrc
 
 !/.githooks
 /.githooks/*
