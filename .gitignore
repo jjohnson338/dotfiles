@@ -17,6 +17,11 @@
 !/.config/dunst
 /.config/dunst/*
 !/.config/dunst/dunstrc
+!/.config/qterminal.org
+.config/qterminal.org/*
+!/.config/qterminal.org/color-schemes
+/.config/qterminal.org/color-schemes/*
+!/.config/qterminal.org/color-schemes/custom.colorscheme
 
 !/.githooks
 /.githooks/*

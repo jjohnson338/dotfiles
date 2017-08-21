@@ -204,7 +204,7 @@
 ## APPLICATION KEYBINDINGS ##################################################################################################################################
 
         # start a terminal
-        bindsym $mod+Return exec xterm
+        bindsym $mod+Return exec /usr/bin/qterminal 
 
         # start program launcher
         bindsym $mod+d exec --no-startup-id dmenu_recency
