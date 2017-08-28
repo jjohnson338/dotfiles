@@ -143,3 +143,5 @@ alias gs='git status'
 alias vssh='vagrant ssh'
 alias vup='vagrant destroy -f && vagrant up'
 alias vkill='vagrant destroy -f'
+#common dirs
+alias gg='cd ~/Source/GroceryGroove'
