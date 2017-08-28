@@ -25,6 +25,8 @@ if [ -f $sysmodmap ]; then
     xmodmap $sysmodmap
 fi
 
+xcape -e 'Super_L=Escape'
+
 if [ -f "$userxrandr" ]; then
 	source "$userxrandr"
 fi
