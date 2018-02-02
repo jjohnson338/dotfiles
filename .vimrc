@@ -56,8 +56,8 @@ set cursorline
 
 " Indentation settings, gave up on editorconfig
 set expandtab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme onedark 
