@@ -25,6 +25,7 @@ Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
 "Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
 Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 Plug 'hoffstein/vim-tsql'
+Plug 'OrangeT/vim-csharp'
 
 " Themes
 Plug 'joshdick/onedark.vim'
