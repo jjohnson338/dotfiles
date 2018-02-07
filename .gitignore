@@ -22,6 +22,14 @@
 !/.config/qterminal.org/color-schemes
 /.config/qterminal.org/color-schemes/*
 !/.config/qterminal.org/color-schemes/custom.colorscheme
+!/.config/morc_menu
+/.config/morc_menu/*
+!.config/morc_menu/morc_menu_v1.conf
+!/.config/rofi
+/.config/rofi/*
+!/.config/rofi/config
+!/.config/rofi/pop-dark.rasi
+
 
 !/.githooks
 /.githooks/*

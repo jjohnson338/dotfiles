@@ -207,10 +207,10 @@
         bindsym $mod+Return exec /usr/bin/qterminal 
 
         # start program launcher
-        #bindsym $mod+d exec --no-startup-id  dmenu_recency
+        bindsym $mod+d exec --no-startup-id rofi -show run 
 
         # launch categorized menu
-        bindsym $mod+d exec --no-startup-id morc_menu
+        bindsym $mod+z exec --no-startup-id morc_menu
 
         bindsym $mod+p exec pcmanfm
         # bindsym $mod+F3 exec ranger
@@ -264,9 +264,9 @@
         bindsym Print mode $mode_scrot
         set $mode_scrot "a=whole screen s=selection w=window"
         mode $mode_scrot {
-                bindsym a exec --no-startup-id i3-scrot ; mode "default"
-                bindsym s --release exec --no-startup-id i3-scrot -s ; mode "default"
-                bindsym w --release exec --no-startup-id i3-scrot -w ; mode "default"
+                bindsym a exec --no-startup-id scrot ; mode "default"
+                bindsym s --release exec --no-startup-id scrot -s ; mode "default"
+                bindsym w --release exec --no-startup-id scrot -w ; mode "default"
                 bindsym Return mode "default"
                 bindsym Escape mode "default"
         }
