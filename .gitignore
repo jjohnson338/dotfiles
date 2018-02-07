@@ -2,18 +2,14 @@
 !/.bashrc
 !/.extend.bashrc
 !/.gitignore
+!/.shared_aliases
 !/.xprofile
 !/.Xresources
 !/.extend.Xresources
+!/.zshrc
 
 !/.config
 /.config/*
-!/.config/Code
-/.config/Code/*
-!/.config/Code/User
-/.config/Code/User/*
-!/.config/Code/User/settings.json
-!/.config/Code/User/keybindings.json
 !/.config/dunst
 /.config/dunst/*
 !/.config/dunst/dunstrc
@@ -56,7 +52,3 @@
 !/.vim/autoload
 /.vim/autoload/*
 !/.vim/autoload/plug.vim
-
-!/.vscode
-/.vscode/*
-!/.vscode/install_extensions.js

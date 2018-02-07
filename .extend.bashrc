@@ -126,22 +126,5 @@ export EDITOR=vim
 export BROWSER=/usr/bin/firefox
 export TERMINAL=/usr/bin/xterm
 
-alias con='code $HOME/.i3/config'
-alias comp='code $HOME/.config/compton.conf'
-alias fixit='sudo rm -f /var/lib/pacman/db.lck'
-alias inst='sudo pacman -S'
-alias la='ls -la --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias ll='ls -l --group-directories-first --time-style=+"%d.%m.%Y %H:%M" --color=auto -F'
-alias mirrors='sudo pacman-mirrors -g'
-alias printer='system-config-printer'
-alias update='yaourt -Syua'
-#git commands
-alias gpsh='git push'
-alias gp='git pull'
-alias gpre='git pull --rebase'
-alias gs='git status'
-alias vssh='vagrant ssh'
-alias vup='vagrant destroy -f && vagrant up'
-alias vkill='vagrant destroy -f'
-#common dirs
-alias gg='cd ~/Source/GroceryGroove'
+#Aliases
+source ~/.shared_aliases
