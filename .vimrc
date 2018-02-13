@@ -55,6 +55,12 @@ set visualbell
 set updatetime=250
 set cursorline
 
+" Folds
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " Indentation settings, gave up on editorconfig
 set expandtab
 set shiftwidth=2
