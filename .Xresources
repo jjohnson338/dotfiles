@@ -43,7 +43,7 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*faceName: Fixed
+XTerm*faceName: Fira Code Medium 
 XTerm*faceSize: 12
 XTerm*selectToClipboard: true
 
