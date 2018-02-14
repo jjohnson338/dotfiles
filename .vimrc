@@ -56,7 +56,7 @@ set updatetime=250
 set cursorline
 
 " Folds
-set foldmethod=syntax
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
@@ -68,7 +68,7 @@ set tabstop=2
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme onedark 
-
+hi TabLineSel ctermfg=DarkGrey ctermbg=LightGrey
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
 
