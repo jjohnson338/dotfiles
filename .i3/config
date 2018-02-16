@@ -205,7 +205,7 @@
 ## APPLICATION KEYBINDINGS ##################################################################################################################################
 
         # start a terminal
-        bindsym $mod+Return exec /usr/bin/qterminal 
+        bindsym $mod+Return exec xterm 
 
         # start program launcher
         bindsym $mod+d exec --no-startup-id rofi -show run 
