@@ -202,6 +202,18 @@
 
 ## /APPLICATIONS ############################################################################################################################################
 
+## DROPDOWN TERMINAL
+
+
+for_window [title="dropdown"] floating enable
+for_window [title="dropdown"] resize set 900 600
+for_window [title="dropdown"] move scratchpad
+for_window [title="dropdown"] border pixel 5
+
+exec --no-startup-id xterm -xrm 'XTerm.vt100.allowTitleOps:false' -T dropdown
+
+## /DROPDOWN TERMINAL
+
 ## APPLICATION KEYBINDINGS ##################################################################################################################################
 
         # start a terminal
@@ -214,6 +226,8 @@
         bindsym $mod+z exec --no-startup-id morc_menu
 
         bindsym $mod+p exec pcmanfm
+
+        bindsym $mod+u [title="dropdown"] scratchpad show; [title="dropdown"] move position center
         # bindsym $mod+F3 exec ranger
 
 ## /APPLICATION KEYBINDINGS ##################################################################################################################################
