@@ -214,6 +214,18 @@ exec --no-startup-id xterm -xrm 'XTerm.vt100.allowTitleOps:false' -T dropdown
 
 ## /DROPDOWN TERMINAL
 
+## FILE BROWSER TERMINAL
+
+
+for_window [title="fileterm"] floating enable
+for_window [title="fileterm"] resize set 900 600
+for_window [title="fileterm"] move scratchpad
+for_window [title="fileterm"] border pixel 5
+
+exec --no-startup-id xterm -xrm 'XTerm.vt100.allowTitleOps:false' -T fileterm -e ranger
+
+## /FILE BROWSER TERMINAL
+
 ## APPLICATION KEYBINDINGS ##################################################################################################################################
 
         # start a terminal
@@ -225,10 +237,9 @@ exec --no-startup-id xterm -xrm 'XTerm.vt100.allowTitleOps:false' -T dropdown
         # launch categorized menu
         bindsym $mod+z exec --no-startup-id morc_menu
 
-        bindsym $mod+p exec pcmanfm
-
         bindsym $mod+u [title="dropdown"] scratchpad show; [title="dropdown"] move position center
-        # bindsym $mod+F3 exec ranger
+
+        bindsym $mod+p [title="fileterm"] scratchpad show; [title="fileterm"] move position center
 
 ## /APPLICATION KEYBINDINGS ##################################################################################################################################
 
