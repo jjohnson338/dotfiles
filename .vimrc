@@ -103,6 +103,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Allow for multiple replace in visual mode
+xnoremap p "_dP
+ 
+
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
