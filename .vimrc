@@ -68,7 +68,7 @@ set tabstop=2
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme onedark 
-hi TabLineSel ctermfg=DarkGrey ctermbg=LightGrey
+hi TabLineSel ctermfg=Magenta ctermbg=DarkGrey
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
 
@@ -105,8 +105,6 @@ nnoremap <C-l> <C-w>l
 
 " Allow for multiple replace in visual mode
 xnoremap p "_dP
- 
-
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
