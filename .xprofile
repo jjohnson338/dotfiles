@@ -13,8 +13,6 @@ fi
 
 userresources=$HOME/.Xresources
 
-xcape -e 'Super_L=Escape'
-
 if [ -f "$userxrandr" ]; then
 	source "$userxrandr"
 fi

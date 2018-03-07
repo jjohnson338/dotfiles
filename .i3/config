@@ -262,7 +262,7 @@ exec --no-startup-id ensureRanger
         }
 
         # Resize window (you can also use the mouse for that)
-        bindsym $mod+r mode "resize"
+        bindsym $mod+e mode "resize"
         mode "resize" {
                 # These bindings trigger as soon as you enter the resize mode
                 # Pressing left will shrink the window’s width.
@@ -358,8 +358,6 @@ exec --no-startup-id ensureRanger
         exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*; sleep 1; compton -b
         exec --no-startup-id nm-applet
         exec --no-startup-id xfce4-power-manager
-        # exec --no-startup-id pamac-tray
-        # exec --no-startup-id clipit
         exec --no-startup-id blueman
         exec --no-startup-id enpass
         exec --no-startup-id messengerfordesktop
@@ -368,4 +366,5 @@ exec --no-startup-id ensureRanger
         exec --no-startup-id light-locker
         exec --no-startup-id mailspring
         exec_always --no-startup-id fix_xcursor
+        exec_always --no-startup-id xcape -e 'Super_L=Escape'
 ## /AUTOSTART APPLICATIONS #####################################################################################################################################
