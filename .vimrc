@@ -113,4 +113,8 @@ autocmd BufReadPost *
 \ endif
 
 
+" Auto-trim trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+
 silent! source $HOME/.vimrc.local
