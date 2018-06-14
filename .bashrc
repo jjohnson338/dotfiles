@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-[[ $- != *i* ]] && return
+#[[ $- != *i* ]] && return
 
 colors() {
 	local fgc bgc vals seq0

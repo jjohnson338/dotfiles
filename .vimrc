@@ -10,11 +10,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'godlygeek/tabular'
-Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-commentary'
 Plug 'simeji/winresizer'
+Plug 'vim-syntastic/syntastic'
 
 " Syntax
 "Plug 'pearofducks/ansible-vim'
@@ -67,19 +67,19 @@ set shiftwidth=2
 set tabstop=2
 
 " Don't complain if the colorscheme isn't set
-silent! colorscheme onedark 
+silent! colorscheme onedark
+let g:onedark_termcolors = 256
 hi TabLineSel ctermfg=Magenta ctermbg=DarkGrey
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
 
+" GVim options
+set guioptions=agit
+set guifont=Inconsolata\ Bold\ 10
+
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
-
-" GVim options
-set guioptions=agit
-
-set guifont=Fira\ Code:h10
 
 " Nerdtree options
 autocmd StdinReadPre * let s:std_in=1
@@ -87,10 +87,19 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
 " Linting
-let g:ale_javascript_eslint_use_global=1
-let g:airline#extensions#ale#enabled=1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_sign_column_always = 1
+"let g:ale_javascript_eslint_use_global=1
+"let g:airline#extensions#ale#enabled=1
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_sign_column_always = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
