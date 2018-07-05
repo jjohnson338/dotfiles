@@ -53,10 +53,13 @@ set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
 set visualbell
 set updatetime=250
-set cursorline
+set nocursorline
+set nocursorcolumn
+set norelativenumber
+syntax sync minlines=256
 
 " Folds
-set foldmethod=indent
+"set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
