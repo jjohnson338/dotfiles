@@ -56,7 +56,6 @@ set updatetime=250
 set nocursorline
 set nocursorcolumn
 set norelativenumber
-syntax sync minlines=256
 
 " Folds
 "set foldmethod=indent
