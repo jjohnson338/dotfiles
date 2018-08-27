@@ -6,9 +6,11 @@ set nocompatible
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+" Plug 'Shougo/unite.vim'
+" Plug 'Shougo/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/dbext.vim'
@@ -38,6 +40,7 @@ let g:jsx_ext_required = 0
 set background=dark       "make sure vim knows bg is dark
 set showmode              "display current mode
 set showcmd               "display partially typed commands
+set title
 set nowrap                "dont wrap long lines
 set noswapfile            "turn off swap files
 set shiftround            "Round indent to multiple of 'shiftwidth'
@@ -46,9 +49,7 @@ set number                "turn on line numbers
 set showmatch             "highlight matching brackets
 set nobackup              "backups are for wimps
 set noundofile            "same as the line above says
-set pastetoggle=<F12>     "press when pasting multiple lines
-set backspace=indent,eol,start
-set title                 "set the terminal title to the filename
+set pastetoggle=<F12>     "press when pasting multiple lines set backspace=indent,eol,start set title                 "set the terminal title to the filename
 set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
 set visualbell
@@ -56,6 +57,7 @@ set updatetime=250
 set nocursorline
 set nocursorcolumn
 set norelativenumber
+set shell=sh
 
 " Folds
 "set foldmethod=indent
@@ -86,7 +88,26 @@ inoremap kj <ESC>
 " Nerdtree options
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | VimFiler -buffer-name=explorer -split -simple -winwidth=50 -toggle -no-quit | endif
 let NERDTreeShowHidden=1
+
+" NERDTree Git Options
+" let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
+" let g:NERDTreeShowIgnoredStatus = 0
+
+" Vimfiler options
+" let g:vimfiler_as_default_explorer = 1
+" let g:vimfiler_expand_jump_to_first_child = 0
+" let g:vimfiler_no_default_key_mapping = 1
+" let g:vimfiler_ignore_pattern = '^\%(\.DS_Store\)$'
+" let g:vimfiler_tree_leaf_icon = ' '
+" let g:vimfiler_tree_opened_icon = '▾'
+" let g:vimfiler_tree_closed_icon = '▸'
+" let g:vimfiler_file_icon = '-'
+" let g:vimfiler_marked_file_icon = '*'
+
+" Vimfiler keybinds
+"nmap <buffer> p <Plug>(vimfiler_jump_first_child)
 
 " Linting
 "let g:ale_javascript_eslint_use_global=1
@@ -106,6 +127,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
 
+"map <Leader>d :VimFiler -buffer-name=explorer -split -simple -winwidth=50 -toggle -no-quit<CR>
 map <Leader>d :NERDTreeToggle<CR>
 
 " Control+hjkl moves focus to that window
