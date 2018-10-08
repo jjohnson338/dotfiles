@@ -1,0 +1,15 @@
+{
+    "editor.fontFamily": "inconsolata",
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    //vim
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"],
+        },
+    ],
+}

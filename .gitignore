@@ -55,3 +55,8 @@
 !/.vim/autoload
 /.vim/autoload/*
 !/.vim/autoload/plug.vim
+
+!/.vscode
+/.vscode/*
+!/.vscode/keybindings.json
+!/.vscode/settings.json
