@@ -28,6 +28,12 @@
 /.config/rofi/*
 !/.config/rofi/config
 !/.config/rofi/pop-dark.rasi
+!/.config/Code\ -\ OSS
+/.config/Code\ -\ OSS/*
+!/.config/Code\ -\ OSS/User
+/.config/Code\ -\ OSS/User/*
+!/.config/Code\ -\ OSS/User/settings.json
+!/.config/Code\ -\ OSS/User/keybindings.json
 
 
 !/.githooks
@@ -55,8 +61,3 @@
 !/.vim/autoload
 /.vim/autoload/*
 !/.vim/autoload/plug.vim
-
-!/.vscode
-/.vscode/*
-!/.vscode/keybindings.json
-!/.vscode/settings.json

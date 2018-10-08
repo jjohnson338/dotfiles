@@ -1,0 +1,98 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    //Navigation
+    {
+        "key":"ctrl+h",
+        "command":"workbench.action.navigateLeft",
+    },
+    {
+        "key":"ctrl+l",
+        "command":"workbench.action.navigateRight",
+    },
+    {
+        "key":"ctrl+k",
+        "command":"workbench.action.navigateUp",
+    },
+    {
+        "key":"ctrl+j",
+        "command":"workbench.action.navigateDown",
+    },
+    //Nerdtree
+    {
+        "key": "space d",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible && vim.mode == 'Normal' && filesExplorerFocus"
+    },
+    {
+        "key": "space d",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible && vim.mode == 'Normal' && editorFocus"
+    },
+    {
+        "key": "space d",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible && vim.mode == 'Normal' && filesExplorerFocus"
+    },
+    {
+        "key": "space d",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible && vim.mode == 'Normal' && editorFocus"
+    },
+    {
+        "key": "m a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "m d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "m m",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "o",
+        "command": "explorer.openToSide",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus && !listFocus"
+    },
+    {
+        "key": "o",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus && listFocus"
+    },
+    {
+        "key": "p",
+        "command": "list.collapse",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    //MoveWindows
+    {
+        "key":"ctrl+w ctrl+h",
+        "command":"workbench.action.moveEditorToLeftGroup",
+    },
+    {
+        "key":"ctrl+w ctrl+l",
+        "command":"workbench.action.moveEditorToRightGroup",
+    },
+    {
+        "key":"ctrl+w ctrl+k",
+        "command":"workbench.action.moveEditorToAboveGroup",
+    },
+    {
+        "key":"ctrl+w ctrl+j",
+        "command":"workbench.action.moveEditorToBelowGroup",
+    },
+    //SplitSizes
+    {
+        "key":"ctrl+e ctrl+h",
+        "command":"workbench.action.increaseViewSize",
+    },
+    {
+        "key":"ctrl+e ctrl+l",
+        "command":"workbench.action.decreaseViewSize",
+    },
+
+]
