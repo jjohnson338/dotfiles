@@ -94,5 +94,10 @@
         "key":"ctrl+e ctrl+l",
         "command":"workbench.action.decreaseViewSize",
     },
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && vim.mode == 'Insert'"
+    },
 
 ]

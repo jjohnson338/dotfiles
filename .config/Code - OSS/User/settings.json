@@ -1,17 +1,46 @@
 {
+    //editor
     "editor.fontFamily": "Inconsolata",
-    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
     "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": true,
+    "editor.scrollBeyondLastLine": false,
+
+    //eslint
+    "eslint.enable": true,
+
+    //explorer
+    "explorer.openEditors.visible": 0,
+
+    //files
+    "files.trimTrailingWhitespace": true,
+
+    //git
+    "git.autoRepositoryDetection": "subFolders",
+    "git.enableSmartCommit": true,
+
+
+    //material-icon
+    "material-icon-theme.showUpdateMessage": false,
+
+    //telemetry
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
     //vim
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
     "vim.insertModeKeyBindings": [
-        {
-            "before": ["j", "k"],
-            "after": ["<Esc>"],
-        },
+        { "before": ["j", "k"], "after": ["<Esc>"], },
+        { "before": ["k", "j"], "after": ["<Esc>"], },
     ],
-    "workbench.iconTheme": "material-icon-theme",
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+
+    //window
+    "window.zoomLevel": 0,
+
+    //workbench
     "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "material-icon-theme",
 }
