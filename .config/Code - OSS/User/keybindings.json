@@ -94,10 +94,15 @@
         "key":"ctrl+e ctrl+l",
         "command":"workbench.action.decreaseViewSize",
     },
+    //Suggestions
     {
         "key": "ctrl+n",
         "command": "editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && vim.mode == 'Insert'"
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && vim.mode == 'Insert'"
     },
-
+    {
+        "key": "ctrn+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
 ]
