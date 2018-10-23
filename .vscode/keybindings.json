@@ -21,12 +21,22 @@
     {
         "key": "space d",
         "command": "workbench.view.explorer",
-        "when": "!explorerViewletVisible && vim.mode == 'Normal'"
+        "when": "!explorerViewletVisible && vim.mode == 'Normal' && filesExplorerFocus"
+    },
+    {
+        "key": "space d",
+        "command": "workbench.view.explorer",
+        "when": "!explorerViewletVisible && vim.mode == 'Normal' && editorFocus"
     },
     {
         "key": "space d",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "explorerViewletVisible && vim.mode == 'Normal'"
+        "when": "explorerViewletVisible && vim.mode == 'Normal' && filesExplorerFocus"
+    },
+    {
+        "key": "space d",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible && vim.mode == 'Normal' && editorFocus"
     },
     {
         "key": "m a",
@@ -47,6 +57,11 @@
         "key": "o",
         "command": "explorer.openToSide",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus && !listFocus"
+    },
+    {
+        "key": "o",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus && listFocus"
     },
     {
         "key": "p",
@@ -79,5 +94,15 @@
         "key":"ctrl+e ctrl+l",
         "command":"workbench.action.decreaseViewSize",
     },
-
+    //Suggestions
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && vim.mode == 'Insert'"
+    },
+    {
+        "key": "ctrn+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
 ]
