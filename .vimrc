@@ -139,6 +139,9 @@ nnoremap <C-l> <C-w>l
 " Allow for multiple replace in visual mode
 xnoremap p "_dP
 
+" Add command to format json
+com! FormatJSON '<,'>!python -m json.tool
+
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
