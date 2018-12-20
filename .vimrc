@@ -28,6 +28,7 @@ Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
 Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
+Plug 'gregsexton/MatchTag'
 
 " Themes
 Plug 'joshdick/onedark.vim'
