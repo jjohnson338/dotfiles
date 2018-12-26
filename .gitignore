@@ -6,7 +6,6 @@
 !/.xprofile
 !/.Xresources
 !/.extend.Xresources
-!/.zshrc
 
 !/.config
 /.config/*
@@ -56,6 +55,7 @@
 !/.i3/config
 
 !/.vimrc
+!/.vimrc.local.example
 !/.vim
 /.vim/*
 !/.vim/autoload

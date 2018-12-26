@@ -1,0 +1,11 @@
+" DB
+let g:dbext_default_SQLSRV_bin = 'sqlcmd'
+let g:sql_type_default = 'sqlserver'
+let g:dbext_default_profile_dev = 'example connection string'
+let g:dbext_default_profile = 'dev'
+let g:dbext_default_use_win32_filenames=1
+
+
+" Configs for work
+set shiftwidth=4
+set tabstop=4
