@@ -1,3 +1,4 @@
+set runtimepath+=$HOME/.vim
 " Tell Vim as early as possible not to try to emulate vi
 set nocompatible
 
@@ -6,8 +7,6 @@ set nocompatible
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-" Plug 'Shougo/unite.vim'
-" Plug 'Shougo/vimfiler.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -22,9 +21,7 @@ Plug 'vim-syntastic/syntastic'
 "Plug 'pearofducks/ansible-vim'
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
-"Plug 'mxw/vim-jsx',                   { 'for': 'javascript' }
-"Plug 'chr4/nginx.vim'
-"Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
+Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
 Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 Plug 'rust-lang/rust.vim'
 Plug 'hoffstein/vim-tsql'
@@ -37,8 +34,6 @@ Plug 'joshdick/onedark.vim'
 call plug#end()
 
 let mapleader=" "
-let g:NERDTreeDirArrows = 0
-let g:jsx_ext_required = 0
 set background=dark       "make sure vim knows bg is dark
 set showmode              "display current mode
 set showcmd               "display partially typed commands
@@ -90,26 +85,12 @@ inoremap kj <ESC>
 " Nerdtree options
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | VimFiler -buffer-name=explorer -split -simple -winwidth=50 -toggle -no-quit | endif
 let NERDTreeShowHidden=1
+let g:NERDTreeDirArrows = 0
 
 " NERDTree Git Options
 " let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
 " let g:NERDTreeShowIgnoredStatus = 0
-
-" Vimfiler options
-" let g:vimfiler_as_default_explorer = 1
-" let g:vimfiler_expand_jump_to_first_child = 0
-" let g:vimfiler_no_default_key_mapping = 1
-" let g:vimfiler_ignore_pattern = '^\%(\.DS_Store\)$'
-" let g:vimfiler_tree_leaf_icon = ' '
-" let g:vimfiler_tree_opened_icon = '▾'
-" let g:vimfiler_tree_closed_icon = '▸'
-" let g:vimfiler_file_icon = '-'
-" let g:vimfiler_marked_file_icon = '*'
-
-" Vimfiler keybinds
-"nmap <buffer> p <Plug>(vimfiler_jump_first_child)
 
 " Linting
 "let g:ale_javascript_eslint_use_global=1
@@ -129,7 +110,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
 
-"map <Leader>d :VimFiler -buffer-name=explorer -split -simple -winwidth=50 -toggle -no-quit<CR>
 map <Leader>d :NERDTreeToggle<CR>
 
 " Control+hjkl moves focus to that window
