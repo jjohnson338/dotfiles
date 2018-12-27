@@ -16,6 +16,8 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-commentary'
 Plug 'simeji/winresizer'
 Plug 'vim-syntastic/syntastic'
+" need pacakages 'mono-devel', 'rustc'
+Plug 'Valloric/YouCompleteMe' " Post Update run 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer'
 
 " Syntax
 "Plug 'pearofducks/ansible-vim'
@@ -91,6 +93,9 @@ let g:NERDTreeDirArrows = 0
 " NERDTree Git Options
 " let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
 " let g:NERDTreeShowIgnoredStatus = 0
+"
+" Airline
+let g:airline#extensions#tabline#enabled = 0
 
 " Linting
 "let g:ale_javascript_eslint_use_global=1
@@ -106,6 +111,11 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
