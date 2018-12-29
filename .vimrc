@@ -17,7 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'simeji/winresizer'
 Plug 'vim-syntastic/syntastic'
 " need pacakages 'mono-devel', 'rustc'
-Plug 'Valloric/YouCompleteMe' " Post Update run 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
 
 " Syntax
 "Plug 'pearofducks/ansible-vim'
