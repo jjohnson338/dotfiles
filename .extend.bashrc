@@ -1,3 +1,4 @@
+#!/bin/sh
 #
 # ~/.extend.bashrc
 #
@@ -96,6 +97,9 @@ if [ $hostname = "JJOHNSON" ]; then
     if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
         ssh-add
     fi
+elif [ $hostname = "jared-laptop" ]; then
+  #make sure to run xprofile
+  source ~/.xprofile
 fi
 
 # better yaourt colors

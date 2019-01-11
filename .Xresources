@@ -33,7 +33,7 @@
 
 ! white
 *.color7:       #707880
-*.color15: #c5c8c6
+*.color15:      #c5c8c6
 
 Xft.dpi: 96
 Xft.antialias: true
@@ -43,10 +43,6 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-XTerm*faceName: Fira Code Medium 
+XTerm*faceName: Fira Code Medium
 XTerm*faceSize: 12
 XTerm*selectToClipboard: true
-
-! State:            'bg'        'fg'        'bgalt'     'hlbg'      'hlfg'
-rofi.color-normal   #BF55EC     #FFFFFF     #BF55EC     #c87de8     #000000
-rofi.color-window   #BF55EC     #BF55EC     #000000
