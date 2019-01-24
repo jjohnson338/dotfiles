@@ -60,7 +60,11 @@ set updatetime=250
 set nocursorline
 set nocursorcolumn
 set norelativenumber
-set shell=sh
+if has('win32') || has ('win64')
+    set shell=cmd.exe
+else
+    set shell=sh
+endif
 
 " Folds
 "set foldmethod=indent
