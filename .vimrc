@@ -6,18 +6,22 @@ set nocompatible
 
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
+
+if ! has ('nvim')
+    Plug 'scrooloose/nerdtree'
+    " need pacakages 'mono-devel', 'rustc'
+    Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-syntastic/syntastic'
+    Plug 'jiangmiao/auto-pairs'
+endif
+
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'godlygeek/tabular'
-Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-commentary'
 Plug 'simeji/winresizer'
-Plug 'vim-syntastic/syntastic'
-" need pacakages 'mono-devel', 'rustc'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
 
 " Syntax
 "Plug 'pearofducks/ansible-vim'
@@ -84,49 +88,49 @@ set guifont=Inconsolata\ Bold\ 10
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-" Nerdtree options
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeShowHidden=1
-let g:NERDTreeDirArrows = 0
+if ! has ('nvim')
+    " Nerdtree options
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    let NERDTreeShowHidden=1
+    let g:NERDTreeDirArrows = 0
+    map <Leader>d :NERDTreeToggle<CR>
+    " NERDTree Git Options
+    " let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
+    " let g:NERDTreeShowIgnoredStatus = 0
+    "
+    " Airline
+    let g:airline#extensions#tabline#enabled = 0
+    " Linting
+    "let g:ale_javascript_eslint_use_global=1
+    "let g:airline#extensions#ale#enabled=1
+    "let g:ale_lint_on_text_changed = 'never'
+    "let g:ale_sign_column_always = 1
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+    "let g:syntastic_always_populate_loc_list = 1
+    "let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_javascript_checkers = ['eslint']
+    " YouCompleteMe
+    let g:ycm_autoclose_preview_window_after_insertion = 1
+    let g:ycm_autoclose_preview_window_after_completion = 1
 
-" NERDTree Git Options
-" let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
-" let g:NERDTreeShowIgnoredStatus = 0
-"
-" Airline
-let g:airline#extensions#tabline#enabled = 0
-
-" Linting
-"let g:ale_javascript_eslint_use_global=1
-"let g:airline#extensions#ale#enabled=1
-"let g:ale_lint_on_text_changed = 'never'
-"let g:ale_sign_column_always = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+    " Control+hjkl moves focus to that window
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-j> <C-w>j
+    nnoremap <C-k> <C-w>k
+    nnoremap <C-l> <C-w>l
+endif
 
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
 
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
 
-map <Leader>d :NERDTreeToggle<CR>
 
-" Control+hjkl moves focus to that window
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Allow for multiple replace in visual mode
 xnoremap p "_dP

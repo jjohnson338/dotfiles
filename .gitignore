@@ -33,6 +33,12 @@
 /.config/Code\ -\ OSS/User/*
 !/.config/Code\ -\ OSS/User/settings.json
 !/.config/Code\ -\ OSS/User/keybindings.json
+!/.config/oni
+/.config/oni/*
+!/.config/oni/config.js
+!/.config/oni/config.tsx
+
+
 
 
 !/.githooks
