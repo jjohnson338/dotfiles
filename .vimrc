@@ -13,7 +13,6 @@ if ! has ('nvim')
     Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-syntastic/syntastic'
-    Plug 'jiangmiao/auto-pairs'
 endif
 
 Plug 'airblade/vim-gitgutter'
@@ -22,6 +21,7 @@ Plug 'godlygeek/tabular'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-commentary'
 Plug 'simeji/winresizer'
+Plug 'jiangmiao/auto-pairs'
 
 " Syntax
 "Plug 'pearofducks/ansible-vim'

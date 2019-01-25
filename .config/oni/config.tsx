@@ -60,6 +60,12 @@ export const configuration = {
     // Editor customization
     "editor.fontSize": "14px",
     "editor.fontFamily": "Fira Code",
+    "editor.renderer": "webgl",
+    "autoClosingPairs.enabled": false,
+    "experimental.indentLines.enabled": true,
+    "tabs.height": "1.5em",
+    "sidebar.width": "20em",
+    "statusbar.fontSize": "1.0em",
 
     //Version Control
     "experimental.vcs.sidebar": true,
