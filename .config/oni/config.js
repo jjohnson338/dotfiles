@@ -42,7 +42,7 @@ exports.configuration = {
     "ui.fontSmoothing": "auto",
     "ui.colorscheme": "onedark",
     // Editor customization
-    "editor.fontSize": "14px",
+    "editor.fontSize": "13px",
     "editor.fontFamily": "Fira Code",
     "editor.renderer": "webgl",
     "autoClosingPairs.enabled": false,
