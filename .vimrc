@@ -7,16 +7,14 @@ set nocompatible
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 
-if ! has ('nvim')
-    Plug 'scrooloose/nerdtree'
-    " need pacakages 'mono-devel', 'rustc'
-    Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-syntastic/syntastic'
-endif
+Plug 'scrooloose/nerdtree'
+" need packages 'mono-devel', 'rustc'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-syntastic/syntastic'
 
 Plug 'airblade/vim-gitgutter'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'godlygeek/tabular'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-commentary'
@@ -60,10 +58,15 @@ set updatetime=250
 set nocursorline
 set nocursorcolumn
 set norelativenumber
+set guioptions=agit
 if has('win32') || has ('win64')
     set shell=cmd.exe
+    set encoding=utf-8
+    set guifont=Fira_Code_Medium:h10:cANSI:qDRAFT
 else
     set shell=sh
+    " GVim options
+    set guifont=Inconsolata\ Bold\ 10
 endif
 
 " Folds
@@ -84,50 +87,45 @@ hi TabLineSel ctermfg=Magenta ctermbg=DarkGrey
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
 
-" GVim options
-set guioptions=agit
-set guifont=Inconsolata\ Bold\ 10
 
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-if ! has ('nvim')
-    " Nerdtree options
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-    let NERDTreeShowHidden=1
-    let g:NERDTreeDirArrows = 0
-    map <Leader>d :NERDTreeToggle<CR>
-    " NERDTree Git Options
-    " let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
-    " let g:NERDTreeShowIgnoredStatus = 0
-    "
-    " Airline
-    let g:airline#extensions#tabline#enabled = 0
-    " Linting
-    "let g:ale_javascript_eslint_use_global=1
-    "let g:airline#extensions#ale#enabled=1
-    "let g:ale_lint_on_text_changed = 'never'
-    "let g:ale_sign_column_always = 1
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-    "let g:syntastic_always_populate_loc_list = 1
-    "let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_javascript_checkers = ['eslint']
-    " YouCompleteMe
-    let g:ycm_autoclose_preview_window_after_insertion = 1
-    let g:ycm_autoclose_preview_window_after_completion = 1
+" Nerdtree options
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden=1
+let g:NERDTreeDirArrows = 0
+map <Leader>d :NERDTreeToggle<CR>
+" NERDTree Git Options
+let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
+let g:NERDTreeShowIgnoredStatus = 0
+"
+" Airline
+let g:airline#extensions#tabline#enabled = 0
+" Linting
+"let g:ale_javascript_eslint_use_global=1
+"let g:airline#extensions#ale#enabled=1
+"let g:ale_lint_on_text_changed = 'never'
+"let g:ale_sign_column_always = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 
-    " Control+hjkl moves focus to that window
-    nnoremap <C-h> <C-w>h
-    nnoremap <C-j> <C-w>j
-    nnoremap <C-k> <C-w>k
-    nnoremap <C-l> <C-w>l
-endif
+" Control+hjkl moves focus to that window
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 
 

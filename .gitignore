@@ -27,17 +27,6 @@
 /.config/rofi/*
 !/.config/rofi/config
 !/.config/rofi/pop-dark.rasi
-!/.config/Code\ -\ OSS
-/.config/Code\ -\ OSS/*
-!/.config/Code\ -\ OSS/User
-/.config/Code\ -\ OSS/User/*
-!/.config/Code\ -\ OSS/User/settings.json
-!/.config/Code\ -\ OSS/User/keybindings.json
-!/.config/oni
-/.config/oni/*
-!/.config/oni/config.js
-!/.config/oni/config.tsx
-
 
 
 
