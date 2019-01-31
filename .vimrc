@@ -9,20 +9,23 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 " need packages 'mono-devel', 'rustc'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
-
-Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-commentary'
 Plug 'simeji/winresizer'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Source control
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
 
 " Syntax
-"Plug 'pearofducks/ansible-vim'
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
 Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
@@ -101,14 +104,9 @@ map <Leader>d :NERDTreeToggle<CR>
 " NERDTree Git Options
 let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
 let g:NERDTreeShowIgnoredStatus = 0
-"
 " Airline
 let g:airline#extensions#tabline#enabled = 0
 " Linting
-"let g:ale_javascript_eslint_use_global=1
-"let g:airline#extensions#ale#enabled=1
-"let g:ale_lint_on_text_changed = 'never'
-"let g:ale_sign_column_always = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -120,6 +118,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+"FZF
+map <c-p> :FZF<CR>
 
 " Control+hjkl moves focus to that window
 nnoremap <C-h> <C-w>h
@@ -128,10 +128,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 
-
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
-
 
 
 " Allow for multiple replace in visual mode
