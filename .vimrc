@@ -12,7 +12,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
-Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-commentary'
@@ -65,7 +64,9 @@ set guioptions=agit
 if has('win32') || has ('win64')
     set shell=cmd.exe
     set encoding=utf-8
-    set guifont=Fira_Code_Medium:h10:cANSI:qDRAFT
+    if !has('nvim')
+        set guifont=Fira_Code_Medium:h10:cANSI:qDRAFT
+    endif
 else
     set shell=sh
     " GVim options
