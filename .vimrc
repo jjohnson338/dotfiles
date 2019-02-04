@@ -8,8 +8,14 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-" need packages 'mono-devel', 'rustc'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python ~/.vim/plugged/YouCompleteMe/install.py --cs-completer --rust-completer' }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } "Javascript
 Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 Plug 'godlygeek/tabular'
@@ -64,6 +70,7 @@ set guioptions=agit
 if has('win32') || has ('win64')
     set shell=cmd.exe
     set encoding=utf-8
+    let g:python3_host_prog='C:\Users\jjohnson\AppData\Local\Programs\Python\Python37\python.exe'
     if !has('nvim')
         set guifont=Fira_Code_Medium:h10:cANSI:qDRAFT
     endif
@@ -103,6 +110,17 @@ let NERDTreeShowHidden=1
 let g:NERDTreeDirArrows = 0
 map <Leader>d :NERDTreeToggle<CR>
 " NERDTree Git Options
+let g:NERDTreeIndicatorMapCustom = {
+            \ "Modified"  : "o",
+            \ "Staged"    : "+",
+            \ "Untracked" : "*",
+            \ "Renamed"   : ">",
+            \ "Unmerged"  : "═",
+            \ "Deleted"   : "X",
+            \ "Dirty"     : "x",
+            \ "Clean"     : "@",
+            \ "Unknown"   : "?"
+            \ }
 let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
 let g:NERDTreeShowIgnoredStatus = 0
 " Airline
@@ -116,9 +134,8 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+"Deoplete
+let g:deoplete#enable_at_startup = 1
 "FZF
 map <c-p> :FZF<CR>
 
@@ -128,6 +145,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+if has('nvim')
+    inoremap <silent> <S-Insert> <C-R>+
+endif
 
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
