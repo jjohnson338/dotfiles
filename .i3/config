@@ -229,10 +229,10 @@ exec --no-startup-id ensureRanger
 ## APPLICATION KEYBINDINGS ##################################################################################################################################
 
         # start a terminal
-        bindsym $mod+Return exec xterm 
+        bindsym $mod+Return exec xterm
 
         # start program launcher
-        bindsym $mod+d exec --no-startup-id rofi -show run 
+        bindsym $mod+d exec --no-startup-id rofi -show run
 
         # launch categorized menu
         bindsym $mod+z exec --no-startup-id morc_menu
@@ -255,7 +255,7 @@ exec --no-startup-id ensureRanger
                 bindsym e exec --no-startup-id i3exit logout, mode "default"
                 bindsym h exec --no-startup-id i3exit hibernate, mode "default"
                 bindsym r exec --no-startup-id i3exit reboot, mode "default"
-                bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default" 
+                bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
                 # exit system mode: "Enter" or "Escape"
                 bindsym Return mode "default"
                 bindsym Escape mode "default"
@@ -353,6 +353,7 @@ exec --no-startup-id ensureRanger
 
 ## AUTOSTART APPLICATIONS ######################################################################################################################################
         exec --no-startup-id pulseaudio
+        exec --no-startup-id pkill pulseaudio && pulseaudio --start &
         exec --no-startup-id pa-applet
         exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
         exec --no-startup-id feh --randomize --bg-fill ~/Wallpapers/*; sleep 1; compton -b

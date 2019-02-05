@@ -77,7 +77,9 @@ if has('win32') || has ('win64')
 else
     set shell=sh
     " GVim options
-    set guifont=Inconsolata\ Bold\ 10
+    if !has('nvim')
+      set guifont=Inconsolata\ Bold\ 10
+    endif
 endif
 
 " Folds
