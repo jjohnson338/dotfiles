@@ -7,7 +7,8 @@ set nocompatible
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
+
+" Autocompletions
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -16,19 +17,27 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } "Javascript
+
+"Style
 Plug 'vim-airline/vim-airline'
-Plug 'vim-syntastic/syntastic'
-Plug 'godlygeek/tabular'
-Plug 'vim-scripts/dbext.vim'
-Plug 'tpope/vim-commentary'
-Plug 'simeji/winresizer'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'joshdick/onedark.vim'
+
+" Utility
+Plug 'scrooloose/nerdtree' " File Explorer
+Plug 'vim-scripts/dbext.vim' " DB
+Plug 'tpope/vim-commentary' " Comments
+Plug 'simeji/winresizer' " Resizing
+Plug 'jiangmiao/auto-pairs' " Pairs
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy File Finder
+Plug 'albfan/ag.vim' "Code search
 
 " Source control
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
+
+"Linting
+Plug 'vim-syntastic/syntastic'
 
 " Syntax
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
@@ -39,9 +48,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
 Plug 'gregsexton/MatchTag'
-
-" Themes
-Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -140,6 +146,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:deoplete#enable_at_startup = 1
 "FZF
 map <c-p> :FZF<CR>
+"Ag
+let g:ag_working_path_mode="r"
 
 " Control+hjkl moves focus to that window
 nnoremap <C-h> <C-w>h
