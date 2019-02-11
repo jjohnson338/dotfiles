@@ -1,16 +1,5 @@
 #!/bin/sh
 #
-
-#capture hostname
-hostname="$(hostname)"
-
-if [ $hostname = "jared-laptop" ]; then
-    userxinput=$HOME/.hostname_configs/jared-laptop/.xinput
-    usermodmap=$HOME/.hostname_configs/jared-laptop/.Xmodmap
-elif [ $hostname = "jared-desktop" ]; then
-    userxrandr=$HOME/.hostname_configs/jared-desktop/.xrandr
-fi
-
 userresources=$HOME/.Xresources
 
 if [ -f "$userxrandr" ]; then

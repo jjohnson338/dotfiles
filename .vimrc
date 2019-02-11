@@ -17,6 +17,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } "Javascript
+Plug 'jjohnson338/deoplete-mssql'
 
 "Style
 Plug 'vim-airline/vim-airline'

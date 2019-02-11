@@ -27,6 +27,9 @@
 /.config/rofi/*
 !/.config/rofi/config
 !/.config/rofi/pop-dark.rasi
+!/.config/sway
+/.config/sway/*
+!/.config/sway/config
 
 
 
