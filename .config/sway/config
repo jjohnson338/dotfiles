@@ -371,7 +371,6 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 ## /INPUT #####################################################################################################################################################
 
 ## AUTOSTART APPLICATIONS ######################################################################################################################################
-        exec --no-startup-id pulseaudio
         exec --no-startup-id pkill pulseaudio && pulseaudio --start &
         exec --no-startup-id pa-applet
         exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

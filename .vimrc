@@ -163,6 +163,7 @@ endif
 map <Leader>n :tabnew<CR>
 map <Leader>c :tabclose<CR>
 
+nnoremap <Leader>p "*p
 
 " Allow for multiple replace in visual mode
 xnoremap p "_dP
