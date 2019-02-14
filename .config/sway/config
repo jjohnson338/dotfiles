@@ -230,13 +230,10 @@ exec --no-startup-id ensureRanger
 ## APPLICATION KEYBINDINGS ##################################################################################################################################
 
         # start a terminal
-        bindsym $mod+Return exec xterm
+        bindsym $mod+Return exec termite
 
         # start program launcher
         bindsym $mod+d exec --no-startup-id rofi -show run
-
-        # launch categorized menu
-        bindsym $mod+z exec --no-startup-id morc_menu
 
         bindsym $mod+u exec ensureDropdown; [title='dropdown'] scratchpad show; [title='dropdown'] move position center
 
@@ -295,12 +292,11 @@ exec --no-startup-id ensureRanger
         bindsym $mod+e mode "resize"
 
         ## screenshot mode start
-        set $mode_grim "a=whole screen c=clipboard s=selection w=window"
+        set $mode_grim "a=whole screen c=clipboard s=selection"
         mode $mode_grim {
-                bindsym a exec --no-startup-id grim $(xdg-user-dir PICTURES)/$(date + '%Y-%m-%d-%H%M%S_grim.png'); mode "default"
-                bindsym s --release exec --no-startup-id grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date + '%Y-%m-%d-%H%M%S_grim.png'); mode "default"
-                bindsym c --release exec --no-startup-id grim - | wl-copy; mode "default"
-                bindsym w --release exec --no-startup-id grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/$(date + '%Y-%m-%d-%H%M%S_grim.png'); mode "default"
+                bindsym a exec --no-startup-id grim ~/Pictures/$(date +'%Y-%m-%d-%H%M%S_grim.png'), mode "default"
+                bindsym s exec --no-startup-id grim -g "$(slurp)" ~/Pictures/$(date +'%Y-%m-%d-%H%M%S_grim.png'), mode "default"
+                bindsym c exec --no-startup-id grim - | wl-copy, mode "default"
                 bindsym Return mode "default"
                 bindsym Escape mode "default"
         }
@@ -310,22 +306,8 @@ exec --no-startup-id ensureRanger
         ## sway reload
         bindsym $mod+r reload
 
-
         # edit config
         bindsym $mod+c exec --no-startup-id nvim-qt ~/.config/sway/config
-
-        set $mode_misc 's=splits t=layouts f=floats p=focus-parent c=focus-child'
-        mode $mode_misc {
-                bindsym s mode $mode_split
-                bindsym t mode $mode_layout
-                bindsym f mode $mode_float
-                bindsym p focus parent ; mode "default"
-                bindsym c focus child  ; mode "default"
-
-                bindsym Escape mode "default"
-        }
-        # misc mode start
-        bindsym $mod+x mode $mode_misc
 
         set $mode_split 'Split: h=horizontal v=vertical'
         mode $mode_split {
@@ -334,6 +316,7 @@ exec --no-startup-id ensureRanger
 
                 bindsym Escape mode "default"
         }
+        bindsym $mod+s mode $mode_split
 
         set $mode_layout 'Layout: s=stacking t=tabbed e=toggle-split f=fullscreen'
         mode $mode_layout {
@@ -344,15 +327,6 @@ exec --no-startup-id ensureRanger
 
                 bindsym Escape mode "default"
         }
-
-        set $mode_float 'Float: l=toggle-float t=toggle-float-tile-focus'
-        mode $mode_float {
-                bindsym l floating toggle   ; mode "default"
-                bindsym t focus mode_toggle ; mode "default"
-
-                bindsym Escape mode "default"
-        }
-        ## misc mode end
 
 ## /MODES #####################################################################################################################################################
 
