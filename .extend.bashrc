@@ -78,11 +78,14 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
+export TERMINAL=/usr/bin/termite
+
 # Conditionally export http and https proxy
 if [ $hostname = "JJOHNSON" ]; then
   export http_proxy="http://192.168.1.19:80/"
   export https_proxy="https://192.168.1.19:3128"
   export PATH="$PATH:/opt/mssql-tools/bin"
+  unset TERM
   export DISPLAY=:0
     # ssh-agent configuration
     if [ -z "$(pgrep ssh-agent)" ]; then
@@ -92,6 +95,7 @@ if [ $hostname = "JJOHNSON" ]; then
         export SSH_AGENT_PID=$(pgrep ssh-agent)
         export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
     fi
+
 
     #optional... potentially annoying
     if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
@@ -106,7 +110,6 @@ fi
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 export EDITOR=nvim-qt
 export BROWSER=/usr/bin/firefox
-export TERMINAL=/usr/bin/termite
 
 #Aliases
 source ~/.shared_aliases

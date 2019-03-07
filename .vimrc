@@ -48,7 +48,6 @@ Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 Plug 'rust-lang/rust.vim'
 Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
-Plug 'gregsexton/MatchTag'
 
 call plug#end()
 
