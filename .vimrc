@@ -29,7 +29,7 @@ Plug 'vim-scripts/dbext.vim' " DB
 Plug 'tpope/vim-commentary' " Comments
 Plug 'simeji/winresizer' " Resizing
 Plug 'jiangmiao/auto-pairs' " Pairs
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy File Finder
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy File Finder
 Plug 'albfan/ag.vim' "Code search
 
 " Source control
@@ -57,13 +57,13 @@ set showmode              "display current mode
 set showcmd               "display partially typed commands
 set title
 set nowrap                "dont wrap long lines
-set noswapfile            "turn off swap files
 set shiftround            "Round indent to multiple of 'shiftwidth'
 set ruler                 "turn of position on bottom
 set number                "turn on line numbers
 set showmatch             "highlight matching brackets
 set nobackup              "backups are for wimps
 set noundofile            "same as the line above says
+set noswapfile            "turn off swap files
 set pastetoggle=<F12>     "press when pasting multiple lines set backspace=indent,eol,start set title                 "set the terminal title to the filename
 set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
@@ -72,6 +72,9 @@ set updatetime=250
 set nocursorline
 set nocursorcolumn
 set norelativenumber
+"searches are case insensitive unless they contain at least one capital letter
+set ignorecase
+set smartcase
 set guioptions=agit
 if has('win32') || has ('win64')
     set shell=cmd.exe
@@ -157,6 +160,21 @@ nnoremap <C-l> <C-w>l
 
 if has('nvim')
     inoremap <silent> <S-Insert> <C-R>+
+endif
+
+"Terminal
+if has('nvim')
+    nnoremap <Leader>to :edit term://bash<CR>
+    nnoremap <Leader>tt :tabedit term://bash<CR>
+    nnoremap <Leader>ti :split term://bash<CR>
+    nnoremap <Leader>ts :vsplit term://bash<CR>
+    tnoremap <ESC><ESC> <C-\><C-n>
+    tnoremap jk <C-\><C-n>
+    tnoremap kj <C-\><C-n>
+    augroup TerminalGroup
+        autocmd!
+        autocmd TermOpen * setlocal nonumber
+    augroup END
 endif
 
 map <Leader>n :tabnew<CR>

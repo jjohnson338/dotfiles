@@ -85,7 +85,6 @@ if [ $hostname = "JJOHNSON" ]; then
   export http_proxy="http://192.168.1.19:80/"
   export https_proxy="https://192.168.1.19:3128"
   export PATH="$PATH:/opt/mssql-tools/bin"
-  unset TERM
   export DISPLAY=:0
     # ssh-agent configuration
     if [ -z "$(pgrep ssh-agent)" ]; then
