@@ -72,10 +72,13 @@ set updatetime=250
 set nocursorline
 set nocursorcolumn
 set norelativenumber
+set sidescroll=0
+set cc=80
 "searches are case insensitive unless they contain at least one capital letter
 set ignorecase
 set smartcase
 set guioptions=agit
+set termguicolors
 if has('win32') || has ('win64')
     set shell=cmd.exe
     set encoding=utf-8
@@ -90,12 +93,6 @@ else
       set guifont=Inconsolata\ Bold\ 10
     endif
 endif
-
-" Folds
-"set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
 
 " Indentation settings, gave up on editorconfig
 set expandtab
@@ -147,8 +144,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 "Deoplete
 let g:deoplete#enable_at_startup = 1
-"FZF
-map <c-p> :FZF<CR>
 "Ag
 let g:ag_working_path_mode="r"
 
