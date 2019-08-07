@@ -6,6 +6,7 @@
 !/.xprofile
 !/.Xresources
 !/.extend.Xresources
+!/.minttyrc
 
 !/.config
 /.config/*

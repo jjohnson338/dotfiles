@@ -1,0 +1,14 @@
+BoldAsFont=no
+Font=Fira Code Medium
+FontHeight=10
+ForegroundColour=197,200,198
+BackgroundColour=15,16,17
+CursorColour=191,85,236
+Transparency=low
+CursorType=block
+Scrollbar=none
+ThemeFile=
+Locale=en_US
+Charset=UTF-8
+OpaqueWhenFocused=yes
+FontWeight=500
