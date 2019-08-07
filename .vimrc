@@ -7,14 +7,13 @@ set nocompatible
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 
-
 " Autocompletions
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } "Javascript
 Plug 'jjohnson338/deoplete-mssql'
@@ -22,6 +21,7 @@ Plug 'jjohnson338/deoplete-mssql'
 "Style
 Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
+Plug 'ryanoasis/vim-devicons'
 
 " Utility
 Plug 'scrooloose/nerdtree' " File Explorer
@@ -131,6 +131,16 @@ let g:NERDTreeIndicatorMapCustom = {
             \ }
 let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
 let g:NERDTreeShowIgnoredStatus = 0
+" DevIcons
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif
+
 " Airline
 let g:airline#extensions#tabline#enabled = 0
 " Linting
