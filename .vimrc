@@ -79,19 +79,15 @@ set ignorecase
 set smartcase
 set guioptions=agit
 set termguicolors
+set guifont=Fira\ Code:h13
 if has('win32') || has ('win64')
     set shell=cmd.exe
     set encoding=utf-8
-    if !has('nvim')
-        set guifont=Fira_Code_Medium:h10:cANSI:qDRAFT
-    endif
 else
     set shell=sh
     " GVim options
-    if !has('nvim')
-      set guifont=Inconsolata\ Bold\ 10
-    endif
 endif
+
 
 " Indentation settings, gave up on editorconfig
 set expandtab
@@ -158,7 +154,7 @@ let g:deoplete#enable_at_startup = 1
 
 "Ag
 let g:ag_working_path_mode="r"
-let g:ag_prg="ag --smart-case --ignore-dir 'build' --ignore-dir 'logs' --ignore-dir '_logs' --vimgrep"
+let g:ag_prg="ag --smart-case --ignore-dir 'build' --ignore-dir 'logs' --ignore-dir '_logs' --ignore-dir 'TestResults' --vimgrep"
 
 " Control+hjkl moves focus to that window
 nnoremap <C-h> <C-w>h
