@@ -64,7 +64,7 @@ set showmatch             "highlight matching brackets
 set nobackup              "backups are for wimps
 set noundofile            "same as the line above says
 set noswapfile            "turn off swap files
-set pastetoggle=<F12>     "press when pasting multiple lines set backspace=indent,eol,start set title                 "set the terminal title to the filename
+set pastetoggle=<F12>     "press when pasting multiple lines set backspace=indent,eol,start set title
 set scrolloff=9           "start scrolling when hits this many lines from edge
 set showtabline=2         "always show tab bar
 set visualbell
@@ -82,7 +82,6 @@ set termguicolors
 if has('win32') || has ('win64')
     set shell=cmd.exe
     set encoding=utf-8
-    let g:python3_host_prog='C:\Users\jjohnson\AppData\Local\Programs\Python\Python37\python.exe'
     if !has('nvim')
         set guifont=Fira_Code_Medium:h10:cANSI:qDRAFT
     endif
@@ -103,6 +102,7 @@ set tabstop=2
 silent! colorscheme onedark
 let g:onedark_termcolors = 256
 hi TabLineSel ctermfg=Magenta ctermbg=DarkGrey
+
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
 
@@ -131,6 +131,7 @@ let g:NERDTreeIndicatorMapCustom = {
             \ }
 let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
 let g:NERDTreeShowIgnoredStatus = 0
+
 " DevIcons
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:webdevicons_conceal_nerdtree_brackets = 1
@@ -143,19 +144,21 @@ endif
 
 " Airline
 let g:airline#extensions#tabline#enabled = 0
+
 " Linting
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+
 "Deoplete
 let g:deoplete#enable_at_startup = 1
+
 "Ag
 let g:ag_working_path_mode="r"
+let g:ag_prg="ag --smart-case --ignore-dir 'build' --ignore-dir 'logs' --ignore-dir '_logs' --vimgrep"
 
 " Control+hjkl moves focus to that window
 nnoremap <C-h> <C-w>h
@@ -192,6 +195,9 @@ xnoremap p "_dP
 
 " Add command to format json
 com! FormatJSON '<,'>!python -m json.tool
+
+" Add alias for often fat-fingered command
+com! Noh noh
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
