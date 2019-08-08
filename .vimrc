@@ -79,7 +79,7 @@ set ignorecase
 set smartcase
 set guioptions=agit
 set termguicolors
-set guifont=Fira\ Code:h13
+set guifont=Hack:h13
 if has('win32') || has ('win64')
     set shell=cmd.exe
     set encoding=utf-8
@@ -140,6 +140,7 @@ endif
 
 " Airline
 let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts = 1
 
 " Linting
 set statusline+=%#warningmsg#
