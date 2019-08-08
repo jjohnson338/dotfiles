@@ -196,6 +196,11 @@ com! FormatJSON '<,'>!python -m json.tool
 " Add alias for often fat-fingered command
 com! Noh noh
 
+" FVim Fullscreen
+if exists('g:fvim_loaded')
+    com! FS :FVimToggleFullScreen
+endif
+
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
