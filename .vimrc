@@ -175,7 +175,6 @@ endif
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
-call deoplete#enable_logging('DEBUG','C:\Users\Jared\Downloads\deoplete.log')
 call deoplete#custom#source('LanguageClient','mark','LC')
 call deoplete#custom#source('LanguageClient','min_pattern_length',1)
 
