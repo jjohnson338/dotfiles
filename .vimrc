@@ -17,7 +17,6 @@ else
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'Shougo/echodoc.vim'
 Plug 'jjohnson338/deoplete-mssql'
 
 "Style
@@ -152,10 +151,6 @@ endif
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 
-"echodoc
-set cmdheight=2
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'signature'
 
 "Lang server
 let g:LanguageClient_autoStart = 1
@@ -170,6 +165,9 @@ else
       \ 'typescript': ['typescript-language-server', '--stdio'],
       \ }
 endif
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
