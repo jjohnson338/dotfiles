@@ -1,5 +1,4 @@
 set runtimepath+=$HOME/.vim
-"set runtimepath+=$HOME/.vim/plugged/LanguageClient-neovim
 
 " Tell Vim as early as possible not to try to emulate vi
 set nocompatible
@@ -97,7 +96,6 @@ if has('win32') || has ('win64')
     set encoding=utf-8
 else
     set shell=sh
-    " GVim options
 endif
 
 
