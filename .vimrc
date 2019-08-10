@@ -1,6 +1,9 @@
 set runtimepath+=$HOME/.vim
+"set runtimepath+=$HOME/.vim/plugged/LanguageClient-neovim
+
 " Tell Vim as early as possible not to try to emulate vi
 set nocompatible
+
 
 " To update Plugins :PlugUpdate
 
@@ -15,7 +18,7 @@ else
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' } "Javascript
+Plug 'Shougo/echodoc.vim'
 Plug 'jjohnson338/deoplete-mssql'
 
 "Style
@@ -29,7 +32,6 @@ Plug 'vim-scripts/dbext.vim' " DB
 Plug 'tpope/vim-commentary' " Comments
 Plug 'simeji/winresizer' " Resizing
 Plug 'jiangmiao/auto-pairs' " Pairs
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy File Finder
 Plug 'albfan/ag.vim' "Code search
 
 " Source control
@@ -37,8 +39,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 
-"Linting
-Plug 'vim-syntastic/syntastic'
+" Lang server
+if has('win32') || has ('win64')
+  Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'powershell -executionpolicy bypass -File install.ps1',
+      \ }
+else
+  Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
+endif
 
 " Syntax
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
@@ -142,16 +154,31 @@ endif
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 
-" Linting
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+"echodoc
+set cmdheight=2
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'signature'
+
+"Lang server
+let g:LanguageClient_autoStart = 1
+if has('win32') || has ('win64')
+  let g:LanguageClient_serverCommands = {
+      \ 'javascript': [ expand($HOME) . '\AppData\Roaming\npm\typescript-language-server.cmd', '--stdio'],
+      \ 'typescript': [ expand($HOME) . '\AppData\Roaming\npm\typescript-language-server.cmd', '--stdio'],
+      \ }
+else
+  let g:LanguageClient_serverCommands = {
+      \ 'javascript': ['typescript-language-server', '--stdio'],
+      \ 'typescript': ['typescript-language-server', '--stdio'],
+      \ }
+endif
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
+call deoplete#enable_logging('DEBUG','C:\Users\Jared\Downloads\deoplete.log')
+call deoplete#custom#source('LanguageClient','mark','LC')
+call deoplete#custom#source('LanguageClient','min_pattern_length',1)
+
 
 "Ag
 let g:ag_working_path_mode="r"
@@ -210,6 +237,4 @@ autocmd BufReadPost *
 
 " Auto-trim trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-
 silent! source $HOME/.vimrc.local
