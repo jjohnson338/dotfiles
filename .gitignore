@@ -64,6 +64,10 @@
 !/.vim/autoload
 /.vim/autoload/*
 !/.vim/autoload/plug.vim
+!/.vim/snippets
+/.vim/snippets/*
+!/.vim/snippets/javascript.snip
+!/.vim/snippets/sql.snip
 !/.config/nvim
 /.config/nvim/*
 !/.config/nvim/init.vim

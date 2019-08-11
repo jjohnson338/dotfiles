@@ -20,6 +20,8 @@ NodeJS Packages `npm install -g typescript typescript-language-server`
 
 pynvim (for deoplete): `pip3 install --user --upgrade pynvim`
 
+python-language-server: `pip install python-language-server`
+
 # Install fvim
 
 [Releases Page](https://github.com/yatli/fvim/releases)

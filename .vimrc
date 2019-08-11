@@ -17,7 +17,8 @@ else
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'jjohnson338/deoplete-mssql'
+" Plug 'jjohnson338/deoplete-mssql'
+Plug 'Shougo/neosnippet.vim'
 
 "Style
 Plug 'vim-airline/vim-airline'
@@ -111,7 +112,6 @@ hi TabLineSel ctermfg=Magenta ctermbg=DarkGrey
 "calls sudo and asks for password if necessary
 cmap w!! %!sudo tee > /dev/null %
 
-
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
@@ -158,6 +158,7 @@ if has('win32') || has ('win64')
   let g:LanguageClient_serverCommands = {
       \ 'javascript': [ expand($HOME) . '\AppData\Roaming\npm\typescript-language-server.cmd', '--stdio'],
       \ 'typescript': [ expand($HOME) . '\AppData\Roaming\npm\typescript-language-server.cmd', '--stdio'],
+      \ 'python': ['pyls'],
       \ }
 else
   let g:LanguageClient_serverCommands = {
@@ -174,6 +175,14 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#source('LanguageClient','mark','LC')
 call deoplete#custom#source('LanguageClient','min_pattern_length',1)
 
+"Neosnippet
+imap <C-o> <Plug>(neosnippet_expand_or_jump)
+smap <C-o> <Plug>(neosnippet_expand_or_jump)
+xmap <C-o> <Plug>(neosnippet_expand_target)
+let g:neosnippet#disable_runtime_snippets = {
+    \   '_' : 1,
+    \ }
+let g:neosnippet#snippets_directory="~/.vim/snippets"
 
 "Ag
 let g:ag_working_path_mode="r"
