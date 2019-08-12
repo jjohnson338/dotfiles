@@ -66,7 +66,11 @@
 !/.vim/autoload/plug.vim
 !/.vim/snippets
 /.vim/snippets/*
+!/.vim/snippets/cs.snip
+!/.vim/snippets/css.snip
+!/.vim/snippets/html.snip
 !/.vim/snippets/javascript.snip
+!/.vim/snippets/markdown.snip
 !/.vim/snippets/sql.snip
 !/.config/nvim
 /.config/nvim/*

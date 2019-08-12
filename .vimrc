@@ -166,6 +166,8 @@ else
       \ 'typescript': ['typescript-language-server', '--stdio'],
       \ }
 endif
+let g:LanguageClient_useVirtualText = 0
+let g:LanguageClient_hoverPreview = "Always"
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
@@ -174,6 +176,7 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#source('LanguageClient','mark','LC')
 call deoplete#custom#source('LanguageClient','min_pattern_length',1)
+call deoplete#custom#source('neosnippet', 'rank', 1000)
 
 "Neosnippet
 imap <C-o> <Plug>(neosnippet_expand_or_jump)
