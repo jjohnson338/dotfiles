@@ -17,7 +17,7 @@ else
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
-" Plug 'jjohnson338/deoplete-mssql'
+Plug 'jjohnson338/deoplete-mssql'
 Plug 'Shougo/neosnippet.vim'
 
 "Style
