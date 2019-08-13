@@ -26,7 +26,10 @@ Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 
 " Utility
-Plug 'scrooloose/nerdtree' " File Explorer
+" Plug 'scrooloose/nerdtree' " File Explorer
+Plug 'Shougo/defx.nvim'
+Plug 'kristijanhusak/defx-git'
+Plug 'kristijanhusak/defx-icons'
 Plug 'vim-scripts/dbext.vim' " DB
 Plug 'tpope/vim-commentary' " Comments
 Plug 'simeji/winresizer' " Resizing
@@ -35,7 +38,7 @@ Plug 'albfan/ag.vim' "Code search
 
 " Source control
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 
 " Lang server
@@ -117,35 +120,119 @@ inoremap jk <ESC>
 inoremap kj <ESC>
 
 " Nerdtree options
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let NERDTreeShowHidden=1
-let g:NERDTreeDirArrows = 0
-map <Leader>d :NERDTreeToggle<CR>
-" NERDTree Git Options
-let g:NERDTreeIndicatorMapCustom = {
-            \ "Modified"  : "o",
-            \ "Staged"    : "+",
-            \ "Untracked" : "*",
-            \ "Renamed"   : ">",
-            \ "Unmerged"  : "═",
-            \ "Deleted"   : "X",
-            \ "Dirty"     : "x",
-            \ "Clean"     : "@",
-            \ "Unknown"   : "?"
-            \ }
-let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
-let g:NERDTreeShowIgnoredStatus = 0
+" let NERDTreeShowHidden=1
+" let g:NERDTreeDirArrows = 0
+" map <Leader>d :NERDTreeToggle<CR>
+" " NERDTree Git Options
+" let g:NERDTreeIndicatorMapCustom = {
+"             \ "Modified"  : "o",
+"             \ "Staged"    : "+",
+"             \ "Untracked" : "*",
+"             \ "Renamed"   : ">",
+"             \ "Unmerged"  : "═",
+"             \ "Deleted"   : "X",
+"             \ "Dirty"     : "x",
+"             \ "Clean"     : "@",
+"             \ "Unknown"   : "?"
+"             \ }
+" let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
+" let g:NERDTreeShowIgnoredStatus = 0
+"
+" " DevIcons
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" let g:webdevicons_conceal_nerdtree_brackets = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+" let g:DevIconsEnableFoldersOpenClose = 1
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" if exists('g:loaded_webdevicons')
+"   call webdevicons#refresh()
+" endif
 
-" DevIcons
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-if exists('g:loaded_webdevicons')
-  call webdevicons#refresh()
-endif
+
+" Defx
+" ----------------------------------------------------------------------{{{
+set conceallevel=2
+set concealcursor=nc
+autocmd VimEnter * if argc() == 0 | :Defx | endif
+map <Leader>d :Defx <cr>
+autocmd FileType defx call s:defx_my_settings()
+call defx#custom#column('icon', {
+  \ 'directory_icon': '',
+  \ 'opened_icon':  '',
+  \ 'root_icon': '',
+  \ 'root_marker_highlight': 'Ignore',
+  \ })
+call defx#custom#column('filename', {
+  \ 'root_marker_highlight': 'Ignore',
+  \ })
+call defx#custom#column('mark', {
+  \ 'readonly_icon': '✗',
+  \ 'selected_icon': '',
+  \ })
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : '*',
+  \ 'Staged'    : '+',
+  \ 'Untracked' : '?',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
+call defx#custom#option('_', {
+  \ 'winwidth': 45,
+  \ 'columns': 'mark:indent:git:icon:icons:filename',
+  \ 'split': 'vertical',
+  \ 'direction': 'topleft',
+  \ 'show_ignored_files': 1,
+  \ 'buffer_name': '',
+  \ 'toggle': 1,
+  \ 'resume': 1,
+  \ 'root_marker': ':',
+  \ })
+function!  s:defx_my_settings() abort
+
+  setl nospell
+  setl signcolumn=no
+  setl nonumber
+  set shell=sh
+  nnoremap <silent><buffer><expr> o defx#is_directory() ?  defx#do_action('open_or_close_tree') : defx#do_action('drop')
+  nnoremap <silent><buffer><expr> p defx#do_action('close_tree')
+  nnoremap <silent><buffer><expr> C defx#do_action('copy')
+  nnoremap <silent><buffer><expr> P defx#do_action('paste')
+  nnoremap <silent><buffer><expr> M defx#do_action('rename')
+  nnoremap <silent><buffer><expr> D defx#do_action('remove_trash')
+  nnoremap <silent><buffer><expr> A defx#do_action('new_multiple_files')
+  nnoremap <silent><buffer><expr> s defx#do_action('open', 'vsplit')
+  nnoremap <silent><buffer><expr> i defx#do_action('open')
+  nnoremap <silent><buffer><expr> R defx#do_action('redraw')
+
+endfunction
+
+
+let g:defx_git#show_ignored = 0
+let g:defx_git#column_length = 1
+
+hi def link Defx_filename_directory NERDTreeDirSlash
+hi def link Defx_git_Modified Special
+hi def link Defx_git_Staged Function
+hi def link Defx_git_Renamed Title
+hi def link Defx_git_Unmerged Label
+hi def link Defx_git_Untracked Tag
+hi def link Defx_git_Ignored Comment
+
+let g:defx_icons_parent_icon = ""
+let g:defx_icons_mark_icon = ''
+let g:defx_icons_enable_syntax_highlight = 1
+let g:defx_icons_column_length = 1
+let g:defx_icons_mark_icon = '*'
+let g:defx_icons_default_icon = ''
+let g:defx_icons_directory_symlink_icon = ''
+" Options below are applicable only when using tree" feature
+let g:defx_icons_directory_icon = ''
+let g:defx_icons_root_opened_tree_icon = ''
+let g:defx_icons_nested_opened_tree_icon = ''
+let g:defx_icons_nested_closed_tree_icon = ''
+
 
 " Airline
 let g:airline#extensions#tabline#enabled = 0
