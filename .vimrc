@@ -203,7 +203,7 @@ function!  s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> D defx#do_action('remove_trash')
   nnoremap <silent><buffer><expr> A defx#do_action('new_multiple_files')
   nnoremap <silent><buffer><expr> s defx#do_action('open', 'vsplit')
-  nnoremap <silent><buffer><expr> i defx#do_action('open')
+  nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split', '')
   nnoremap <silent><buffer><expr> R defx#do_action('redraw')
 
 endfunction
