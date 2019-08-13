@@ -23,12 +23,9 @@ Plug 'Shougo/neosnippet.vim'
 "Style
 Plug 'vim-airline/vim-airline'
 Plug 'joshdick/onedark.vim'
-Plug 'ryanoasis/vim-devicons'
 
 " Utility
-" Plug 'scrooloose/nerdtree' " File Explorer
-Plug 'Shougo/defx.nvim'
-Plug 'kristijanhusak/defx-git'
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 Plug 'vim-scripts/dbext.vim' " DB
 Plug 'tpope/vim-commentary' " Comments
@@ -38,7 +35,7 @@ Plug 'albfan/ag.vim' "Code search
 
 " Source control
 Plug 'airblade/vim-gitgutter'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kristijanhusak/defx-git'
 Plug 'tpope/vim-fugitive'
 
 " Lang server
@@ -96,11 +93,11 @@ set termguicolors
 set guifont=Hack:h13
 if has('win32') || has ('win64')
     set shell=cmd.exe
+    set clipboard+=unnamedplus
     set encoding=utf-8
 else
     set shell=sh
 endif
-
 
 " Indentation settings, gave up on editorconfig
 set expandtab
@@ -118,36 +115,6 @@ cmap w!! %!sudo tee > /dev/null %
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
-
-" Nerdtree options
-" let NERDTreeShowHidden=1
-" let g:NERDTreeDirArrows = 0
-" map <Leader>d :NERDTreeToggle<CR>
-" " NERDTree Git Options
-" let g:NERDTreeIndicatorMapCustom = {
-"             \ "Modified"  : "o",
-"             \ "Staged"    : "+",
-"             \ "Untracked" : "*",
-"             \ "Renamed"   : ">",
-"             \ "Unmerged"  : "═",
-"             \ "Deleted"   : "X",
-"             \ "Dirty"     : "x",
-"             \ "Clean"     : "@",
-"             \ "Unknown"   : "?"
-"             \ }
-" let g:NERDTreeGitStatusIgnoreSubmodules = 'all'
-" let g:NERDTreeShowIgnoredStatus = 0
-"
-" " DevIcons
-" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-" let g:webdevicons_conceal_nerdtree_brackets = 1
-" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-" let g:DevIconsEnableFoldersOpenClose = 1
-" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-" if exists('g:loaded_webdevicons')
-"   call webdevicons#refresh()
-" endif
-
 
 " Defx
 " ----------------------------------------------------------------------{{{
@@ -196,13 +163,13 @@ function!  s:defx_my_settings() abort
   setl nonumber
   nnoremap <silent><buffer><expr> o defx#is_directory() ?  defx#do_action('open_or_close_tree') : defx#do_action('drop')
   nnoremap <silent><buffer><expr> p defx#do_action('close_tree')
+  nnoremap <silent><buffer><expr> s defx#do_action('open', 'botright vsplit')
+  nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split', '')
   nnoremap <silent><buffer><expr> C defx#do_action('copy')
   nnoremap <silent><buffer><expr> P defx#do_action('paste')
   nnoremap <silent><buffer><expr> M defx#do_action('rename')
   nnoremap <silent><buffer><expr> D defx#do_action('remove_trash')
-  nnoremap <silent><buffer><expr> A defx#do_action('new_multiple_files')
-  nnoremap <silent><buffer><expr> s defx#do_action('open', 'vsplit')
-  nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split', '')
+  nnoremap <silent><buffer><expr> A defx#do_action('new_file')
   nnoremap <silent><buffer><expr> R defx#do_action('redraw')
 
 endfunction
@@ -285,24 +252,6 @@ nnoremap <C-l> <C-w>l
 if has('nvim')
     inoremap <silent> <S-Insert> <C-R>+
 endif
-
-"Terminal
-if has('nvim')
-    nnoremap <Leader>to :edit term://bash<CR>
-    nnoremap <Leader>tt :tabedit term://bash<CR>
-    nnoremap <Leader>ti :split term://bash<CR>
-    nnoremap <Leader>ts :vsplit term://bash<CR>
-    tnoremap <ESC><ESC> <C-\><C-n>
-    tnoremap jk <C-\><C-n>
-    tnoremap kj <C-\><C-n>
-    augroup TerminalGroup
-        autocmd!
-        autocmd TermOpen * setlocal nonumber
-    augroup END
-endif
-
-map <Leader>n :tabnew<CR>
-map <Leader>c :tabclose<CR>
 
 nnoremap <Leader>p "*p
 
