@@ -170,7 +170,7 @@ call defx#custom#column('mark', {
   \ 'selected_icon': '',
   \ })
 call defx#custom#column('git', 'indicators', {
-  \ 'Modified'  : '*',
+  \ 'Modified'  : '',
   \ 'Staged'    : '+',
   \ 'Untracked' : '?',
   \ 'Renamed'   : '➜',
@@ -194,7 +194,6 @@ function!  s:defx_my_settings() abort
   setl nospell
   setl signcolumn=no
   setl nonumber
-  set shell=sh
   nnoremap <silent><buffer><expr> o defx#is_directory() ?  defx#do_action('open_or_close_tree') : defx#do_action('drop')
   nnoremap <silent><buffer><expr> p defx#do_action('close_tree')
   nnoremap <silent><buffer><expr> C defx#do_action('copy')
@@ -256,7 +255,7 @@ endif
 let g:LanguageClient_hoverPreview = "Always"
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 "Deoplete
 let g:deoplete#enable_at_startup = 1
