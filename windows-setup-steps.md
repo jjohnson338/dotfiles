@@ -22,6 +22,8 @@ pynvim (for deoplete): `pip3 install --user --upgrade pynvim`
 
 python-language-server: `pip install python-language-server`
 
+Send2Trash: `pip install Send2Trash`
+
 # Install fvim
 
 [Releases Page](https://github.com/yatli/fvim/releases)
