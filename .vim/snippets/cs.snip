@@ -43,7 +43,8 @@ snippet delegate
 
 snippet property
 alias   prop
-    ${1:int} ${2:#:Name} { get${3:;} ${4:#:private }set${5:;} }${0}
+options word
+    public ${1:string} ${2:#:Name} { get; set; }${0}
 
 snippet get
 abbr    get {}

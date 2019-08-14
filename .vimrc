@@ -269,10 +269,15 @@ let g:ag_working_path_mode="r"
 let g:ag_prg="ag --smart-case --ignore-dir 'build' --ignore-dir 'logs' --ignore-dir '_logs' --ignore-dir 'TestResults' --vimgrep"
 
 " Control+hjkl moves focus to that window
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
+" Control+HJKL moves windows
+" nnoremap <C-H> <C-w>H
+" nnoremap <C-J> <C-w>J
+" nnoremap <C-K> <C-w>K
+" nnoremap <C-L> <C-w>L
 
 if has('nvim')
     inoremap <silent> <S-Insert> <C-R>+
