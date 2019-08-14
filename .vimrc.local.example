@@ -5,6 +5,13 @@ let g:dbext_default_profile_dev = 'example connection string'
 let g:dbext_default_profile = 'dev'
 let g:dbext_default_use_win32_filenames=1
 
+" Startify Bookmarks
+let g:startify_bookmarks = [
+  \ '~',
+  \ '~/Source',
+  \ '~/Source/some_proj_dir',
+  \ ]
+
 
 " Configs for work
 set shiftwidth=4

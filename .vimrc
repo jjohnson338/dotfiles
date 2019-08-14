@@ -32,6 +32,7 @@ Plug 'tpope/vim-commentary' " Comments
 Plug 'simeji/winresizer' " Resizing
 Plug 'jiangmiao/auto-pairs' " Pairs
 Plug 'albfan/ag.vim' "Code search
+Plug 'mhinz/vim-startify' "Home page
 
 " Source control
 Plug 'airblade/vim-gitgutter'
@@ -120,7 +121,6 @@ inoremap kj <ESC>
 " ----------------------------------------------------------------------{{{
 set conceallevel=2
 set concealcursor=nc
-autocmd VimEnter * if argc() == 0 | :Defx | endif
 map <Leader>d :Defx <cr>
 autocmd FileType defx call s:defx_my_settings()
 call defx#custom#column('icon', {
@@ -203,6 +203,31 @@ let g:defx_icons_nested_closed_tree_icon = ''
 " Airline
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
+
+" Startify
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_fortune_use_unicode = 1
+let g:startify_enable_special = 1
+let g:startify_lists = [
+  \ { 'type': 'files',     'header': ['   Recents']            },
+  \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ { 'type': 'sessions',  'header': ['   Sessions']       },
+  \ ]
+
+function! s:isdir(dir) abort
+    return !empty(a:dir) && (isdirectory(a:dir) ||
+                \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[0]).a:dir)))
+endfu
+
+" open defx anytime a directory buffer is opened
+" and change to that directory
+augroup defx
+    au!
+    au VimEnter * sil! au! FileExplorer *
+    au BufEnter * if s:isdir(expand('%')) | cd %:p:h | Defx | endif
+augroup END
 
 
 "Lang server
