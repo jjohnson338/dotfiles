@@ -273,11 +273,12 @@ nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
-" Control+HJKL moves windows
-" nnoremap <C-H> <C-w>H
-" nnoremap <C-J> <C-w>J
-" nnoremap <C-K> <C-w>K
-" nnoremap <C-L> <C-w>L
+
+" Shift+HJKL moves windows
+nnoremap <S-H> <C-w>H
+nnoremap <S-J> <C-w>J
+nnoremap <S-K> <C-w>K
+nnoremap <S-L> <C-w>L
 
 if has('nvim')
     inoremap <silent> <S-Insert> <C-R>+
