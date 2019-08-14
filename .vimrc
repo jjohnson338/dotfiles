@@ -274,6 +274,7 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
+
 " Shift+HJKL moves windows
 nnoremap <S-H> <C-w>H
 nnoremap <S-J> <C-w>J
