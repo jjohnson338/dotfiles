@@ -36,7 +36,22 @@ Then add to `PATH`
 
 # SSH Key Auth
 
+## Easy Way
 Enable the `OpenSSH Authentication Agent` Service that is packaged with Windows10
+
+## Less Easy Way
+
+* Download latest [release](https://github.com/PowerShell/Win32-OpenSSH/releases) of OpenSSH for Windows:
+
+* Extract and copy out to Program Files or somewhere logical
+
+* Add the folder to PATH
+
+* With an Administrator PowerShell prompt, execute `install-sshd.ps1`
+
+* Then, enable the service
+
+## Shared
 
 Generate a key:
 `ssh-keygen -t rsa`
