@@ -34,6 +34,19 @@ Then add to `PATH`
 
 [Powerline Hack Font](https://github.com/powerline/fonts/tree/master/Hack)
 
+# SSH Key Auth
+
+Enable the `OpenSSH Authentication Agent` Service that is packaged with Windows10
+
+Generate a key:
+`ssh-keygen -t rsa`
+
+Add the key to the now-running ssh-agent:
+`ssh-add ~/.ssh/id_rsa`
+
+Copy the pub key out to Git servers:
+`clip < ~/.ssh/id_rsa.pub`
+
 
 # Clone dotfiles repo
 `mkdir ~/Source`

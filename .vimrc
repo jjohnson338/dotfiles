@@ -121,7 +121,7 @@ inoremap kj <ESC>
 " ----------------------------------------------------------------------{{{
 set conceallevel=2
 set concealcursor=nc
-map <Leader>d :Defx <cr>
+map <Leader>d :Defx -buffer-name=defx <cr>
 autocmd FileType defx call s:defx_my_settings()
 call defx#custom#column('icon', {
   \ 'directory_icon': '',
@@ -216,18 +216,13 @@ let g:startify_lists = [
   \ { 'type': 'sessions',  'header': ['   Sessions']       },
   \ ]
 
-function! s:isdir(dir) abort
-    return !empty(a:dir) && (isdirectory(a:dir) ||
-                \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[0]).a:dir)))
-endfu
-
-" open defx anytime a directory buffer is opened
-" and change to that directory
-augroup defx
-    au!
-    au VimEnter * sil! au! FileExplorer *
-    au BufEnter * if s:isdir(expand('%')) | cd %:p:h | Defx | endif
-augroup END
+" Eat all File Explorer Buffer opens
+au VimEnter * sil! au! FileExplorer *
+" Whenever Startify launches a buffer, find and destroy the defx buffer, then
+" launch a new one
+au User StartifyBufferOpened silent! bwipeout defx | Defx -buffer-name=defx
+" Map an alias command for Startify
+com! Home Startify
 
 
 "Lang server
