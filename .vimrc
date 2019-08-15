@@ -121,7 +121,7 @@ inoremap kj <ESC>
 " ----------------------------------------------------------------------{{{
 set conceallevel=2
 set concealcursor=nc
-map <Leader>d :Defx -buffer-name=defx <cr>
+map <Leader>d :Defx -buffer-name=defx<CR>
 autocmd FileType defx call s:defx_my_settings()
 call defx#custom#column('icon', {
   \ 'directory_icon': '',
@@ -131,6 +131,7 @@ call defx#custom#column('icon', {
   \ })
 call defx#custom#column('filename', {
   \ 'root_marker_highlight': 'Ignore',
+  \ 'max_width': '200'
   \ })
 call defx#custom#column('mark', {
   \ 'readonly_icon': '✗',
@@ -154,7 +155,7 @@ call defx#custom#option('_', {
   \ 'buffer_name': '',
   \ 'toggle': 1,
   \ 'resume': 1,
-  \ 'root_marker': ':',
+  \ 'root_marker': ':'
   \ })
 function!  s:defx_my_settings() abort
 
@@ -210,9 +211,9 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_enable_special = 1
 let g:startify_lists = [
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
   \ { 'type': 'files',     'header': ['   Recents']            },
   \ { 'type': 'dir',       'header': ['   Recents '. getcwd()] },
-  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
   \ { 'type': 'sessions',  'header': ['   Sessions']       },
   \ ]
 
