@@ -77,7 +77,7 @@ set nobackup              "backups are for wimps
 set noundofile            "same as the line above says
 set noswapfile            "turn off swap files
 set pastetoggle=<F12>     "press when pasting multiple lines set backspace=indent,eol,start set title
-set scrolloff=9           "start scrolling when hits this many lines from edge
+set scrolloff=999         "keeps cursor vertically centered when scrolling
 set showtabline=2         "always show tab bar
 set visualbell
 set updatetime=250
@@ -86,6 +86,9 @@ set nocursorcolumn
 set norelativenumber
 set sidescroll=0
 set cc=80
+set list
+set listchars=eol:↵,tab:⇒·,trail:·,nbsp:·
+
 "searches are case insensitive unless they contain at least one capital letter
 set ignorecase
 set smartcase
@@ -102,8 +105,8 @@ endif
 
 " Indentation settings, gave up on editorconfig
 set expandtab
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme onedark
@@ -295,6 +298,12 @@ com! Noh noh
 if exists('g:fvim_loaded')
     com! FS :FVimToggleFullScreen
 endif
+
+
+" Filetype indentations
+autocmd FileType snip setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType vim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType cs setlocal shiftwidth=4 tabstop=4 expandtab
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
