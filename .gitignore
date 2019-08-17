@@ -1,11 +1,9 @@
 /*
 !/.bashrc
-!/.extend.bashrc
 !/.gitignore
 !/.shared_aliases
 !/.xprofile
 !/.Xresources
-!/.extend.Xresources
 !/.minttyrc
 !/windows-setup-steps.md
 
@@ -35,12 +33,9 @@
 !/.config/termite
 /.config/termite/*
 !/.config/termite/config
-
-
-
-!/.githooks
-/.githooks/*
-!/.githooks/post-merge
+!/.config/windows
+/.config/windows/*
+!/.config/windows/capslock-ctrlescape.ahk
 
 !/.hostname_configs
 /.hostname_configs/*
@@ -48,9 +43,6 @@
 /.hostname_configs/jared-laptop/*
 !/.hostname_configs/jared-laptop/.xinput
 !/.hostname_configs/jared-laptop/.Xmodmap
-!/.hostname_configs/jared-desktop
-/.hostname_configs/jared-desktop/*
-!/.hostname_configs/jared-desktop/.xrandr
 
 
 !/.i3

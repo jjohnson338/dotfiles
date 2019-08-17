@@ -120,8 +120,10 @@ cmap w!! %!sudo tee > /dev/null %
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+
 " Defx
 " ----------------------------------------------------------------------{{{
+autocmd FileType defx setlocal statusline=defx
 set conceallevel=2
 set concealcursor=nc
 map <Leader>d :Defx -buffer-name=defx<CR>
