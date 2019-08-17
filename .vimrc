@@ -120,9 +120,8 @@ cmap w!! %!sudo tee > /dev/null %
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-
 " Defx
-" ----------------------------------------------------------------------{{{
+" ----------------------------------------------------------------------
 autocmd FileType defx setlocal statusline=defx
 set conceallevel=2
 set concealcursor=nc
@@ -207,10 +206,13 @@ let g:defx_icons_nested_closed_tree_icon = ''
 
 
 " Airline
+" ----------------------------------------------------------------------
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 
+
 " Startify
+" ----------------------------------------------------------------------
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
@@ -230,8 +232,8 @@ au User StartifyBufferOpened silent! bwipeout defx | Defx -buffer-name=defx
 " Map an alias command for Startify
 com! Home Startify
 
-
-"Lang server
+" Lang Server
+" ----------------------------------------------------------------------
 let g:LanguageClient_autoStart = 1
 if has('win32') || has ('win64')
   let g:LanguageClient_serverCommands = {
@@ -250,13 +252,17 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-"Deoplete
+
+" Deoplete
+" ----------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#source('LanguageClient','mark','LC')
 call deoplete#custom#source('LanguageClient','min_pattern_length',1)
 call deoplete#custom#source('neosnippet', 'rank', 2000)
 
-"Neosnippet
+
+" Neosnippet
+" ----------------------------------------------------------------------
 imap <C-o> <Plug>(neosnippet_expand_or_jump)
 smap <C-o> <Plug>(neosnippet_expand_or_jump)
 xmap <C-o> <Plug>(neosnippet_expand_target)
@@ -265,7 +271,9 @@ let g:neosnippet#disable_runtime_snippets = {
     \ }
 let g:neosnippet#snippets_directory="~/.vim/snippets"
 
-"Ag
+
+" Ag
+" ----------------------------------------------------------------------
 let g:ag_working_path_mode="r"
 let g:ag_prg="ag --smart-case --ignore-dir 'build' --ignore-dir 'logs' --ignore-dir '_logs' --ignore-dir 'TestResults' --vimgrep"
 
@@ -275,11 +283,11 @@ nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 
-" Shift+HJKL moves windows
-nnoremap <S-H> <C-w>H
-nnoremap <S-J> <C-w>J
-nnoremap <S-K> <C-w>K
-nnoremap <S-L> <C-w>L
+" Tab+hjkl moves windows
+nnoremap <Tab>h <C-w>H
+nnoremap <Tab>j <C-w>J
+nnoremap <Tab> <C-w>K
+nnoremap <Tab>l <C-w>L
 
 if has('nvim')
     inoremap <silent> <S-Insert> <C-R>+
