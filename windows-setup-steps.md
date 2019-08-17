@@ -4,25 +4,19 @@ In admin cmd prompt, run:
 `@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"`
 
 # Install Packages
-Git `choco install git`
 
-Neovim `choco install neovim`
+## Chocolatey
 
-Fira Code `choco install firacode`
+`choco install ag autohotkey git neovim firacode nodejs python3`
 
-Ag `choco install ag`
+## Pip
 
-NodeJS `choco install nodejs`
+`pip install --user --upgrade pynvim python-language-server Send2Trash`
 
-Python3 `choco install python3`
+## Npm
 
-NodeJS Packages `npm install -g typescript typescript-language-server`
+`npm install -g typescript typescript-language-server`
 
-pynvim (for deoplete): `pip3 install --user --upgrade pynvim`
-
-python-language-server: `pip install python-language-server`
-
-Send2Trash: `pip install Send2Trash`
 
 # Install fvim
 
@@ -86,3 +80,10 @@ C:/Users/Jared/AppData/Local/nvim/init.vim
 ```
 source ~/.config/nvim/ginit.vim
 ```
+
+# Remap Caps Lock to do something useful
+
+Add a Startup Task in Task Scheduler that launches
+`~/.config/Windows/capslock-ctrlescape.ahk` on system startup (probably have to use full path)
+
+This script remaps the `CapsLock` key to `Escape` when pressed by itself, and `Ctrl` when pressed in combination with another key
