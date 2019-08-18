@@ -26,7 +26,7 @@ Plug 'joshdick/onedark.vim'
 
 " Utility
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'albfan/ag.vim' "Code search
+Plug 'mileszs/ack.vim' "Code search
 Plug 'jiangmiao/auto-pairs' " Pairs
 Plug 'kristijanhusak/defx-icons'
 Plug 'mhinz/vim-startify' "Home page
@@ -277,10 +277,13 @@ let g:neosnippet#disable_runtime_snippets = {
 let g:neosnippet#snippets_directory="~/.vim/snippets"
 
 
-" Ag
+" Ack / Ag
 " ----------------------------------------------------------------------
-let g:ag_working_path_mode="r"
-let g:ag_prg="ag --smart-case --ignore-dir 'build' --ignore-dir 'logs' --ignore-dir '_logs' --ignore-dir 'TestResults' --vimgrep"
+let g:ackprg="ag --vimgrep --smart-case --ignore=TestResults --ignore=Debug --ignore=build --ignore=_logs --ignore=logs"
+let g:ackhighlight=1
+let g:ackpreview=0
+" For familiarity's sake
+com! -nargs=* Ag Ack! <args>
 
 " Control+hjkl moves focus to that window
 nnoremap <silent> <C-h> :wincmd h<CR>
