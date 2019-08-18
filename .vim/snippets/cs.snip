@@ -1,12 +1,4 @@
 # Structure
-snippet namespace
-alias   name
-abbr    namespace {}
-options head
-    namespace ${1:#:Name} {
-        ${0:TARGET}
-    }
-
 snippet class
 abbr    class {}
     class ${1:#:Name} ${2::} ${3:Parent}${4:,} ${5:Interface} {
@@ -54,49 +46,12 @@ snippet set
 abbr    set {}
     set {${1:TARGET}}${0}
 
-
-# PreProcess Syntax
-snippet define
-alias   def
-options head
-    #define ${0:#:SYMBOL}
-
-snippet undef
-alias   und
-options head
-    #undef ${0:#:SYMBOL}
-
-snippet ifdef
-options head
-    #if ${1:SYMBOL}
-        ${0:TARGET}
-    #endif
-
-snippet warning
-alias   warn
-options head
-    #warning ${0:#:message}
-
-snippet error
-alias   err
-options head
-    #error ${0:#:message}
-
-snippet line
-options head
-    #line ${0:#:number}
-
 snippet region
 alias   reg
 options head
     #region ${1:#:name}
         ${0:TARGET}
     #endregion
-
-snippet pragma_warning
-alias   pragma pragma_warn
-options head
-    #pragma warning ${2:disable} ${3:#:errno}
 
 
 # Syntax
@@ -128,13 +83,6 @@ abbr    while () {}
         ${0:TARGET}
     }
 
-snippet do_while
-alias   dowhile
-abbr    do {} while() {}
-    do {
-        ${0:TARGET}
-    } while (${1:#:condition});
-
 snippet for
 abbr    for () {}
     for (${1:#:var}; ${2:#:condition}; ${3:#:effect}) {
@@ -165,10 +113,6 @@ options head
 snippet break
 options head
     break;
-
-snippet goto
-options head
-    goto case ${1:#:Val};${0}
 
 snippet default
 options head
@@ -275,45 +219,6 @@ options head
         ${0:TARGET}
     }
 
-snippet checked
-abbr    checked () {}
-options head
-    checked (${1:#:var}) {
-        ${0:TARGET}
-    }
-
-snippet unchecked
-abbr    unchecked () {}
-options head
-    unchecked (${1:#:var}) {
-        ${0:TARGET}
-    }
-
-snippet unsafe
-abbr    unsafe {}
-options head
-    unsafe {
-        ${0:TARGET}
-    }
-
-snippet fixed
-abbr    fixed () {}
-options head
-    fixed (${1:#:type}* ${2:#:var} = ${3:#:adress}) {
-        ${0:TARGET}
-    }
-
-snippet using_import
-alias   import
-options head
-    using ${1:#:path};${0}
-
-snippet using_typedef
-alias   typedef
-options head
-    using ${1:Name} = ${2:Type};${0}
-
-
 # Import Path
 snippet s.l
     System.Linq
@@ -332,9 +237,6 @@ snippet s.d
 
 snippet s.r.c
     System.Runtie.CompilerServices
-
-snippet s.w.f
-    System.Windows.Forms
 
 
 # Attribute
@@ -396,14 +298,6 @@ snippet remarks
 abbr    <remarks></remarks>
     <remarks>${0:#:description}</remarks>
 
-snippet see
-abbr    <see cref=""/>
-    <see cref="${1:#:member}"/>
-
-snippet seealso
-abbr    <seealso cref=""/>
-    <seealso cref="${1:#:member}"/>}
-
 snippet summary
 abbr    <summary></summary>
     <summary>${0:#:description}</summary>
@@ -438,47 +332,35 @@ alias   print
 options head
     Console.Write(${1:#:message});${0}
 
-snippet helloworld
-options head
-    public class ${1:Hello} {
-        public static void Main(string[] args) {
-            System.Console.WriteLine("Hello, world!");
-        }
-    }
 
-
-# NUnit
+# MSTest
 snippet testclass
 alias   tc
 options head
-    [TestFixture]
+    [TestClass]
     public class ${1}Test {
         ${0:TARGET}
     }
 
-snippet testsetup
-alias   tsu
+snippet testinitialize
+alias   ti
 options head
-    [SetUp]
-    public void SetUp() {
+    [TestInitialize]
+    public void Setup() {
         ${0:TARGET}
     }
 
-snippet testteardown
-alias   ttd
+snippet testcleanup
+alias   tc
 options head
-    [TearDown]
-    public void TearDown() {
+    [TestCleanup]
+    public void Cleanup() {
         ${0:TARGET}
     }
 
 snippet test
 options head
-    [Test]
-    public void ${1:#:Name}Test() {
+    [TestMethod]
+    public void Test${1:#:Name}() {
         ${0:TARGET}
     }
-
-snippet category
-options head
-    [Category("${0:#:category}")]
