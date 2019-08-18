@@ -26,13 +26,14 @@ Plug 'joshdick/onedark.vim'
 
 " Utility
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'kristijanhusak/defx-icons'
-Plug 'vim-scripts/dbext.vim' " DB
-Plug 'tpope/vim-commentary' " Comments
-Plug 'simeji/winresizer' " Resizing
-Plug 'jiangmiao/auto-pairs' " Pairs
 Plug 'albfan/ag.vim' "Code search
+Plug 'jiangmiao/auto-pairs' " Pairs
+Plug 'kristijanhusak/defx-icons'
 Plug 'mhinz/vim-startify' "Home page
+Plug 'pgdouyon/vim-evanesco' "Better buffer searching
+Plug 'simeji/winresizer' " Resizing
+Plug 'tpope/vim-commentary' " Comments
+Plug 'vim-scripts/dbext.vim' " DB
 
 " Source control
 Plug 'airblade/vim-gitgutter'
@@ -65,36 +66,41 @@ call plug#end()
 
 let mapleader=" "
 set background=dark       "make sure vim knows bg is dark
-set showmode              "display current mode
-set showcmd               "display partially typed commands
-set title
-set nowrap                "dont wrap long lines
-set shiftround            "Round indent to multiple of 'shiftwidth'
-set ruler                 "turn of position on bottom
-set number                "turn on line numbers
-set showmatch             "highlight matching brackets
-set nobackup              "backups are for wimps
-set noundofile            "same as the line above says
-set noswapfile            "turn off swap files
-set pastetoggle=<F12>     "press when pasting multiple lines set backspace=indent,eol,start set title
-set scrolloff=999         "keeps cursor vertically centered when scrolling
-set showtabline=2         "always show tab bar
-set visualbell
-set updatetime=250
-set nocursorline
-set nocursorcolumn
-set norelativenumber
-set sidescroll=0
 set cc=80
 set list
 set listchars=eol:↵,tab:⇒·,trail:·,nbsp:·
+set nobackup              "backups are for wimps
+set nocursorline
+set noswapfile            "turn off swap files
+set noundofile            "same as the line above says
+set nowrap                "dont wrap long lines
+set number                "turn on line numbers
+set pastetoggle=<F12>     "press when pasting multiple lines set backspace=indent,eol,start set title
+set ruler                 "turn of position on bottom
+set scrolloff=999         "keeps cursor vertically centered when scrolling
+set shiftround            "Round indent to multiple of 'shiftwidth'
+set showcmd               "display partially typed commands
+set showmatch             "highlight matching brackets
+set showmode              "display current mode
+set showtabline=2         "always show tab bar
+set sidescroll=0          "big horizontal jumps
+set title
+set updatetime=250
+set visualbell
 
-"searches are case insensitive unless they contain at least one capital letter
+
+"search settings
 set ignorecase
 set smartcase
+set hlsearch
+
+" Gui settings
 set guioptions=agit
 set termguicolors
 set guifont=Hack:h13
+
+
+" OS settings
 if has('win32') || has ('win64')
     set shell=cmd.exe
     set clipboard+=unnamedplus
@@ -163,46 +169,45 @@ call defx#custom#option('_', {
   \ })
 function!  s:defx_my_settings() abort
 
+  setl nonumber
   setl nospell
   setl signcolumn=no
-  setl nonumber
+  nnoremap <silent><buffer><expr> A defx#do_action('new_file')
+  nnoremap <silent><buffer><expr> C defx#do_action('copy')
+  nnoremap <silent><buffer><expr> D defx#do_action('remove_trash')
+  nnoremap <silent><buffer><expr> M defx#do_action('rename')
+  nnoremap <silent><buffer><expr> P defx#do_action('paste')
+  nnoremap <silent><buffer><expr> R defx#do_action('redraw')
+  nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split', '')
   nnoremap <silent><buffer><expr> o defx#is_directory() ?  defx#do_action('open_or_close_tree') : defx#do_action('drop')
   nnoremap <silent><buffer><expr> p defx#do_action('close_tree')
   nnoremap <silent><buffer><expr> s defx#do_action('open', 'botright vsplit')
-  nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split', '')
-  nnoremap <silent><buffer><expr> C defx#do_action('copy')
-  nnoremap <silent><buffer><expr> P defx#do_action('paste')
-  nnoremap <silent><buffer><expr> M defx#do_action('rename')
-  nnoremap <silent><buffer><expr> D defx#do_action('remove_trash')
-  nnoremap <silent><buffer><expr> A defx#do_action('new_file')
-  nnoremap <silent><buffer><expr> R defx#do_action('redraw')
 
 endfunction
 
 
-let g:defx_git#show_ignored = 0
 let g:defx_git#column_length = 1
+let g:defx_git#show_ignored = 0
 
-hi def link Defx_filename_directory NERDTreeDirSlash
+hi def link Defx_git_Ignored Comment
 hi def link Defx_git_Modified Special
-hi def link Defx_git_Staged Function
 hi def link Defx_git_Renamed Title
+hi def link Defx_git_Staged Function
 hi def link Defx_git_Unmerged Label
 hi def link Defx_git_Untracked Tag
-hi def link Defx_git_Ignored Comment
 
-let g:defx_icons_parent_icon = ""
-let g:defx_icons_mark_icon = ''
-let g:defx_icons_enable_syntax_highlight = 1
 let g:defx_icons_column_length = 1
-let g:defx_icons_mark_icon = '*'
 let g:defx_icons_default_icon = ''
 let g:defx_icons_directory_symlink_icon = ''
+let g:defx_icons_enable_syntax_highlight = 1
+let g:defx_icons_mark_icon = '*'
+let g:defx_icons_mark_icon = ''
+let g:defx_icons_parent_icon = ""
 " Options below are applicable only when using tree" feature
 let g:defx_icons_directory_icon = ''
-let g:defx_icons_root_opened_tree_icon = ''
-let g:defx_icons_nested_opened_tree_icon = ''
 let g:defx_icons_nested_closed_tree_icon = ''
+let g:defx_icons_nested_opened_tree_icon = ''
+let g:defx_icons_root_opened_tree_icon = ''
 
 
 " Airline
@@ -311,9 +316,9 @@ endif
 
 
 " Filetype indentations
+autocmd FileType cs setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType snip setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType vim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType cs setlocal shiftwidth=4 tabstop=4 expandtab
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
