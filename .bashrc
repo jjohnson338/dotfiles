@@ -119,8 +119,28 @@ fi
 
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-export EDITOR=fvim
 export BROWSER=/usr/bin/firefox
+
+case $(uname | tr '[:upper:]' '[:lower:]') in
+  linux*)
+    OS_NAME=linux
+    ;;
+  darwin*)
+    OS_NAME=osx
+    ;;
+  msys*)
+    OS_NAME=windows
+    ;;
+  *)
+    OS_NAME=notset
+    ;;
+esac
+
+if [ $OS_NAME = "windows" ]; then
+    export EDITOR=fvim
+else
+    export EDITOR=nvim-qt
+fi
 
 #Aliases
 source ~/.shared_aliases

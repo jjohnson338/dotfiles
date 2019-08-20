@@ -97,16 +97,16 @@ set hlsearch
 " Gui settings
 set guioptions=agit
 set termguicolors
-set guifont=Hack:h13
 
-
+set clipboard+=unnamedplus
 " OS settings
 if has('win32') || has ('win64')
     set shell=cmd.exe
-    set clipboard+=unnamedplus
     set encoding=utf-8
+    set guifont=Hack:h13
 else
     set shell=sh
+    set guifont=Hack\ Nerd\ Font\ Regular:h13
 endif
 
 " Indentation settings, gave up on editorconfig

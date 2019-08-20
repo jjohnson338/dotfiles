@@ -2,6 +2,13 @@
 #
 userresources=$HOME/.Xresources
 
+#capture hostname
+hostname="$(hostname)"
+
+if [ $hostname = "jared-laptop" ]; then
+    usermodmap=$HOME/.hostname_configs/jared-laptop/.Xmodmap
+fi
+
 if [ -f "$userxrandr" ]; then
 	source "$userxrandr"
 fi
@@ -17,5 +24,8 @@ fi
 if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
+
+setxkbmap us -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape'
 
 export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
