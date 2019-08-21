@@ -26,7 +26,7 @@ Plug 'joshdick/onedark.vim'
 
 " Utility
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'mileszs/ack.vim' "Code search
+Plug 'rking/ag.vim' "Code search
 Plug 'jiangmiao/auto-pairs' " Pairs
 Plug 'kristijanhusak/defx-icons'
 Plug 'mhinz/vim-startify' "Home page
@@ -61,6 +61,7 @@ Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
 Plug 'rust-lang/rust.vim'
 Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
+Plug 'NLKNguyen/vim-maven-syntax'
 
 call plug#end()
 
@@ -277,13 +278,10 @@ let g:neosnippet#disable_runtime_snippets = {
 let g:neosnippet#snippets_directory="~/.vim/snippets"
 
 
-" Ack / Ag
+" Ag
 " ----------------------------------------------------------------------
-let g:ackprg="ag --vimgrep --smart-case --ignore=TestResults --ignore=Debug --ignore=build --ignore=_logs --ignore=logs"
-let g:ackhighlight=1
-let g:ackpreview=0
-" For familiarity's sake
-com! -nargs=* Ag Ack! <args>
+let g:ag_working_path_mode="r"
+let g:ag_prg="ag --vimgrep --smart-case --ignore=TestResults --ignore=Debug --ignore=build --ignore=_logs --ignore=logs --ignore=.git --ignore=*.prpt --ignore=*.bak --ignore=*.db --ignore=*.tmp --ignore=*.inc"
 
 " Control+hjkl moves focus to that window
 nnoremap <silent> <C-h> :wincmd h<CR>
