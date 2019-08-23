@@ -89,7 +89,6 @@ set title
 set updatetime=250
 set visualbell
 
-
 "search settings
 set ignorecase
 set smartcase
@@ -132,7 +131,7 @@ inoremap kj <ESC>
 autocmd FileType defx setlocal statusline=defx
 set conceallevel=2
 set concealcursor=nc
-map <Leader>d :Defx -buffer-name=defx<CR>
+map <Leader>d :Defx<CR>
 autocmd FileType defx call s:defx_my_settings()
 call defx#custom#column('icon', {
   \ 'directory_icon': '',
@@ -158,18 +157,18 @@ call defx#custom#column('git', 'indicators', {
   \ 'Unknown'   : '?'
   \ })
 call defx#custom#option('_', {
-  \ 'winwidth': 75,
+  \ 'winwidth': 50,
   \ 'columns': 'mark:indent:git:icon:icons:filename',
   \ 'split': 'vertical',
   \ 'direction': 'topleft',
   \ 'show_ignored_files': 1,
-  \ 'buffer_name': '',
+  \ 'buffer_name': 'defx',
   \ 'toggle': 1,
   \ 'resume': 1,
+  \ 'listed': 1,
   \ 'root_marker': ':'
   \ })
 function!  s:defx_my_settings() abort
-
   setl nonumber
   setl nospell
   setl signcolumn=no
@@ -184,6 +183,11 @@ function!  s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> p defx#do_action('close_tree')
   nnoremap <silent><buffer><expr> s defx#do_action('open', 'botright vsplit')
 
+endfunction
+
+function! s:change_defx_buffer_dir() abort
+  :Defx
+  call defx#call_action('cd', expand('%:p:h'))
 endfunction
 
 
@@ -220,7 +224,6 @@ let g:airline_powerline_fonts = 1
 " Startify
 " ----------------------------------------------------------------------
 let g:startify_change_to_dir = 1
-let g:startify_change_to_vcs_root = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_enable_special = 1
 let g:startify_lists = [
@@ -232,9 +235,8 @@ let g:startify_lists = [
 
 " Eat all File Explorer Buffer opens
 au VimEnter * sil! au! FileExplorer *
-" Whenever Startify launches a buffer, find and destroy the defx buffer, then
-" launch a new one
-au User StartifyBufferOpened silent! bwipeout defx | Defx -buffer-name=defx
+" Whenever a directory is changed, open Defx and change it's dir
+autocmd DirChanged * call s:change_defx_buffer_dir()
 " Map an alias command for Startify
 com! Home Startify
 
