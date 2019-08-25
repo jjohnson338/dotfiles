@@ -7,15 +7,11 @@ In admin cmd prompt, run:
 
 ## Chocolatey
 
-`choco install ag autohotkey git neovim firacode nodejs python3`
+`choco install ag autohotkey git neovim firacode nodejs python3 universal-ctags`
 
 ## Pip
 
-`pip install --user --upgrade pynvim python-language-server Send2Trash`
-
-## Npm
-
-`npm install -g typescript typescript-language-server`
+`pip install --user --upgrade pynvim Send2Trash`
 
 
 # Install fvim

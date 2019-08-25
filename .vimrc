@@ -40,19 +40,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'kristijanhusak/defx-git'
 Plug 'tpope/vim-fugitive'
 
-" Lang server
-if has('win32') || has ('win64')
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'powershell -executionpolicy bypass -File install.ps1',
-      \ }
-else
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
-endif
-
 " Syntax
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
@@ -113,6 +100,7 @@ endif
 set expandtab
 set shiftwidth=4
 set tabstop=4
+set softtabstop=4
 
 " Don't complain if the colorscheme isn't set
 silent! colorscheme onedark
@@ -240,27 +228,6 @@ autocmd DirChanged * call s:change_defx_buffer_dir()
 " Map an alias command for Startify
 com! Home Startify
 
-" Lang Server
-" ----------------------------------------------------------------------
-let g:LanguageClient_autoStart = 1
-if has('win32') || has ('win64')
-  let g:LanguageClient_serverCommands = {
-      \ 'javascript': [ expand($HOME) . '\AppData\Roaming\npm\typescript-language-server.cmd', '--stdio'],
-      \ 'typescript': [ expand($HOME) . '\AppData\Roaming\npm\typescript-language-server.cmd', '--stdio'],
-      \ 'python': ['pyls'],
-      \ }
-else
-  let g:LanguageClient_serverCommands = {
-      \ 'javascript': ['typescript-language-server', '--stdio'],
-      \ 'typescript': ['typescript-language-server', '--stdio'],
-      \ }
-endif
-let g:LanguageClient_hoverPreview = "Always"
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-
-
 " Deoplete
 " ----------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
@@ -312,6 +279,11 @@ com! FormatJSON '<,'>!python -m json.tool
 " Add alias for often fat-fingered command
 com! Noh noh
 
+" Ctags
+com! Ctags !ctags -R .
+nnoremap <S-k> <C-]> " Shift + K to goto ctag
+
+
 " FVim Fullscreen
 if exists('g:fvim_loaded')
     com! FS :FVimToggleFullScreen
@@ -319,9 +291,10 @@ endif
 
 
 " Filetype indentations
-autocmd FileType cs setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType cs setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType snip setlocal shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType vim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+autocmd FileType vim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab formatoptions-=c formatoptions-=r formatoptions-=o
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
