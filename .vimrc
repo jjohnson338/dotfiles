@@ -34,6 +34,7 @@ Plug 'pgdouyon/vim-evanesco' "Better buffer searching
 Plug 'simeji/winresizer' " Resizing
 Plug 'tpope/vim-commentary' " Comments
 Plug 'vim-scripts/dbext.vim' " DB
+Plug 'majutsushi/tagbar' " Tag Viewer
 
 " Source control
 Plug 'airblade/vim-gitgutter'
@@ -282,7 +283,20 @@ com! Noh noh
 " Ctags
 com! Ctags !ctags -R .
 nnoremap <S-k> <C-]> " Shift + K to goto ctag
-
+nmap <Leader>b :TagbarOpenAutoClose<CR>
+let g:tagbar_sort=0 " Sort by location in file
+let g:tagbar_iconchars = ['', '']
+let g:tagbar_width=50
+let g:tagbar_compact=1
+highlight TagbarFoldIcon guifg=LightBlue ctermfg=LightBlue
+highlight TagbarHighlight guifg=Black ctermfg=Black guibg=DarkGray ctermbg=DarkGray
+highlight TagbarKind guifg=LightGreen ctermfg=LightGreen
+highlight TagbarScope guifg=Green ctermfg=Green
+highlight TagbarScope guifg=White ctermfg=White
+highlight TagbarSignature guifg=LightMagenta ctermfg=LightMagenta
+highlight TagbarVisibilityPrivate guifg=LightBlue ctermfg=LightBlue
+highlight TagbarVisibilityProtected guifg=LightBlue ctermfg=LightBlue
+highlight TagbarVisibilityPublic guifg=LightGreen ctermfg=LightGreen
 
 " FVim Fullscreen
 if exists('g:fvim_loaded')
