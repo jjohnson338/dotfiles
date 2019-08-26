@@ -13,6 +13,9 @@ In admin cmd prompt, run:
 
 `pip install --user --upgrade pynvim Send2Trash`
 
+## npm
+`npm install -g eslint`
+
 
 # Install fvim
 

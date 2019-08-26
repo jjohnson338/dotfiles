@@ -51,6 +51,9 @@ Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
 Plug 'NLKNguyen/vim-maven-syntax'
 
+"Linting
+Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 
 let mapleader=" "
@@ -253,6 +256,14 @@ let g:neosnippet#snippets_directory="~/.vim/snippets"
 let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case --ignore=TestResults --ignore=Debug --ignore=build --ignore=_logs --ignore=logs --ignore=.git --ignore=*.prpt --ignore=*.bak --ignore=*.db --ignore=*.tmp --ignore=*.inc"
 
+" Linting
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
 " Control+hjkl moves focus to that window
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
@@ -283,7 +294,7 @@ com! Noh noh
 " Ctags
 com! Ctags !ctags -R .
 nnoremap <S-k> <C-]> " Shift + K to goto ctag
-nmap <Leader>b :TagbarOpenAutoClose<CR>
+nmap <Leader>t :TagbarOpenAutoClose<CR>
 let g:tagbar_sort=0 " Sort by location in file
 let g:tagbar_iconchars = ['', '']
 let g:tagbar_width=50
