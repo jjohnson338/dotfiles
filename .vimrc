@@ -52,7 +52,7 @@ Plug 'OrangeT/vim-csharp'
 Plug 'NLKNguyen/vim-maven-syntax'
 
 "Linting
-Plug 'vim-syntastic/syntastic'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -79,6 +79,7 @@ set sidescroll=0          "big horizontal jumps
 set title
 set updatetime=250
 set visualbell
+set signcolumn=auto
 
 "search settings
 set ignorecase
@@ -257,12 +258,16 @@ let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case --ignore=TestResults --ignore=Debug --ignore=build --ignore=_logs --ignore=logs --ignore=.git --ignore=*.prpt --ignore=*.bak --ignore=*.db --ignore=*.tmp --ignore=*.inc"
 
 " Linting
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_use_global_executables = 1
+let g:ale_sign_column_always = 1
+let g:ale_linters_explicit = 1
+let g:ale_sign_error = '‼'
+let g:ale_sign_warning = '☹'
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:airline#extensions#ale#enabled = 1
 
 " Control+hjkl moves focus to that window
 nnoremap <silent> <C-h> :wincmd h<CR>
