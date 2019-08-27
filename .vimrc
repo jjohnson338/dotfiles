@@ -46,6 +46,7 @@ Plug 'JulesWang/css.vim',             { 'for': 'css' }
 Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
 Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
 Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
+Plug 'numirias/semshi',               { 'do': ':UpdateRemotePlugins', 'for': 'python' }
 Plug 'rust-lang/rust.vim'
 Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
@@ -259,7 +260,8 @@ let g:ag_prg="ag --vimgrep --smart-case --ignore=TestResults --ignore=Debug --ig
 
 " Linting
 let g:ale_linters = {
-  \ 'javascript': ['eslint']
+  \ 'javascript': ['eslint'],
+  \ 'python': ['flake8'],
   \ }
 let g:ale_cursor_detail = 0
 let g:ale_javascript_eslint_options = '--cache'
