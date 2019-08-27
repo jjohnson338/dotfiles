@@ -98,7 +98,7 @@ if has('win32') || has ('win64')
     set guifont=Hack:h13
 else
     set shell=sh
-    set guifont=Hack\ Nerd\ Font\ Regular:h13
+    set guifont=Hack\ Nerd\ Font:h14
 endif
 
 " Indentation settings, gave up on editorconfig
