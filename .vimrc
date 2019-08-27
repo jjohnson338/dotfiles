@@ -258,15 +258,27 @@ let g:ag_working_path_mode="r"
 let g:ag_prg="ag --vimgrep --smart-case --ignore=TestResults --ignore=Debug --ignore=build --ignore=_logs --ignore=logs --ignore=.git --ignore=*.prpt --ignore=*.bak --ignore=*.db --ignore=*.tmp --ignore=*.inc"
 
 " Linting
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_use_global_executables = 1
-let g:ale_sign_column_always = 1
-let g:ale_linters_explicit = 1
-let g:ale_sign_error = '‼'
-let g:ale_sign_warning = '☹'
+let g:ale_linters = {
+  \ 'javascript': ['eslint']
+  \ }
+let g:ale_cursor_detail = 0
+let g:ale_javascript_eslint_options = '--cache'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+let g:ale_linters_explicit = 1
+let g:ale_set_balloons = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
+let g:ale_set_signs = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '‼'
+let g:ale_sign_warning = '☹'
+let g:ale_use_global_executables = 1
+let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_prefix = '> ALE > '
+let airline#extensions#ale#error_symbol = '‼'
+let airline#extensions#ale#warning_symbol = '☹'
 let g:airline#extensions#ale#enabled = 1
 
 " Control+hjkl moves focus to that window
