@@ -63,7 +63,7 @@ set cc=80
 set list
 set listchars=eol:↵,tab:⇒·,trail:·,nbsp:·
 set nobackup              "backups are for wimps
-set nocursorline
+set cursorline
 set noswapfile            "turn off swap files
 set noundofile            "same as the line above says
 set nowrap                "dont wrap long lines
@@ -265,7 +265,7 @@ let g:ale_linters = {
   \ }
 let g:ale_cursor_detail = 0
 let g:ale_javascript_eslint_options = '--cache'
-let g:ale_lint_on_enter = 1
+let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_linters_explicit = 1
@@ -278,7 +278,7 @@ let g:ale_sign_error = '‼'
 let g:ale_sign_warning = '☹'
 let g:ale_use_global_executables = 1
 let g:ale_virtualtext_cursor = 1
-let g:ale_virtualtext_prefix = '> ALE > '
+let g:ale_virtualtext_prefix = ' ⎩ ALE ⎫ '
 let airline#extensions#ale#error_symbol = '‼'
 let airline#extensions#ale#warning_symbol = '☹'
 let g:airline#extensions#ale#enabled = 1
@@ -331,6 +331,14 @@ highlight TagbarVisibilityPublic guifg=LightGreen ctermfg=LightGreen
 " FVim Fullscreen
 if exists('g:fvim_loaded')
     com! FS :FVimToggleFullScreen
+    FVimCursorSmoothBlink v:true
+    FVimFontAntialias v:true
+    FVimFontAutoSnap v:true
+    FVimFontAutohint v:true
+    FVimFontLcdRender v:true
+    FVimFontSubpixel v:true
+    " FVimCursorSmoothMove v:true
+    " FVimUIPopupMenu v:true
 endif
 
 
