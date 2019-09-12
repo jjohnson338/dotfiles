@@ -42,12 +42,8 @@ Plug 'kristijanhusak/defx-git'
 Plug 'tpope/vim-fugitive'
 
 " Syntax
+Plug 'sheerun/vim-polyglot'
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
-Plug 'pangloss/vim-javascript',       { 'for': 'javascript' }
-Plug 'stephpy/vim-yaml',              { 'for': 'yaml' }
-Plug 'GutenYe/json5.vim',             { 'for': 'json5' }
-Plug 'numirias/semshi',               { 'do': ':UpdateRemotePlugins', 'for': 'python' }
-Plug 'rust-lang/rust.vim'
 Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
 Plug 'NLKNguyen/vim-maven-syntax'

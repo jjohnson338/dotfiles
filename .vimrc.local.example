@@ -1,9 +1,16 @@
 " DB
 let g:dbext_default_SQLSRV_bin = 'sqlcmd'
 let g:sql_type_default = 'sqlserver'
-let g:dbext_default_profile_dev = 'example connection string'
+let g:dbext_default_profile_dev = 'type=SQLSRV:srvname=example:dbname=example_db1:user=ExampleUser:passwd=Seattle100'
+let g:dbext_default_profile_dev2 = 'type=SQLSRV:srvname=example:dbname=example_db2:user=ExampleUser:passwd=Seattle100'
+let g:dbext_default_profile_dev3 = 'type=SQLSRV:srvname=example:dbname=example_db3:user=ExampleUser:passwd=Seattle100'
 let g:dbext_default_profile = 'dev'
 let g:dbext_default_use_win32_filenames=1
+
+let g:deoplete#sources#mssql#server='example'
+let g:deoplete#sources#mssql#user='ExampleUser'
+let g:deoplete#sources#mssql#password='Seattle100'
+let g:deoplete#sources#mssql#db='example_db1'
 
 " Startify Bookmarks
 let g:startify_bookmarks = [
@@ -13,6 +20,9 @@ let g:startify_bookmarks = [
   \ ]
 
 
-" Configs for work
-set shiftwidth=4
-set tabstop=4
+" Path specific settings
+augroup projectname
+    au!
+    " Automatically choose the correct dbext profile
+    autocmd BufRead */Source/projectname/* DBSetOption profile=dev
+augroup end
