@@ -11,11 +11,11 @@ call plug#begin('~/.vim/plugged')
 
 " Autocompletions
 if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'jjohnson338/deoplete-mssql'
 Plug 'Shougo/neosnippet.vim'
@@ -50,6 +50,11 @@ Plug 'NLKNguyen/vim-maven-syntax'
 
 "Linting
 Plug 'dense-analysis/ale'
+
+" LSP
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ }
 
 call plug#end()
 
@@ -90,12 +95,12 @@ set termguicolors
 set clipboard+=unnamedplus
 " OS settings
 if has('win32') || has ('win64')
-    set shell=cmd.exe
-    set encoding=utf-8
-    set guifont=Hack:h13
+  set shell=cmd.exe
+  set encoding=utf-8
+  set guifont=Hack:h13
 else
-    set shell=sh
-    set guifont=Hack\ Nerd\ Font:h16
+  set shell=sh
+  set guifont=Hack\ Nerd\ Font:h16
 endif
 
 " Indentation settings, gave up on editorconfig
@@ -172,7 +177,6 @@ function!  s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> o defx#is_directory() ?  defx#do_action('open_or_close_tree') : defx#do_action('drop')
   nnoremap <silent><buffer><expr> p defx#do_action('close_tree')
   nnoremap <silent><buffer><expr> s defx#do_action('open', 'botright vsplit')
-
 endfunction
 
 function! s:change_defx_buffer_dir() abort
@@ -244,8 +248,8 @@ imap <C-o> <Plug>(neosnippet_expand_or_jump)
 smap <C-o> <Plug>(neosnippet_expand_or_jump)
 xmap <C-o> <Plug>(neosnippet_expand_target)
 let g:neosnippet#disable_runtime_snippets = {
-    \   '_' : 1,
-    \ }
+  \   '_' : 1,
+  \ }
 let g:neosnippet#snippets_directory="~/.vim/snippets"
 
 
@@ -292,7 +296,7 @@ nnoremap <Tab> <C-w>K
 nnoremap <Tab>l <C-w>L
 
 if has('nvim')
-    inoremap <silent> <S-Insert> <C-R>+
+  inoremap <silent> <S-Insert> <C-R>+
 endif
 
 nnoremap <Leader>p "*p
@@ -326,23 +330,30 @@ highlight TagbarVisibilityPublic guifg=LightGreen ctermfg=LightGreen
 
 " FVim Fullscreen
 if exists('g:fvim_loaded')
-    com! FS :FVimToggleFullScreen
-    FVimCursorSmoothBlink v:true
-    FVimFontAntialias v:true
-    FVimFontAutoSnap v:true
-    FVimFontAutohint v:true
-    FVimFontLcdRender v:true
-    FVimFontSubpixel v:true
-    " FVimCursorSmoothMove v:true
-    " FVimUIPopupMenu v:true
+  com! FS :FVimToggleFullScreen
+  FVimCursorSmoothBlink v:true
+  FVimFontAntialias v:true
+  FVimFontAutoSnap v:true
+  FVimFontAutohint v:true
+  FVimFontLcdRender v:true
+  FVimFontSubpixel v:true
 endif
 
+
+" Custom filetypes
+augroup filetypedetect
+  au! BufRead,BufNewFile *.fsproj   setfiletype fsproj
+augroup end
+
+" For commentary
+autocmd FileType fsharp setlocal commentstring=//%s
 
 " Filetype indentations
 autocmd FileType cs setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 autocmd FileType snip setlocal shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType vim setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType fsproj setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab formatoptions-=c formatoptions-=r formatoptions-=o
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
