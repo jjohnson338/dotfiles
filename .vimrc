@@ -3,20 +3,13 @@ set runtimepath+=$HOME/.vim
 " Tell Vim as early as possible not to try to emulate vi
 set nocompatible
 
-
 " To update Plugins :PlugUpdate
 
 " Set up vim plugins
 call plug#begin('~/.vim/plugged')
 
 " Autocompletions
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jjohnson338/deoplete-mssql'
 Plug 'Shougo/neosnippet.vim'
 
@@ -45,16 +38,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'JulesWang/css.vim',             { 'for': 'css' }
 Plug 'hoffstein/vim-tsql'
 Plug 'OrangeT/vim-csharp'
-Plug 'NLKNguyen/vim-maven-syntax'
-Plug 'jparise/vim-graphql'
 
 "Linting
 Plug 'dense-analysis/ale'
-
-" LSP
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ }
 
 call plug#end()
 
@@ -103,7 +89,7 @@ else
   set guifont=Hack\ Nerd\ Font:h16
 endif
 
-" Indentation settings, gave up on editorconfig
+" Indentation settings
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -113,9 +99,6 @@ set softtabstop=4
 silent! colorscheme onedark
 let g:onedark_termcolors = 256
 hi TabLineSel ctermfg=Magenta ctermbg=DarkGrey
-
-"calls sudo and asks for password if necessary
-cmap w!! %!sudo tee > /dev/null %
 
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
@@ -237,8 +220,6 @@ com! Home Startify
 " Deoplete
 " ----------------------------------------------------------------------
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#source('LanguageClient','mark','LC')
-call deoplete#custom#source('LanguageClient','min_pattern_length',1)
 call deoplete#custom#source('neosnippet', 'rank', 2000)
 
 
@@ -295,9 +276,7 @@ nnoremap <Tab>j <C-w>J
 nnoremap <Tab> <C-w>K
 nnoremap <Tab>l <C-w>L
 
-if has('nvim')
-  inoremap <silent> <S-Insert> <C-R>+
-endif
+inoremap <silent> <S-Insert> <C-R>+
 
 nnoremap <Leader>p "*p
 
@@ -310,34 +289,14 @@ com! FormatJSON '<,'>!python -m json.tool
 " Add alias for often fat-fingered command
 com! Noh noh
 
-" Ctags
-com! Ctags !ctags -R .
-nnoremap <S-k> <C-]> " Shift + K to goto ctag
-nmap <Leader>t :TagbarOpenAutoClose<CR>
-let g:tagbar_sort=0 " Sort by location in file
-let g:tagbar_iconchars = ['', '']
-let g:tagbar_width=50
-let g:tagbar_compact=1
-highlight TagbarFoldIcon guifg=LightBlue ctermfg=LightBlue
-highlight TagbarHighlight guifg=Black ctermfg=Black guibg=DarkGray ctermbg=DarkGray
-highlight TagbarKind guifg=LightGreen ctermfg=LightGreen
-highlight TagbarScope guifg=Green ctermfg=Green
-highlight TagbarScope guifg=White ctermfg=White
-highlight TagbarSignature guifg=LightMagenta ctermfg=LightMagenta
-highlight TagbarVisibilityPrivate guifg=LightBlue ctermfg=LightBlue
-highlight TagbarVisibilityProtected guifg=LightBlue ctermfg=LightBlue
-highlight TagbarVisibilityPublic guifg=LightGreen ctermfg=LightGreen
-
 " FVim Fullscreen
 if exists('g:fvim_loaded')
   com! FS :FVimToggleFullScreen
-  FVimCursorSmoothBlink v:true
   FVimFontAntialias v:true
   FVimFontAutoSnap v:true
   FVimFontAutohint v:true
   FVimFontSubpixel v:true
 endif
-
 
 " Custom filetypes
 augroup filetypedetect
@@ -359,7 +318,6 @@ autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
 \   exe "normal! g'\"" |
 \ endif
-
 
 " Auto-trim trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
