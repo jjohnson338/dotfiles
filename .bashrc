@@ -30,7 +30,7 @@ colors() {
 }
 
 # Capture hostname
-hostname="$(hostname)"
+hostname='$(hostname)'
 
 # Change the window title of X terminals
 case ${TERM} in
@@ -112,6 +112,9 @@ if [ $hostname = "JJOHNSON" ]; then
   export https_proxy="https://192.168.1.19:3128"
   export PATH="$PATH:/opt/mssql-tools/bin"
   export DISPLAY=:0
+elif [ $hostname = "jared-laptop" ]; then
+    export PATH="$PATH:/home/jared/.dotnet/tools"
+    export DOTNET_ROOT=/opt/dotnet
 fi
 
 # better yaourt colors
