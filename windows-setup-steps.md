@@ -46,6 +46,12 @@ Enable the `OpenSSH Authentication Agent` Service that is packaged with Windows1
 
 ## Shared
 
+Rename:
+* `C:\Program Files\Git\usr\bin\ssh-add.exe` => `C:\Program Files\Git\usr\bin\ssh-add.exe.bak`
+* `C:\Program Files\Git\usr\bin\ssh-agent.exe` => `C:\Program Files\Git\usr\bin\ssh-agent.exe.bak`
+
+so that the newly installed versions are always picked-up
+
 Generate a key:
 `ssh-keygen -t rsa`
 
