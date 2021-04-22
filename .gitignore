@@ -41,8 +41,9 @@
 /.hostname_configs/*
 !/.hostname_configs/jared-laptop
 /.hostname_configs/jared-laptop/*
-!/.hostname_configs/jared-laptop/.xinput
-!/.hostname_configs/jared-laptop/.Xmodmap
+!/.hostname_configs/jared-laptop/remaps
+!/.hostname_configs/jared-laptop/remaps.desktop
+!/.hostname_configs/jared-laptop/keyboard.png
 
 
 !/.i3
