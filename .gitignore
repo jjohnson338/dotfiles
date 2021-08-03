@@ -50,7 +50,6 @@
 /.i3/*
 !/.i3/config
 
-!/.vimrc
 !/.vimrc.local.example
 !/.vim
 /.vim/*
@@ -67,5 +66,26 @@
 !/.vim/snippets/sql.snip
 !/.config/nvim
 /.config/nvim/*
+!/.config/nvim/nvim-settings.vim
+!/.config/nvim/theme.vim
 !/.config/nvim/init.vim
 !/.config/nvim/ginit.vim
+!/.config/nvim/commands.vim
+!/.config/nvim/keybinds.vim
+!/.config/nvim/filetypes.vim
+!/.config/nvim/fvim.vim
+!/.config/nvim/plug
+/.config/nvim/plug/*
+!/.config/nvim/plug/plug.vim
+!/.config/nvim/modules
+/.config/nvim/modules/*
+!/.config/nvim/modules/airline.vim
+!/.config/nvim/modules/ale.vim
+!/.config/nvim/modules/defx-git.vim
+!/.config/nvim/modules/defx-icons.vim
+!/.config/nvim/modules/defx.vim
+!/.config/nvim/modules/denite.vim
+!/.config/nvim/modules/deoplete.vim
+!/.config/nvim/modules/fterm.vim
+!/.config/nvim/modules/neosnippet.vim
+!/.config/nvim/modules/startify.vim
