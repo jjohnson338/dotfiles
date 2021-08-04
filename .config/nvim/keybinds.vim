@@ -18,6 +18,21 @@ nnoremap <Tab>l <C-w>L
 nnoremap <TAB>n :tabnext<CR>
 nnoremap <TAB>p :tabprevious<CR>
 
+" Zoom in/out with Ctrl + -=
+nnoremap <C-=> :silent! let &guifont = substitute(
+ \ &guifont,
+ \ ':h\zs\d\+',
+ \ '\=eval(submatch(0)+1)',
+ \ '')<CR>
+nnoremap <C--> :silent! let &guifont = substitute(
+ \ &guifont,
+ \ ':h\zs\d\+',
+ \ '\=eval(submatch(0)-1)',
+ \ '')<CR>
+" Reload config with Ctrl + 0
+nnoremap <C-0> :silent! :source $MYVIMRC<CR>
+
+
 inoremap <silent> <S-Insert> <C-R>+
 
 nnoremap <Leader>p "*p
