@@ -1,5 +1,5 @@
 " Set up vim plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
   " Autocompletions
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

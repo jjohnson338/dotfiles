@@ -1,4 +1,4 @@
-set runtimepath+=$HOME/.vim
+set runtimepath+=$HOME/.config/nvim
 
 source $HOME/.config/nvim/plug/plug.vim
 source $HOME/.config/nvim/nvim-settings.vim
