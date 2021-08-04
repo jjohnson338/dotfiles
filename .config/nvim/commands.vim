@@ -6,3 +6,9 @@ com! Noh noh
 
 " Map an alias command for Startify
 com! Home Startify
+
+" Git commands
+com! Gs Git
+com! Gp Git push
+com! Gd Gdiff
+com! Gc Git commit

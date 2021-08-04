@@ -11,8 +11,12 @@ nnoremap <silent> <C-l> :wincmd l<CR>
 " Tab+hjkl moves windows
 nnoremap <Tab>h <C-w>H
 nnoremap <Tab>j <C-w>J
-nnoremap <Tab> <C-w>K
+nnoremap <Tab>k <C-w>K
 nnoremap <Tab>l <C-w>L
+
+" Tab+np to move between tabs
+nnoremap <TAB>n :tabnext<CR>
+nnoremap <TAB>p :tabprevious<CR>
 
 inoremap <silent> <S-Insert> <C-R>+
 
@@ -20,6 +24,10 @@ nnoremap <Leader>p "*p
 
 " Allow for multiple replace in visual mode
 xnoremap p "_dP
+
+" Better tabbing
+vnoremap < <gv
+vnoremap > >gv
 
 " Toggle terminal
 tnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
