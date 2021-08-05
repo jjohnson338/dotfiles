@@ -3,6 +3,9 @@ let g:ale_linters = {
 \   'typescript': ['tsserver', 'tslint'],
 \   'vue': ['eslint']
 \}
+let g:ale_fixers = {
+\ 'javascript': ['prettier', 'eslint'],
+\}
 let g:ale_cursor_detail = 0
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
