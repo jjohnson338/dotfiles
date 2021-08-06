@@ -2,8 +2,10 @@
 call plug#begin('~/.config/nvim/plugged')
 
   " Autocompletions
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/neosnippet.vim'
+  Plug 'hrsh7th/nvim-compe'
+  Plug 'hrsh7th/vim-vsnip'
+  Plug 'hrsh7th/vim-vsnip-integ'
+  Plug 'rafamadriz/friendly-snippets', { 'branch': 'main' }
 
   "Style
   Plug 'vim-airline/vim-airline'

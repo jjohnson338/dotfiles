@@ -25,6 +25,7 @@ set title
 set updatetime=250
 set visualbell
 set signcolumn=auto
+set mouse=a
 
 "search settings
 set ignorecase

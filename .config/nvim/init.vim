@@ -15,9 +15,8 @@ source $HOME/.config/nvim/modules/defx-git.vim
 source $HOME/.config/nvim/modules/defx-icons.vim
 source $HOME/.config/nvim/modules/defx.vim
 source $HOME/.config/nvim/modules/denite.vim
-source $HOME/.config/nvim/modules/deoplete.vim
 source $HOME/.config/nvim/modules/fterm.vim
-source $HOME/.config/nvim/modules/neosnippet.vim
+source $HOME/.config/nvim/modules/nvim-compe.vim
 source $HOME/.config/nvim/modules/startify.vim
 
 silent! source $HOME/.vimrc.local
