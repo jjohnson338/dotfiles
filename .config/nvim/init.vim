@@ -19,4 +19,8 @@ source $HOME/.config/nvim/modules/fterm.vim
 source $HOME/.config/nvim/modules/nvim-compe.vim
 source $HOME/.config/nvim/modules/startify.vim
 
+" LSP
+luafile $HOME/.config/nvim/modules/lsp/html-server.lua
+luafile $HOME/.config/nvim/modules/lsp/ts-server.lua
+
 silent! source $HOME/.vimrc.local

@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
   Plug 'rafamadriz/friendly-snippets', { 'branch': 'main' }
+  Plug 'neovim/nvim-lspconfig'
 
   "Style
   Plug 'vim-airline/vim-airline'
