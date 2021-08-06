@@ -48,6 +48,11 @@
 !/.config/nvim/modules/fterm.vim
 !/.config/nvim/modules/nvim-compe.vim
 !/.config/nvim/modules/startify.vim
+!/.config/nvim/modules/lsp
+/.config/nvim/modules/lsp/*
+!/.config/nvim/modules/lsp/html-server.lua
+!/.config/nvim/modules/lsp/ts-server.lua
+
 !/.config/nvim/nvim-settings.vim
 !/.config/nvim/plug
 /.config/nvim/plug/*
