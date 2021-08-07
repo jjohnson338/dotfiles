@@ -18,6 +18,7 @@ source $HOME/.config/nvim/modules/denite.vim
 source $HOME/.config/nvim/modules/fterm.vim
 source $HOME/.config/nvim/modules/nvim-compe.vim
 source $HOME/.config/nvim/modules/startify.vim
+luafile $HOME/.config/nvim/modules/treesitter.lua
 
 " LSP
 luafile $HOME/.config/nvim/modules/lsp/html-server.lua

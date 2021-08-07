@@ -11,6 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
   "Style
   Plug 'vim-airline/vim-airline'
   Plug 'joshdick/onedark.vim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Utility
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }

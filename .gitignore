@@ -48,6 +48,7 @@
 !/.config/nvim/modules/fterm.vim
 !/.config/nvim/modules/nvim-compe.vim
 !/.config/nvim/modules/startify.vim
+!/.config/nvim/modules/treesitter.lua
 !/.config/nvim/modules/lsp
 /.config/nvim/modules/lsp/*
 !/.config/nvim/modules/lsp/html-server.lua
