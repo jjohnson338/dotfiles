@@ -2,6 +2,10 @@
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+" Smash JK in insert mode to revert to normal mode in terminal
+tnoremap jk <C-\><C-n>
+tnoremap kj <C-\><C-n>
+
 " Control+hjkl moves focus to that window
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>

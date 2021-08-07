@@ -30,7 +30,7 @@ colors() {
 }
 
 # Capture hostname
-hostname='$(hostname)'
+hostname=$(hostname)
 
 # Change the window title of X terminals
 case ${TERM} in
@@ -113,7 +113,7 @@ if [ $hostname = "JJOHNSON" ]; then
   export PATH="$PATH:/opt/mssql-tools/bin"
   export DISPLAY=:0
 elif [ $hostname = "jared-laptop" ]; then
-    export PATH="$PATH:/home/jared/.dotnet/tools"
+    PATH=$PATH:~/.dotnet/tools
     export DOTNET_ROOT=/opt/dotnet
 fi
 

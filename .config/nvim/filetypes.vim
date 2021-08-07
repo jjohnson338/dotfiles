@@ -3,6 +3,9 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.fsproj   setfiletype fsproj
 augroup end
 
+autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi set filetype=fsharp
+
+
 " For commentary
 autocmd FileType fsharp setlocal commentstring=//%s
 
