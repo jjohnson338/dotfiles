@@ -46,7 +46,10 @@
 !/.config/nvim/modules/defx.vim
 !/.config/nvim/modules/denite.vim
 !/.config/nvim/modules/fterm.vim
+!/.config/nvim/modules/lsp-saga.lua
+!/.config/nvim/modules/nvim-colorizer.lua
 !/.config/nvim/modules/nvim-compe.vim
+!/.config/nvim/modules/nvim-lightbulb.lua
 !/.config/nvim/modules/startify.vim
 !/.config/nvim/modules/treesitter.lua
 !/.config/nvim/modules/lsp

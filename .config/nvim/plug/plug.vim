@@ -7,11 +7,14 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hrsh7th/vim-vsnip-integ'
   Plug 'rafamadriz/friendly-snippets', { 'branch': 'main' }
   Plug 'neovim/nvim-lspconfig'
+  Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
   "Style
   Plug 'vim-airline/vim-airline'
-  Plug 'joshdick/onedark.vim'
+  Plug 'navarasu/onedark.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'kosayoda/nvim-lightbulb'
+  Plug 'norcalli/nvim-colorizer.lua'
 
   " Utility
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }

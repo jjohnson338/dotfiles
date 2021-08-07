@@ -173,4 +173,8 @@ nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+
+nnoremap <silent> <leader>ca :Lspsaga code_action<CR>
+vnoremap <silent> <leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent> K :Lspsaga hover_doc<CR>
+nnoremap <silent> <F2> :Lspsaga rename<CR>
