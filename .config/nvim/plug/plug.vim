@@ -10,7 +10,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
   "Style
-  Plug 'vim-airline/vim-airline'
+  Plug 'hoob3rt/lualine.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'navarasu/onedark.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'kosayoda/nvim-lightbulb'
