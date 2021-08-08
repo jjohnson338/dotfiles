@@ -47,7 +47,7 @@ if has('win32') || has ('win64')
   set guifont=Hack:h13
 else
   set shell=bash
-  set guifont=Hack\ Nerd\ Font:h16
+  set guifont=Hack\ Nerd\ Font:h13
 endif
 
 " Indentation settings

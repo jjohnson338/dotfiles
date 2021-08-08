@@ -23,6 +23,12 @@ In admin cmd prompt, run:
 
 Then add to `PATH`
 
+# Install neovide
+
+[Releases Page](https://github.com/neovide/neovide/releases)
+
+Then add to `PATH`
+
 # Install Powerline Hack font
 
 [Powerline Hack Font](https://github.com/powerline/fonts/tree/master/Hack)

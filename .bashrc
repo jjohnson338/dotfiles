@@ -136,7 +136,7 @@ case $(uname | tr '[:upper:]' '[:lower:]') in
     ;;
 esac
 
-export EDITOR=fvim
+export EDITOR=neovide
 if [ ! $os_name = "windows" ]; then
   # ssh-agent configuration
   if [ -z "$(pgrep ssh-agent)" ]; then
