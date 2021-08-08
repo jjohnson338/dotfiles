@@ -84,78 +84,16 @@ function! s:defx_my_settings() abort
 endfunction
 
 
-" === Denite shorcuts === "
+" === Telescope shorcuts === "
 "   ;         - Browser currently open buffers
-"   <Ctrl>p - Browse list of files in current directory
-"   <Ctrl>/ - Search current directory for occurences of given term and close window if no results
-"   <Ctrl>g - Search current directory for occurences of word under cursor
-nmap ; :Denite buffer<CR>
-nmap <C-p> :DeniteProjectDir file/rec<CR>
-nnoremap <C-/> :<C-u>Denite grep:. -no-empty<CR>
-nnoremap <C-*> :<C-u>DeniteCursorWord grep:.<CR>
-nnoremap <C-8> :<C-u>DeniteCursorWord grep:.<CR>
-
-" Define mappings while in 'filter' mode
-"   <C-o>         - Switch to normal mode inside of search results
-"   <Esc>         - Exit denite window in any mode
-"   <CR>          - Open currently selected file in any mode
-"   <C-t>         - Open currently selected file in a new tab
-"   <C-v>         - Open currently selected file a vertical split
-"   <C-h>         - Open currently selected file in a horizontal split
-autocmd FileType denite-filter call s:denite_filter_my_settings()
-function! s:denite_filter_my_settings() abort
-  imap <silent><buffer> <C-o>
-  \ <Plug>(denite_filter_update)
-  inoremap <silent><buffer><expr> <Esc>
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> <Esc>
-  \ denite#do_map('quit')
-  inoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  inoremap <silent><buffer><expr> <C-t>
-  \ denite#do_map('do_action', 'tabopen')
-  inoremap <silent><buffer><expr> <C-v>
-  \ denite#do_map('do_action', 'vsplit')
-  inoremap <silent><buffer><expr> <C-h>
-  \ denite#do_map('do_action', 'split')
-  inoremap <silent><buffer><expr> <C-n>
-  \ denite#increment_parent_cursor(1)
-  inoremap <silent><buffer><expr> <C-p>
-  \ denite#increment_parent_cursor(-1)
-endfunction
-
-" Define mappings while in denite window
-"   <CR>        - Opens currently selected file
-"   q or <Esc>  - Quit Denite window
-"   d           - Delete currenly selected file
-"   p           - Preview currently selected file
-"   <C-o> or i  - Switch to insert mode inside of filter prompt
-"   <C-t>       - Open currently selected file in a new tab
-"   <C-v>       - Open currently selected file a vertical split
-"   <C-h>       - Open currently selected file in a horizontal split
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> <Esc>
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-o>
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-t>
-  \ denite#do_map('do_action', 'tabopen')
-  nnoremap <silent><buffer><expr> <C-v>
-  \ denite#do_map('do_action', 'vsplit')
-  nnoremap <silent><buffer><expr> <C-h>
-  \ denite#do_map('do_action', 'split')
-endfunction
+"   <Ctrl>p - Search files in current project directory
+"   <Ctrl>/ - Search current project directory for occurences of given term
+"   <Ctrl>* | <Ctrl>8 - Search current project directory directory for occurences of word under cursor
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <C-/> <cmd>Telescope live_grep<cr>
+nnoremap ; <cmd>Telescope buffers<cr>
+nnoremap <expr> <C-*> ':Telescope live_grep<cr>' . expand('<cword>')
+nnoremap <expr> <C-8> ':Telescope live_grep<cr>' . expand('<cword>')
 
 " vim-snip
 " Expand or jump

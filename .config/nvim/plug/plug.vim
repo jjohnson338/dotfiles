@@ -19,7 +19,9 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Utility
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
   Plug 'jiangmiao/auto-pairs' " Pairs
   Plug 'kristijanhusak/defx-icons'
   Plug 'mhinz/vim-startify' "Home page

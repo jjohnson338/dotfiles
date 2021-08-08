@@ -7,7 +7,7 @@ In admin cmd prompt, run:
 
 ## Chocolatey
 
-`choco install autohotkey git neovim firacode nodejs python3 ripgrep`
+`choco install autohotkey git neovim firacode nodejs python3 ripgrep bat mingw fd`
 
 ## Pip
 

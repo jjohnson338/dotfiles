@@ -13,13 +13,13 @@ source $HOME/.config/nvim/modules/ale.vim
 source $HOME/.config/nvim/modules/defx-git.vim
 source $HOME/.config/nvim/modules/defx-icons.vim
 source $HOME/.config/nvim/modules/defx.vim
-source $HOME/.config/nvim/modules/denite.vim
 source $HOME/.config/nvim/modules/fterm.vim
 source $HOME/.config/nvim/modules/nvim-compe.vim
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
 source $HOME/.config/nvim/modules/startify.vim
 luafile $HOME/.config/nvim/modules/lualine.lua
 luafile $HOME/.config/nvim/modules/nvim-colorizer.lua
+luafile $HOME/.config/nvim/modules/telescope.lua
 luafile $HOME/.config/nvim/modules/treesitter.lua
 
 " LSP
