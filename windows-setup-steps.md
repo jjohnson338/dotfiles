@@ -14,7 +14,7 @@ In admin cmd prompt, run:
 `pip install --user --upgrade pynvim Send2Trash flake8`
 
 ## npm
-`npm install -g eslint`
+`npm install -g eslint prettier`
 
 
 # Install fvim
@@ -92,3 +92,6 @@ Add a Startup Task in Task Scheduler that launches
 `~/.config/Windows/capslock-ctrlescape.ahk` on system startup (probably have to use full path)
 
 This script remaps the `CapsLock` key to `Escape` when pressed by itself, and `Ctrl` when pressed in combination with another key
+
+# Add user env var SHELL
+`SHELL=C:\windows\system32\WindowsPowerShell\v1.0\powershell.exe`
