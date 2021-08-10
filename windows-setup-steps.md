@@ -14,7 +14,7 @@ In admin cmd prompt, run:
 `pip install --user --upgrade pynvim Send2Trash flake8`
 
 ## npm
-`npm install -g eslint prettier`
+`npm install -g eslint_d prettier diagnostic-languageserver`
 
 
 # Install fvim

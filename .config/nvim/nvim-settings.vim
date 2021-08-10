@@ -28,7 +28,6 @@ set signcolumn=auto
 set mouse=a
 set wildmenu
 set wildmode=list:longest,full
-set wildoptions+=pum
 
 "search settings
 set ignorecase

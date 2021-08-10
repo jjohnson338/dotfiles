@@ -9,7 +9,6 @@ source $HOME/.config/nvim/keybinds.vim
 source $HOME/.config/nvim/filetypes.vim
 source $HOME/.config/nvim/fvim.vim
 
-source $HOME/.config/nvim/modules/ale.vim
 source $HOME/.config/nvim/modules/defx-git.vim
 source $HOME/.config/nvim/modules/defx-icons.vim
 source $HOME/.config/nvim/modules/defx.vim
@@ -26,5 +25,6 @@ luafile $HOME/.config/nvim/modules/treesitter.lua
 luafile $HOME/.config/nvim/modules/lsp-saga.lua
 luafile $HOME/.config/nvim/modules/lsp/html-server.lua
 luafile $HOME/.config/nvim/modules/lsp/ts-server.lua
+luafile $HOME/.config/nvim/modules/lsp/eslint-server.lua
 
 silent! source $HOME/.vimrc.local

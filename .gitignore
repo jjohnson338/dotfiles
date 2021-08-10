@@ -1,6 +1,6 @@
 /*
 !/.bashrc
-!/.eslintrc
+!/.eslintrc.json
 !/.gitignore
 !/.shared_aliases
 !/.xprofile
@@ -39,7 +39,6 @@
 !/.config/nvim/keybinds.vim
 !/.config/nvim/modules
 /.config/nvim/modules/*
-!/.config/nvim/modules/ale.vim
 !/.config/nvim/modules/defx-git.vim
 !/.config/nvim/modules/defx-icons.vim
 !/.config/nvim/modules/defx.vim
@@ -54,6 +53,7 @@
 !/.config/nvim/modules/treesitter.lua
 !/.config/nvim/modules/lsp
 /.config/nvim/modules/lsp/*
+!/.config/nvim/modules/lsp/eslint-server.lua
 !/.config/nvim/modules/lsp/html-server.lua
 !/.config/nvim/modules/lsp/ts-server.lua
 
