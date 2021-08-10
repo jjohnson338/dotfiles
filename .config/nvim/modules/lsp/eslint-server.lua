@@ -1,3 +1,4 @@
+-- npm install -g eslint_d diagnostic-languageserver
  local util = require "lspconfig".util
 
   require'lspconfig'.diagnosticls.setup{
