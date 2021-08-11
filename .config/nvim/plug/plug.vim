@@ -7,6 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'kabouzeid/nvim-lspinstall', { 'branch': 'main' }
   Plug 'rafamadriz/friendly-snippets', { 'branch': 'main' }
 
   "Style

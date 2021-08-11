@@ -53,6 +53,7 @@
 !/.config/nvim/modules/treesitter.lua
 !/.config/nvim/modules/lsp
 /.config/nvim/modules/lsp/*
+!/.config/nvim/modules/lsp/csharp-server.lua
 !/.config/nvim/modules/lsp/eslint-server.lua
 !/.config/nvim/modules/lsp/html-server.lua
 !/.config/nvim/modules/lsp/ts-server.lua
