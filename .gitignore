@@ -10,9 +10,9 @@
 
 !/.config
 /.config/*
-!/.config/termite
-/.config/termite/*
-!/.config/termite/config
+!/.config/alacritty
+/.config/alacritty/*
+!/.config/alacritty/alacritty.yml
 !/.config/windows
 /.config/windows/*
 !/.config/windows/capslock-ctrlescape.ahk

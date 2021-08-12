@@ -104,7 +104,7 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
-export TERMINAL=/usr/bin/termite
+export TERMINAL=/usr/bin/alacritty
 
 # Conditionally export http and https proxy
 if [ $hostname = "JJOHNSON" ]; then
