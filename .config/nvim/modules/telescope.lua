@@ -16,5 +16,15 @@ require('telescope').setup{
             },
         },
         sorting_strategy = "ascending"
+    },
+    extensions = {
+        fzf = {
+            fuzzy = true,                    -- false will only do exact matching
+            override_generic_sorter = false, -- override the generic sorter
+            override_file_sorter = true,     -- override the file sorter
+            case_mode = "smart_case"
+        }
     }
 }
+
+require('telescope').load_extension('fzf')

@@ -27,6 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch': 'main', 'do': 'make' }
   Plug 'pgdouyon/vim-evanesco' "Better buffer searching
   Plug 'simeji/winresizer' " Resizing
   Plug 'tpope/vim-commentary' " Comments
