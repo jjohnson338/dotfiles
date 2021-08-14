@@ -1,7 +1,14 @@
 -- npm install -g eslint_d diagnostic-languageserver
  local util = require "lspconfig".util
+    local bin_name = 'diagnostic-languageserver'
+    if vim.fn.has 'win32' == 1 then
+    bin_name = bin_name .. '.cmd'
+    end
 
   require'lspconfig'.diagnosticls.setup{
+    default_config = {
+        cmd = { bin_name, '--stdio' },
+    },
     filetypes = {"javascript", "typescript"},
     root_dir = function(fname)
       return util.root_pattern("tsconfig.json")(fname) or
