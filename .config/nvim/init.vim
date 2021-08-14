@@ -9,9 +9,6 @@ source $HOME/.config/nvim/keybinds.vim
 source $HOME/.config/nvim/filetypes.vim
 source $HOME/.config/nvim/fvim.vim
 
-source $HOME/.config/nvim/modules/defx-git.vim
-source $HOME/.config/nvim/modules/defx-icons.vim
-source $HOME/.config/nvim/modules/defx.vim
 source $HOME/.config/nvim/modules/fterm.vim
 source $HOME/.config/nvim/modules/nvim-compe.vim
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
@@ -20,6 +17,7 @@ luafile $HOME/.config/nvim/modules/lualine.lua
 luafile $HOME/.config/nvim/modules/nvim-colorizer.lua
 luafile $HOME/.config/nvim/modules/telescope.lua
 luafile $HOME/.config/nvim/modules/treesitter.lua
+luafile $HOME/.config/nvim/modules/nvim-tree.lua
 
 " LSP
 luafile $HOME/.config/nvim/modules/lsp-saga.lua

@@ -19,9 +19,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Utility
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'jiangmiao/auto-pairs' " Pairs
-  Plug 'kristijanhusak/defx-icons'
   Plug 'mhinz/vim-startify' "Home page
   Plug 'numtostr/FTerm.nvim' "Terminal
   Plug 'nvim-lua/plenary.nvim'
@@ -34,7 +33,6 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Source control
   Plug 'airblade/vim-gitgutter'
-  Plug 'kristijanhusak/defx-git'
   Plug 'tpope/vim-fugitive'
 
   " Syntax

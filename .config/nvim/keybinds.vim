@@ -52,9 +52,9 @@ vnoremap > >gv
 tnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
 nnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
 
-" === Defx shortcuts ===                                            "
-" <Leader>d     - Toggle defxi                                      "
-" === Defx buffer shortcuts ===                                     "
+" === Lua tree shortcuts ===                                        "
+" <Leader>d     - Toggle lua tree                                   "
+" === Lua tree buffer shortcuts ===                                 "
 " A             - New file                                          "
 " C             - Copy                                              "
 " D             - Delete                                            "
@@ -65,23 +65,24 @@ nnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
 " s             - Open - Vertical Split                             "
 " o             - Toggle Dir Open/Closed or Open in Buffer          "
 " p             - Close Tree                                        "
-map <Leader>d :Defx<CR>
-autocmd FileType defx call s:defx_my_settings()
-function! s:defx_my_settings() abort
-  setl nonumber
-  setl nospell
-  setl signcolumn=no
-  nnoremap <silent><buffer><expr> A defx#do_action('new_file')
-  nnoremap <silent><buffer><expr> C defx#do_action('copy')
-  nnoremap <silent><buffer><expr> D defx#do_action('remove_trash')
-  nnoremap <silent><buffer><expr> M defx#do_action('rename')
-  nnoremap <silent><buffer><expr> P defx#do_action('paste')
-  nnoremap <silent><buffer><expr> R defx#do_action('redraw')
-  nnoremap <silent><buffer><expr> i defx#do_action('open', 'botright split', '')
-  nnoremap <silent><buffer><expr> o defx#is_directory() ?  defx#do_action('open_or_close_tree') : defx#do_action('drop')
-  nnoremap <silent><buffer><expr> p defx#do_action('close_tree')
-  nnoremap <silent><buffer><expr> s defx#do_action('open', 'botright vsplit')
-endfunction
+lua <<EOF
+    local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+    -- default mappings
+    vim.g.nvim_tree_bindings = {
+      { key = "A",                            cb = tree_cb("create") },
+      { key = "C",                            cb = tree_cb("copy") },
+      { key = "D",                            cb = tree_cb("remove") },
+      { key = "M",                            cb = tree_cb("rename") },
+      { key = "P",                            cb = tree_cb("paste") },
+      { key = "R",                            cb = tree_cb("refresh") },
+      { key = "X",                            cb = tree_cb("cut") },
+      { key = "s",                            cb = tree_cb("vsplit") },
+      { key = "i",                            cb = tree_cb("split") },
+      { key = "p",                            cb = tree_cb("close_node") },
+      { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+    }
+EOF
+map <Leader>d :NvimTreeToggle<CR>
 
 
 " === Telescope shorcuts === "

@@ -39,9 +39,6 @@
 !/.config/nvim/keybinds.vim
 !/.config/nvim/modules
 /.config/nvim/modules/*
-!/.config/nvim/modules/defx-git.vim
-!/.config/nvim/modules/defx-icons.vim
-!/.config/nvim/modules/defx.vim
 !/.config/nvim/modules/fterm.vim
 !/.config/nvim/modules/lsp-saga.lua
 !/.config/nvim/modules/lualine.lua
