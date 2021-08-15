@@ -45,6 +45,7 @@
 !/.config/nvim/modules/nvim-colorizer.lua
 !/.config/nvim/modules/nvim-compe.vim
 !/.config/nvim/modules/nvim-lightbulb.vim
+!/.config/nvim/modules/nvim-tree.vim
 !/.config/nvim/modules/startify.vim
 !/.config/nvim/modules/telescope.lua
 !/.config/nvim/modules/treesitter.lua
