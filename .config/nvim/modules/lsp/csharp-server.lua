@@ -3,6 +3,11 @@ local util = require "lspconfig".util
 local lang = "csharp"
 lspinstall.setup()
 
+local bin_name = vim.fn.stdpath("data") .. "/lspinstall/" .. lang .. "/omnisharp/run"
+if vim.fn.has 'win32' == 1 then
+    bin_name = vim.fn.stdpath("data") .. "\\lspinstall\\" .. lang .. "\\omnisharp\\OmniSharp.exe"
+end
+
 --- Check if a file or directory exists in this path
 function exists(file)
     local ok, err, code = os.rename(file, file)
@@ -27,6 +32,7 @@ if not isdir(csharpServerPath) then
     lspinstall.install_server(lang)
 else
     require'lspconfig'[lang].setup{
+        cmd = { bin_name, "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) },
         root_dir = function(fname)
         return util.root_pattern('.git')(fname)
             or util.root_pattern("*.sln")(fname)
