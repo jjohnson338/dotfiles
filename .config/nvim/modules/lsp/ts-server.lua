@@ -1,2 +1,7 @@
 -- npm install -g typescript typescript-language-server
-require'lspconfig'.tsserver.setup{}
+local util = require "lspconfig".util
+require'lspconfig'.tsserver.setup{
+    root_dir = function(fname)
+      return util.root_pattern('.git')(fname)
+    end
+}

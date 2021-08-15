@@ -1,4 +1,5 @@
 local lspinstall = require'lspinstall'
+local util = lspinstall.util
 local lang = "csharp"
 lspinstall.setup()
 
@@ -25,6 +26,11 @@ local csharpServerPath = vim.fn.stdpath("data") .. "/lspinstall/" .. lang
 if not isdir(csharpServerPath) then
     lspinstall.install_server(lang)
 else
-    require'lspconfig'[lang].setup{}
+    require'lspconfig'[lang].setup{
+        root_dir = function(fname)
+        return util.root_pattern('.git')(fname)
+            or util.root_pattern("*.sln")(fname)
+        end,
+    }
 end
 
