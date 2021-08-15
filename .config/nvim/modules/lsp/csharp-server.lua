@@ -1,5 +1,5 @@
 local lspinstall = require'lspinstall'
-local util = lspinstall.util
+local util = require "lspconfig".util
 local lang = "csharp"
 lspinstall.setup()
 
