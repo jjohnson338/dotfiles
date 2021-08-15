@@ -6,9 +6,7 @@ if vim.fn.has 'win32' == 1 then
 end
 
 require'lspconfig'.diagnosticls.setup{
-    default_config = {
-        cmd = { bin_name, '--stdio' },
-    },
+    cmd = { bin_name, '--stdio' },
     filetypes = {"javascript", "typescript"},
     root_dir = function(fname)
         return util.root_pattern('.git')(fname)
