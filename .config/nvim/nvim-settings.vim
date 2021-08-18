@@ -28,6 +28,7 @@ set signcolumn=auto
 set mouse=a
 set wildmenu
 set wildmode=list:longest,full
+set timeoutlen=300
 
 "search settings
 set ignorecase

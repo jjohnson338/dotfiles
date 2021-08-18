@@ -50,7 +50,9 @@ vnoremap > >gv
 
 " Toggle terminal
 tnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
+tnoremap <Leader>tt <Cmd>lua require'FTerm'.toggle()<CR>
 nnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
+nnoremap <Leader>tt <Cmd>lua require'FTerm'.toggle()<CR>
 
 " === Lua tree shortcuts ===                                        "
 " <Leader>d     - Toggle lua tree                                   "
