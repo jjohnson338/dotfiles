@@ -5,6 +5,7 @@
 include () {
     [[ -f "$1" ]] && source "$1"
 }
+include ~/.git-prompt.sh
 
 # Change the window title of X terminals
 case ${TERM} in
@@ -100,15 +101,10 @@ if [ ! $OS_NAME = "windows" ]; then
   fi
 fi
 
-# Determine git branch.
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
-export PS1="${GREEN}\w ${RED}$(parse_git_branch)${NC} > "
+export PS1="${GREEN}\w ${RED}$(__git_ps1)${NC} > "
 
 # WSL2
 if grep -q "microsoft" /proc/version &>/dev/null; then
