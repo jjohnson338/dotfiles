@@ -93,10 +93,14 @@ map <Leader>d :NvimTreeToggle<CR>
 "   <Ctrl>/ - Search current project directory for occurences of given term
 "   <Ctrl>* | <Ctrl>8 - Search current project directory directory for occurences of word under cursor
 nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <Leader>p <cmd>Telescope find_files<cr>
 nnoremap <C-/> <cmd>Telescope live_grep<cr>
+nnoremap <Leader>/ <cmd>Telescope live_grep<cr>
 nnoremap ; <cmd>Telescope buffers<cr>
 nnoremap <expr> <C-*> ':Telescope live_grep<cr>' . expand('<cword>')
+nnoremap <expr> <Leader>* ':Telescope live_grep<cr>' . expand('<cword>')
 nnoremap <expr> <C-8> ':Telescope live_grep<cr>' . expand('<cword>')
+nnoremap <expr> <Leader>8 ':Telescope live_grep<cr>' . expand('<cword>')
 
 " vim-snip
 " Expand or jump

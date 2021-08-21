@@ -1,4 +1,4 @@
--- npm install -g eslint_d diagnostic-languageserver
+-- npm install -g eslint diagnostic-languageserver
 local util = require "lspconfig".util
 local bin_name = 'diagnostic-languageserver'
 if vim.fn.has 'win32' == 1 then
@@ -14,7 +14,7 @@ require'lspconfig'.diagnosticls.setup{
     end,
     init_options = {
         linters = { eslint = {
-                command = "eslint_d",
+                command = "eslint",
                 rootPatterns = {".eslintrc*", ".git"},
                 debounce = 100,
                 args = {
