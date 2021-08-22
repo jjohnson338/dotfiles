@@ -1,3 +1,10 @@
+call which_key#register('<Space>', "g:which_key_map")
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+let g:which_key_map =  {}
+let g:which_key_map['c'] = { 'name': 'which_key_ignore' }
+let g:which_key_map['h'] = { 'name': 'which_key_ignore' }
+let g:which_key_map['t'] = { 'name': 'which_key_ignore' }
+
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
 inoremap kj <ESC>
@@ -39,8 +46,6 @@ nnoremap <C-0> :silent! :source $MYVIMRC<CR>
 
 inoremap <silent> <S-Insert> <C-R>+
 
-nnoremap <Leader>p "*p
-
 " Allow for multiple replace in visual mode
 xnoremap p "_dP
 
@@ -49,10 +54,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Toggle terminal
-tnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
-tnoremap <Leader>tt <Cmd>lua require'FTerm'.toggle()<CR>
-nnoremap <C-`> <Cmd>lua require'FTerm'.toggle()<CR>
-nnoremap <Leader>tt <Cmd>lua require'FTerm'.toggle()<CR>
+tnoremap <Leader>t <Cmd>lua require'FTerm'.toggle()<CR>
+nnoremap <Leader>t <Cmd>lua require'FTerm'.toggle()<CR>
 
 " === Lua tree shortcuts ===                                        "
 " <Leader>d     - Toggle lua tree                                   "
@@ -86,21 +89,20 @@ lua <<EOF
 EOF
 map <Leader>d :NvimTreeToggle<CR>
 
-
 " === Telescope shorcuts === "
-"   ;         - Browser currently open buffers
-"   <Ctrl>p - Search files in current project directory
-"   <Ctrl>/ - Search current project directory for occurences of given term
-"   <Ctrl>* | <Ctrl>8 - Search current project directory directory for occurences of word under cursor
-nnoremap <C-p> <cmd>Telescope find_files<cr>
-nnoremap <Leader>p <cmd>Telescope find_files<cr>
-nnoremap <C-/> <cmd>Telescope live_grep<cr>
-nnoremap <Leader>/ <cmd>Telescope live_grep<cr>
-nnoremap ; <cmd>Telescope buffers<cr>
-nnoremap <expr> <C-*> ':Telescope live_grep<cr>' . expand('<cword>')
-nnoremap <expr> <Leader>* ':Telescope live_grep<cr>' . expand('<cword>')
-nnoremap <expr> <C-8> ':Telescope live_grep<cr>' . expand('<cword>')
-nnoremap <expr> <Leader>8 ':Telescope live_grep<cr>' . expand('<cword>')
+nnoremap <Leader>pp <cmd>Telescope find_files<cr>
+nnoremap <Leader>po <cmd>Telescope old_files<cr>
+nnoremap <Leader>p/ <cmd>Telescope live_grep<cr>
+nnoremap <Leader>p; <cmd>Telescope buffers<cr>
+nnoremap <Leader>p8 <cmd>Telescope grep_string<cr>
+let g:which_key_map.p = {
+    \ 'name' : '+search',
+    \ 'p': [':Telescope find_files', 'search-files'],
+    \ 'o': [':Telescope old_files', 'recent-files'],
+    \ '/': [':Telescope live_grep', 'search-text'],
+    \ ';': [':Telescope buffers', 'search-buffers'],
+    \ '8': [':Telescope grep_string', 'search-cursor-word'],
+    \ }
 
 " vim-snip
 " Expand or jump
@@ -114,12 +116,26 @@ imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 " LSP
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+function GoToDefinition()
+    v:lua.vim.lsp.buf.definition()
+endfunction
 
-nnoremap <silent> <leader>ca :Lspsaga code_action<CR>
-vnoremap <silent> <leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap <silent> <leader>la :Lspsaga code_action<CR>
 nnoremap <silent> K :Lspsaga hover_doc<CR>
-nnoremap <silent> <F2> :Lspsaga rename<CR>
+nnoremap <silent> <leader>lR :Lspsaga rename<CR>
+nnoremap <silent> <Leader>ld :Lspsaga lsp_finder<CR>
+nnoremap <silent> <Leader>lr <cmd>Telescope lsp_references<CR>
+nnoremap <silent> <Leader>ls <cmd>Telescope lsp_document_symbols<CR>
+nnoremap <silent> <Leader>ln <cmd>Telescope lsp_document_diagnostics<CR>
+
+
+let g:which_key_map.l = {
+    \ 'name' : '+lsp',
+    \ 'a': [':Lspsaga code_action', 'code-action'],
+    \ 'R': [':Lspsaga rename', 'rename'],
+    \ 'd': [':Lspsaga lsp_finder', 'def-and-refs'],
+    \ 'r': [':Telescope lsp_references', 'references'],
+    \ 's': [':Telescope lsp_document_symbols', 'symbols'],
+    \ 'n': [':Telescope lsp_document_diagnostics', 'diagnostics'],
+    \ }
+

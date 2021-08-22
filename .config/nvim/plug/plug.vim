@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'pgdouyon/vim-evanesco' "Better buffer searching
   Plug 'simeji/winresizer' " Resizing
   Plug 'tpope/vim-commentary' " Comments
+  Plug 'liuchengxu/vim-which-key' " Help menu
 
   " Source control
   Plug 'airblade/vim-gitgutter'
