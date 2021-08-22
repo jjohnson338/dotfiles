@@ -95,6 +95,7 @@ nnoremap <Leader>po <cmd>Telescope old_files<cr>
 nnoremap <Leader>p/ <cmd>Telescope live_grep<cr>
 nnoremap <Leader>p; <cmd>Telescope buffers<cr>
 nnoremap <Leader>p8 <cmd>Telescope grep_string<cr>
+nnoremap <Leader>pt <cmd>Telescope treesitter<cr>
 let g:which_key_map.p = {
     \ 'name' : '+search',
     \ 'p': [':Telescope find_files', 'search-files'],
@@ -102,6 +103,20 @@ let g:which_key_map.p = {
     \ '/': [':Telescope live_grep', 'search-text'],
     \ ';': [':Telescope buffers', 'search-buffers'],
     \ '8': [':Telescope grep_string', 'search-cursor-word'],
+    \ 't': [':Telescope treesitter', 'search-funcs-and-vars'],
+    \ }
+
+" Telescope Git
+nnoremap <Leader>gc <cmd>Telescope git_commits<cr>
+nnoremap <Leader>gb <cmd>Telescope git_branches<cr>
+nnoremap <Leader>gs <cmd>Telescope git_status<cr>
+nnoremap <Leader>gh <cmd>Telescope git_stash<cr>
+let g:which_key_map.g = {
+    \ 'name' : '+git',
+    \ 'c': [':Telescope git_commits', 'git-commits'],
+    \ 'b': [':Telescope git_branches', 'git-branches'],
+    \ 's': [':Telescope git_status', 'git-status'],
+    \ 'h': [':Telescope git_stash', 'git-stash'],
     \ }
 
 " vim-snip
