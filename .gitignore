@@ -15,7 +15,7 @@
 !/.config/alacritty/alacritty.yml
 !/.config/windows
 /.config/windows/*
-!/.config/windows/capslock-ctrlescape.ahk
+!/.config/windows/windows-keybinds.ahk
 
 !/.hostname_configs
 /.hostname_configs/*

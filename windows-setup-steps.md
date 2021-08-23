@@ -92,10 +92,9 @@ C:/Users/Jared/AppData/Local/nvim/init.vim
 source ~/.config/nvim/ginit.vim
 ```
 
-# Remap Caps Lock to do something useful
+# Remap Caps Lock to do something useful and other keybinds
 
-Add a Startup Task in Task Scheduler that launches
-`~/.config/Windows/capslock-ctrlescape.ahk` on system startup (probably have to use full path)
+Copy `~/.config/Windows/windows-keybinds.ahk` to windows startup directory.
 
 This script remaps the `CapsLock` key to `Escape` when pressed by itself, and `Ctrl` when pressed in combination with another key
 

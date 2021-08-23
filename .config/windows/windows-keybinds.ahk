@@ -13,3 +13,12 @@ if (A_PriorKey=="CapsLock"){
     Suspend Off
 }
 Return
+
+^Enter::
+    Run, wt
+Return
+
+^Backspace::
+    WinClose
+Return
+
