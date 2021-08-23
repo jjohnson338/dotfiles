@@ -18,7 +18,4 @@ Return
     Run, wt
 Return
 
-^Backspace::
-    WinClose
-Return
-
+^Backspace::WinClose A
