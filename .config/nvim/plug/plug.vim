@@ -19,18 +19,21 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Utility
-  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'jiangmiao/auto-pairs' " Pairs
+  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'liuchengxu/vim-which-key' " Help menu
   Plug 'mhinz/vim-startify' "Home page
   Plug 'numtostr/FTerm.nvim' "Terminal
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch': 'main', 'do': 'make' }
+  Plug 'nvim-telescope/telescope.nvim'
   Plug 'pgdouyon/vim-evanesco' "Better buffer searching
   Plug 'simeji/winresizer' " Resizing
   Plug 'tpope/vim-commentary' " Comments
-  Plug 'liuchengxu/vim-which-key' " Help menu
+  Plug 'vimwiki/vimwiki' " Wiki
+  Plug 'tools-life/taskwiki' " Wiki
+  Plug 'powerman/vim-plugin-AnsiEsc' " Wiki
 
   " Source control
   Plug 'airblade/vim-gitgutter'

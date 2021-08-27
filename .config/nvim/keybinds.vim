@@ -3,7 +3,9 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 let g:which_key_map =  {}
 let g:which_key_map['c'] = { 'name': 'which_key_ignore' }
 let g:which_key_map['h'] = { 'name': 'which_key_ignore' }
-let g:which_key_map['t'] = { 'name': 'which_key_ignore' }
+let g:which_key_map.t = {
+    \ 'name': '+tasks'
+    \ }
 
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
@@ -24,7 +26,6 @@ nnoremap <Tab>h <C-w>H
 nnoremap <Tab>j <C-w>J
 nnoremap <Tab>k <C-w>K
 nnoremap <Tab>l <C-w>L
-
 " Tab+np to move between tabs
 nnoremap <TAB>n :tabnext<CR>
 nnoremap <TAB>p :tabprevious<CR>
@@ -54,8 +55,8 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Toggle terminal
-tnoremap <Leader>t <Cmd>lua require'FTerm'.toggle()<CR>
-nnoremap <Leader>t <Cmd>lua require'FTerm'.toggle()<CR>
+tnoremap <Leader>o <Cmd>lua require'FTerm'.toggle()<CR>
+nnoremap <Leader>o <Cmd>lua require'FTerm'.toggle()<CR>
 
 " === Lua tree shortcuts ===                                        "
 " <Leader>d     - Toggle lua tree                                   "
@@ -154,3 +155,4 @@ let g:which_key_map.l = {
     \ 'n': [':Telescope lsp_document_diagnostics', 'diagnostics'],
     \ }
 
+let g:which_key_map['w'] = { 'name': '+wiki' }
