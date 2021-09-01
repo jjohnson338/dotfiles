@@ -11,7 +11,7 @@ In admin cmd prompt, run:
 
 ## Pip
 
-`pip install --user --upgrade pynvim Send2Trash flake8`
+`pip install --user --upgrade pynvim Send2Trash flake8 tasklib tzlocal==2.1`
 
 ## npm
 `npm install -g eslint_d prettier diagnostic-languageserver`

@@ -5,6 +5,8 @@ augroup end
 
 autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi set filetype=fsharp
 
+" Markdown
+autocmd BufNewFile,BufRead *.md set wrap
 
 " For commentary
 autocmd FileType fsharp setlocal commentstring=//%s
