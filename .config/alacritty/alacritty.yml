@@ -1,9 +1,12 @@
 # Window
 window:
+  dimensions:
+    columns: 220
+    lines: 55
   padding:
     x: 5
     y: 5
-  decorations: full
+  decorations: none
   dynamic_title: true
 scrolling:
   history: 10000

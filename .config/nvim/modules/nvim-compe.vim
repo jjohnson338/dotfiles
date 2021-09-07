@@ -24,3 +24,4 @@ let g:compe.source.vsnip = v:true
 let g:compe.source.ultisnips = v:false
 let g:compe.source.luasnip = v:false
 let g:compe.source.emoji = v:true
+let g:compe.source.spell = v:true
