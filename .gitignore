@@ -7,6 +7,7 @@
 !/.Xresources
 !/.minttyrc
 !/windows-setup-steps.md
+!/.xinitrc
 
 !/.config
 /.config/*
