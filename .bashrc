@@ -41,7 +41,7 @@ if type -P dircolors >/dev/null ; then
     fi
 fi
 
-alias ls='ls --color=auto'
+alias ls='lsd'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
@@ -96,7 +96,7 @@ if [ ! $OS_NAME = "windows" ]; then
 
   #optional... potentially annoying
   if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
-    ssh-add
+    ssh-add 2>/dev/null
   fi
 fi
 
