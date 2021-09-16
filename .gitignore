@@ -40,7 +40,6 @@
 !/.config/nvim/keybinds.vim
 !/.config/nvim/modules
 /.config/nvim/modules/*
-!/.config/nvim/modules/fterm.vim
 !/.config/nvim/modules/lsp-saga.lua
 !/.config/nvim/modules/lualine.lua
 !/.config/nvim/modules/nvim-colorizer.lua
