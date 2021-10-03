@@ -20,3 +20,4 @@ alias vkill='vagrant destroy -f'
 alias gg='cd ~/Source/GroceryGroove'
 #editor alias
 alias v='nvim'
+alias t='task'
