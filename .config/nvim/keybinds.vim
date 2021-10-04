@@ -58,7 +58,7 @@ vnoremap > >gv
 tnoremap <Leader>o <Cmd>lua require'FTerm'.toggle()<CR>
 nnoremap <Leader>o <Cmd>lua require'FTerm'.toggle()<CR>
 
-" === Lua tree shortcuts ===                                        "
+" === Lua tree shortcuts setup in nvim-tree.vim ===                                        "
 " <Leader>d     - Toggle lua tree                                   "
 " === Lua tree buffer shortcuts ===                                 "
 " A             - New file                                          "
@@ -71,23 +71,6 @@ nnoremap <Leader>o <Cmd>lua require'FTerm'.toggle()<CR>
 " s             - Open - Vertical Split                             "
 " o             - Toggle Dir Open/Closed or Open in Buffer          "
 " p             - Close Tree                                        "
-lua <<EOF
-    local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-    -- default mappings
-    vim.g.nvim_tree_bindings = {
-      { key = "A",                            cb = tree_cb("create") },
-      { key = "C",                            cb = tree_cb("copy") },
-      { key = "D",                            cb = tree_cb("remove") },
-      { key = "M",                            cb = tree_cb("rename") },
-      { key = "P",                            cb = tree_cb("paste") },
-      { key = "R",                            cb = tree_cb("refresh") },
-      { key = "X",                            cb = tree_cb("cut") },
-      { key = "s",                            cb = tree_cb("vsplit") },
-      { key = "i",                            cb = tree_cb("split") },
-      { key = "p",                            cb = tree_cb("close_node") },
-      { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
-    }
-EOF
 map <Leader>d :NvimTreeToggle<CR>
 
 " === Telescope shorcuts === "

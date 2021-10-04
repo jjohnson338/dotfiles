@@ -21,3 +21,4 @@ alias gg='cd ~/Source/GroceryGroove'
 #editor alias
 alias v='nvim'
 alias t='task'
+alias to='~/taskopen'

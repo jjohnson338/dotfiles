@@ -8,6 +8,7 @@
 !/.minttyrc
 !/windows-setup-steps.md
 !/.xinitrc
+!/taskopen
 
 !/.config
 /.config/*

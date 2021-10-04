@@ -1,0 +1,4 @@
+#!/bin/bash
+uuid=$(task $1 info | grep "UUID" | awk '{split($0,a); print a[2];}')
+taskfile=~/tasks/$uuid.md
+nvim $taskfile
