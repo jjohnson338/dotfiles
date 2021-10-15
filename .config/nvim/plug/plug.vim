@@ -2,7 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
   " Autocompletions
-  Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+  Plug 'tami5/lspsaga.nvim', { 'branch': 'main' }
   Plug 'hrsh7th/nvim-compe'
   Plug 'hrsh7th/vim-vsnip'
   Plug 'hrsh7th/vim-vsnip-integ'
