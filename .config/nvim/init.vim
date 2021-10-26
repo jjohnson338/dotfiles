@@ -9,7 +9,7 @@ source $HOME/.config/nvim/keybinds.vim
 source $HOME/.config/nvim/filetypes.vim
 source $HOME/.config/nvim/fvim.vim
 
-source $HOME/.config/nvim/modules/nvim-compe.vim
+source $HOME/.config/nvim/modules/nvim-cmp.vim
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
 source $HOME/.config/nvim/modules/nvim-tree.vim
 source $HOME/.config/nvim/modules/startify.vim

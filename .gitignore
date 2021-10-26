@@ -44,7 +44,7 @@
 !/.config/nvim/modules/lsp-saga.lua
 !/.config/nvim/modules/lualine.lua
 !/.config/nvim/modules/nvim-colorizer.lua
-!/.config/nvim/modules/nvim-compe.vim
+!/.config/nvim/modules/nvim-cmp.vim
 !/.config/nvim/modules/nvim-lightbulb.vim
 !/.config/nvim/modules/nvim-tree.vim
 !/.config/nvim/modules/startify.vim

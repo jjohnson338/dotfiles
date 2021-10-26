@@ -31,7 +31,9 @@ local csharpServerPath = vim.fn.stdpath("data") .. "/lspinstall/" .. lang
 if not isdir(csharpServerPath) then
     lspinstall.install_server(lang)
 else
+    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     require'lspconfig'[lang].setup{
+        capabilities = capabilities,
         cmd = { bin_name, "--languageserver" , "--hostPID", tostring(vim.fn.getpid()) },
         root_dir = function(fname)
         return util.root_pattern('.git')(fname)

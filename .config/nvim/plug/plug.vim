@@ -3,9 +3,11 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Autocompletions
   Plug 'tami5/lspsaga.nvim', { 'branch': 'main' }
-  Plug 'hrsh7th/nvim-compe'
+  Plug 'hrsh7th/cmp-nvim-lsp', { 'branch': 'main' }
+  Plug 'hrsh7th/cmp-buffer', { 'branch': 'main' }
+  Plug 'hrsh7th/nvim-cmp', { 'branch': 'main' }
+  Plug 'hrsh7th/cmp-vsnip', { 'branch': 'main' }
   Plug 'hrsh7th/vim-vsnip'
-  Plug 'hrsh7th/vim-vsnip-integ'
   Plug 'neovim/nvim-lspconfig'
   Plug 'kabouzeid/nvim-lspinstall', { 'branch': 'main' }
   Plug 'rafamadriz/friendly-snippets', { 'branch': 'main' }
