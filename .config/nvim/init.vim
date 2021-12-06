@@ -25,5 +25,6 @@ luafile $HOME/.config/nvim/modules/lsp/csharp-server.lua
 luafile $HOME/.config/nvim/modules/lsp/eslint-server.lua
 luafile $HOME/.config/nvim/modules/lsp/html-server.lua
 luafile $HOME/.config/nvim/modules/lsp/ts-server.lua
+luafile $HOME/.config/nvim/modules/lsp/python-server.lua
 
 silent! source $HOME/.vimrc.local
