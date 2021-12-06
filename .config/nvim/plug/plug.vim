@@ -34,8 +34,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'simeji/winresizer' " Resizing
   Plug 'tpope/vim-commentary' " Comments
   Plug 'vimwiki/vimwiki' " Wiki
-  Plug 'tools-life/taskwiki' " Wiki
+  " Plug 'tools-life/taskwiki' " Wiki
   Plug 'powerman/vim-plugin-AnsiEsc' " Wiki
+  Plug 'editorconfig/editorconfig-vim'
 
   " Source control
   Plug 'airblade/vim-gitgutter'

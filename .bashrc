@@ -75,6 +75,8 @@ case $(uname | tr '[:upper:]' '[:lower:]') in
     OS_NAME=osx
     ;;
   msys*)
+    ;&
+  ming*)
     OS_NAME=windows
     ;;
   *)

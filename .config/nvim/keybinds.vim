@@ -3,9 +3,6 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 let g:which_key_map =  {}
 let g:which_key_map['c'] = { 'name': 'which_key_ignore' }
 let g:which_key_map['h'] = { 'name': 'which_key_ignore' }
-let g:which_key_map.t = {
-    \ 'name': '+tasks'
-    \ }
 
 " Smash JK in insert mode to revert to normal mode
 inoremap jk <ESC>
@@ -138,4 +135,10 @@ let g:which_key_map.l = {
     \ 'n': [':Telescope lsp_document_diagnostics', 'diagnostics'],
     \ }
 
+" Wiki
+map <Leader>t :VimwikiToggleListItem<CR>
 let g:which_key_map['w'] = { 'name': '+wiki' }
+
+if has('win32')
+    nmap <C-z> <Nop>
+endif

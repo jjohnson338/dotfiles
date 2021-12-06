@@ -9,6 +9,7 @@ source $HOME/.config/nvim/keybinds.vim
 source $HOME/.config/nvim/filetypes.vim
 source $HOME/.config/nvim/fvim.vim
 
+source $HOME/.config/nvim/modules/editorconfig.vim
 source $HOME/.config/nvim/modules/nvim-cmp.vim
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
 source $HOME/.config/nvim/modules/nvim-tree.vim
@@ -18,10 +19,11 @@ luafile $HOME/.config/nvim/modules/lualine.lua
 luafile $HOME/.config/nvim/modules/nvim-colorizer.lua
 luafile $HOME/.config/nvim/modules/telescope.lua
 luafile $HOME/.config/nvim/modules/treesitter.lua
+luafile $HOME/.config/nvim/modules/f-term.lua
 
 " LSP
 luafile $HOME/.config/nvim/modules/lsp-saga.lua
-luafile $HOME/.config/nvim/modules/lsp/csharp-server.lua
+" luafile $HOME/.config/nvim/modules/lsp/csharp-server.lua
 luafile $HOME/.config/nvim/modules/lsp/eslint-server.lua
 luafile $HOME/.config/nvim/modules/lsp/html-server.lua
 luafile $HOME/.config/nvim/modules/lsp/ts-server.lua
