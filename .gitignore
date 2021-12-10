@@ -21,11 +21,11 @@
 
 !/.hostname_configs
 /.hostname_configs/*
-!/.hostname_configs/jared-laptop
-/.hostname_configs/jared-laptop/*
-!/.hostname_configs/jared-laptop/remaps
-!/.hostname_configs/jared-laptop/remaps.desktop
-!/.hostname_configs/jared-laptop/keyboard.png
+!/.hostname_configs/jared-framework
+/.hostname_configs/jared-framework/*
+!/.hostname_configs/jared-framework/remaps
+!/.hostname_configs/jared-framework/remaps.desktop
+!/.hostname_configs/jared-framework/keyboard.png
 
 !/.vimrc.local.example
 !/.config/nvim
