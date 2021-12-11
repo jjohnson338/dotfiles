@@ -117,5 +117,5 @@ fi
 include ~/.shared_aliases
 include ~/.bashrc.extend
 
-[ -r /usr/share/doc/fzf/examples/key-bindings.bash ] && . /usr/share/doc/fzf/examples/key-bindings.bash
-[ -r /usr/share/doc/fzf/examples/completion.bash ] && . /usr/share/doc/fzf/examples/completion.bash
+include ~/.config/fzf/key-bindings.bash
+include ~/.config/fzf/completion.bash

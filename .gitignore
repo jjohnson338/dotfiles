@@ -15,6 +15,10 @@
 !/.config/alacritty
 /.config/alacritty/*
 !/.config/alacritty/alacritty.yml
+!/.config/fzf
+/.config/fzf/*
+!/.config/fzf/completion.bash
+!/.config/fzf/key-bindings.bash
 !/.config/windows
 /.config/windows/*
 !/.config/windows/windows-keybinds.ahk
