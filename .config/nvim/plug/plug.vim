@@ -37,6 +37,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Plug 'tools-life/taskwiki' " Wiki
   Plug 'powerman/vim-plugin-AnsiEsc' " Wiki
   Plug 'editorconfig/editorconfig-vim'
+  Plug 'vim-test/vim-test'
 
   " Source control
   Plug 'airblade/vim-gitgutter'

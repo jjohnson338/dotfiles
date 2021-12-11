@@ -41,6 +41,8 @@ nnoremap <C--> :silent! let &guifont = substitute(
 " Reload config with Ctrl + 0
 nnoremap <C-0> :silent! :source $MYVIMRC<CR>
 
+" Allow gf to open non-existent files
+map gf :edit <cfile><cr>
 
 inoremap <silent> <S-Insert> <C-R>+
 
@@ -136,9 +138,26 @@ let g:which_key_map.l = {
     \ }
 
 " Wiki
-map <Leader>t :VimwikiToggleListItem<CR>
+map <Leader>c :VimwikiToggleListItem<CR>
 let g:which_key_map['w'] = { 'name': '+wiki' }
 
+" Vim-test
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
+let g:which_key_map.t = {
+    \ 'name' : '+test',
+    \ 'n': [':TestNearest', 'test-nearest'],
+    \ 'f': [':TestFile', 'test-file'],
+    \ 's': [':TestSuite', 'test-suite'],
+    \ 'l': [':TestLast', 'test-last'],
+    \ 'v': [':TestVisit', 'test-visit'],
+    \ }
+
+
+" Unmap C-z on Windows
 if has('win32')
     nmap <C-z> <Nop>
 endif
