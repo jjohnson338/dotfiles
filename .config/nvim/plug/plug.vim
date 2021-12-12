@@ -34,10 +34,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'simeji/winresizer' " Resizing
   Plug 'tpope/vim-commentary' " Comments
   Plug 'vimwiki/vimwiki' " Wiki
-  " Plug 'tools-life/taskwiki' " Wiki
   Plug 'powerman/vim-plugin-AnsiEsc' " Wiki
   Plug 'editorconfig/editorconfig-vim'
   Plug 'vim-test/vim-test'
+  Plug 'code-biscuits/nvim-biscuits', { 'branch': 'main' } " nice bracket matching virtual text
 
   " Source control
   Plug 'airblade/vim-gitgutter'
