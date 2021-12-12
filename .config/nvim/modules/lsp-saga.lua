@@ -9,3 +9,6 @@ saga.init_lsp_saga {
         virtual_text = false,
     }
 }
+
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'lspsaga.diagnostic'.show_line_diagnostics()]]

@@ -25,6 +25,7 @@ luafile $HOME/.config/nvim/modules/nvim-biscuits.lua
 " LSP
 luafile $HOME/.config/nvim/modules/lsp-saga.lua
 " luafile $HOME/.config/nvim/modules/lsp/csharp-server.lua
+luafile $HOME/.config/nvim/modules/lsp/lsp-base.lua
 luafile $HOME/.config/nvim/modules/lsp/eslint-server.lua
 luafile $HOME/.config/nvim/modules/lsp/html-server.lua
 luafile $HOME/.config/nvim/modules/lsp/ts-server.lua
