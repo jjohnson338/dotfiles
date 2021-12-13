@@ -20,6 +20,7 @@ luafile $HOME/.config/nvim/modules/telescope.lua
 luafile $HOME/.config/nvim/modules/treesitter.lua
 luafile $HOME/.config/nvim/modules/f-term.lua
 luafile $HOME/.config/nvim/modules/nvim-biscuits.lua
+luafile $HOME/.config/nvim/modules/projects.lua
 
 " LSP
 luafile $HOME/.config/nvim/modules/lsp-saga.lua

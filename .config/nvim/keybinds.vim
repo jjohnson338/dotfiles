@@ -73,6 +73,7 @@ nnoremap <Leader>o <Cmd>lua require'FTerm'.toggle()<CR>
 map <Leader>d :NvimTreeToggle<CR>
 
 " === Telescope shorcuts === "
+nnoremap <Leader>pd <cmd>Telescope projects<cr>
 nnoremap <Leader>pp <cmd>Telescope find_files<cr>
 nnoremap <Leader>po <cmd>Telescope old_files<cr>
 nnoremap <Leader>p/ <cmd>Telescope live_grep<cr>
@@ -81,6 +82,7 @@ nnoremap <Leader>p8 <cmd>Telescope grep_string<cr>
 nnoremap <Leader>pt <cmd>Telescope treesitter<cr>
 let g:which_key_map.p = {
     \ 'name' : '+search',
+    \ 'd': [':Telescope projects', 'search-projects'],
     \ 'p': [':Telescope find_files', 'search-files'],
     \ 'o': [':Telescope old_files', 'recent-files'],
     \ '/': [':Telescope live_grep', 'search-text'],

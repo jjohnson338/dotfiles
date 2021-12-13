@@ -38,6 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-test/vim-test'
   Plug 'code-biscuits/nvim-biscuits', { 'branch': 'main' } " nice bracket matching virtual text
   Plug 'tpope/vim-surround'
+  Plug 'ahmedkhalf/project.nvim', { 'branch': 'main' }
 
   " Source control
   Plug 'airblade/vim-gitgutter'

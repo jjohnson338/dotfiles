@@ -57,6 +57,7 @@
 !/.config/nvim/modules/startify.vim
 !/.config/nvim/modules/telescope.lua
 !/.config/nvim/modules/treesitter.lua
+!/.config/nvim/modules/projects.lua
 !/.config/nvim/modules/vim-wiki.vim
 !/.config/nvim/modules/lsp
 /.config/nvim/modules/lsp/*
