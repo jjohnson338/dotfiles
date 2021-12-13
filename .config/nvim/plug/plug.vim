@@ -9,7 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hrsh7th/cmp-vsnip', { 'branch': 'main' }
   Plug 'hrsh7th/vim-vsnip'
   Plug 'neovim/nvim-lspconfig'
-  Plug 'kabouzeid/nvim-lspinstall', { 'branch': 'main' }
+  Plug 'williamboman/nvim-lsp-installer', { 'branch': 'main' }
   Plug 'rafamadriz/friendly-snippets', { 'branch': 'main' }
 
   "Style
@@ -24,7 +24,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jiangmiao/auto-pairs' " Pairs
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'liuchengxu/vim-which-key' " Help menu
-  Plug 'mhinz/vim-startify' "Home page
   Plug 'numtostr/FTerm.nvim' "Terminal
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-lua/popup.nvim'
@@ -38,13 +37,14 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'vim-test/vim-test'
   Plug 'code-biscuits/nvim-biscuits', { 'branch': 'main' } " nice bracket matching virtual text
+  Plug 'tpope/vim-surround'
 
   " Source control
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
 
   " Syntax
-  Plug 'JulesWang/css.vim',             { 'for': 'css' }
+  Plug 'vim-language-dept/css-syntax.vim',  { 'for': 'css' }
   Plug 'OrangeT/vim-csharp'
   Plug 'cakebaker/scss-syntax.vim'
   Plug 'hoffstein/vim-tsql'

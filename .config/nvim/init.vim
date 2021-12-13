@@ -13,7 +13,6 @@ source $HOME/.config/nvim/modules/editorconfig.vim
 source $HOME/.config/nvim/modules/nvim-cmp.vim
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
 source $HOME/.config/nvim/modules/nvim-tree.vim
-source $HOME/.config/nvim/modules/startify.vim
 source $HOME/.config/nvim/modules/vim-wiki.vim
 luafile $HOME/.config/nvim/modules/lualine.lua
 luafile $HOME/.config/nvim/modules/nvim-colorizer.lua
