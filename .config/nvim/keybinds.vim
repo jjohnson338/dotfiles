@@ -160,6 +160,8 @@ let g:which_key_map.t = {
     \ 'v': [':TestVisit', 'test-visit'],
     \ }
 
+nmap <silent> <leader>i <CMD>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
+
 
 " Unmap C-z on Windows
 if has('win32')
