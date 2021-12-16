@@ -29,6 +29,8 @@ set mouse=a
 set wildmenu
 set wildmode=list:longest,full
 set timeoutlen=300
+set exrc                  "enable folder by folder .nvimrc files. useful for project specific settings
+set nosecure              "allow autocommands in folder .nvimrc files
 
 "search settings
 set ignorecase
