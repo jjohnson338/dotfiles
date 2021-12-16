@@ -1,0 +1,2 @@
+autocmd BufWritePre *.js* Neoformat
+autocmd BufWritePre *.ts* Neoformat

@@ -1,13 +1,14 @@
 /*
+!/.Xresources
 !/.bashrc
 !/.eslintrc.json
 !/.gitignore
-!/.shared_aliases
-!/.xprofile
-!/.Xresources
 !/.minttyrc
-!/windows-setup-steps.md
+!/.nvimrc.example
+!/.shared_aliases
 !/.xinitrc
+!/.xprofile
+!/windows-setup-steps.md
 !/taskopen
 
 !/.config
