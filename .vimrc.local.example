@@ -1,6 +1,0 @@
-" Startify Bookmarks
-let g:startify_bookmarks = [
-  \ '~',
-  \ '~/Source',
-  \ '~/Source/some_proj_dir',
-  \ ]
