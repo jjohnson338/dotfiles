@@ -32,6 +32,7 @@ set timeoutlen=300
 set exrc                  "enable folder by folder .nvimrc files. useful for project specific settings
 set nosecure              "allow autocommands in folder .nvimrc files
 set clipboard+=unnamedplus
+set termguicolors
 
 "search settings
 set ignorecase

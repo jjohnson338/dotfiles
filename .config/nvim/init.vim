@@ -8,7 +8,6 @@ source $HOME/.config/nvim/commands.vim
 source $HOME/.config/nvim/keybinds.vim
 source $HOME/.config/nvim/filetypes.vim
 
-source $HOME/.config/nvim/modules/editorconfig.vim
 source $HOME/.config/nvim/modules/nvim-cmp.vim
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
 source $HOME/.config/nvim/modules/nvim-tree.vim

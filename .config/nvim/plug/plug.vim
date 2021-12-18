@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'kosayoda/nvim-lightbulb'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'navarasu/onedark.nvim'
-  Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'norcalli/nvim-colorizer.lua' " hex colorizing
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Utility
@@ -33,7 +33,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary' " Comments
   Plug 'vimwiki/vimwiki' " Wiki
   Plug 'powerman/vim-plugin-AnsiEsc' " Wiki
-  Plug 'editorconfig/editorconfig-vim'
   Plug 'vim-test/vim-test'
   Plug 'code-biscuits/nvim-biscuits', { 'branch': 'main' } " nice bracket matching virtual text
   Plug 'tpope/vim-surround'
