@@ -23,23 +23,11 @@ nnoremap <Tab>h <C-w>H
 nnoremap <Tab>j <C-w>J
 nnoremap <Tab>k <C-w>K
 nnoremap <Tab>l <C-w>L
-" Tab+np to move between tabs
-nnoremap <TAB>n :tabnext<CR>
-nnoremap <TAB>p :tabprevious<CR>
 
-" Zoom in/out with Ctrl + -=
-nnoremap <C-=> :silent! let &guifont = substitute(
- \ &guifont,
- \ ':h\zs\d\+',
- \ '\=eval(submatch(0)+1)',
- \ '')<CR>
-nnoremap <C--> :silent! let &guifont = substitute(
- \ &guifont,
- \ ':h\zs\d\+',
- \ '\=eval(submatch(0)-1)',
- \ '')<CR>
-" Reload config with Ctrl + 0
-nnoremap <C-0> :silent! :source $MYVIMRC<CR>
+" Tab creation/navigation
+nnoremap tn :tabnext<CR>
+nnoremap tp :tabprevious<CR>
+nnoremap tt :tabnew<CR>
 
 " Allow gf to open non-existent files
 map gf :edit <cfile><cr>
@@ -161,7 +149,6 @@ let g:which_key_map.t = {
     \ }
 
 nmap <silent> <leader>i <CMD>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
-
 
 " Unmap C-z on Windows
 if has('win32')

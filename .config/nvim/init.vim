@@ -7,20 +7,19 @@ source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/commands.vim
 source $HOME/.config/nvim/keybinds.vim
 source $HOME/.config/nvim/filetypes.vim
-source $HOME/.config/nvim/fvim.vim
 
 source $HOME/.config/nvim/modules/editorconfig.vim
 source $HOME/.config/nvim/modules/nvim-cmp.vim
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
 source $HOME/.config/nvim/modules/nvim-tree.vim
 source $HOME/.config/nvim/modules/vim-wiki.vim
+luafile $HOME/.config/nvim/modules/f-term.lua
 luafile $HOME/.config/nvim/modules/lualine.lua
+luafile $HOME/.config/nvim/modules/nvim-biscuits.lua
 luafile $HOME/.config/nvim/modules/nvim-colorizer.lua
 luafile $HOME/.config/nvim/modules/telescope.lua
-luafile $HOME/.config/nvim/modules/treesitter.lua
-luafile $HOME/.config/nvim/modules/f-term.lua
-luafile $HOME/.config/nvim/modules/nvim-biscuits.lua
 luafile $HOME/.config/nvim/modules/projects.lua
+luafile $HOME/.config/nvim/modules/treesitter.lua
 
 " LSP
 luafile $HOME/.config/nvim/modules/lsp-saga.lua

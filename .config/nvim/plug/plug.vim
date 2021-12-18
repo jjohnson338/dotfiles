@@ -29,7 +29,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'branch': 'main', 'do': 'make' }
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'pgdouyon/vim-evanesco' "Better buffer searching
   Plug 'simeji/winresizer' " Resizing
   Plug 'tpope/vim-commentary' " Comments
   Plug 'vimwiki/vimwiki' " Wiki
@@ -44,12 +43,5 @@ call plug#begin('~/.config/nvim/plugged')
   " Source control
   Plug 'airblade/vim-gitgutter'
   Plug 'tpope/vim-fugitive'
-
-  " Syntax
-  Plug 'vim-language-dept/css-syntax.vim',  { 'for': 'css' }
-  Plug 'OrangeT/vim-csharp'
-  Plug 'cakebaker/scss-syntax.vim'
-  Plug 'hoffstein/vim-tsql'
-  Plug 'sheerun/vim-polyglot'
 
 call plug#end()

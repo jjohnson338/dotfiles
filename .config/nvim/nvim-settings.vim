@@ -31,28 +31,23 @@ set wildmode=list:longest,full
 set timeoutlen=300
 set exrc                  "enable folder by folder .nvimrc files. useful for project specific settings
 set nosecure              "allow autocommands in folder .nvimrc files
+set clipboard+=unnamedplus
 
 "search settings
 set ignorecase
 set smartcase
 set hlsearch
 
-" Gui settings
-set guioptions=agit
-set termguicolors
 
-set clipboard+=unnamedplus
 " OS settings
 if has('win32') || has ('win64')
   set shell=cmd.exe
   set encoding=utf-8
-  set guifont=Hack:h13
 else
   set shell=bash
-  set guifont=Hack\ Nerd\ Font:h13
 endif
 
-" Indentation settings
+" Default Indentation settings
 set expandtab
 set shiftwidth=4
 set tabstop=4
