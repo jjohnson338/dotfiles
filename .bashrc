@@ -120,5 +120,7 @@ include ~/.bashrc.extend
 include ~/.config/fzf/key-bindings.bash
 include ~/.config/fzf/completion.bash
 
+# Don't ignore gitignore files, include hidden, search from home
 export FZF_CTRL_T_COMMAND="fd -I -H . $HOME"
+# Only include dirs, don't ignore gitignore files, include hidden, search from home
 export FZF_ALT_C_COMMAND="fd -t d -I -H . $HOME"
