@@ -17,5 +17,3 @@ Return
 ^Enter::
     Run, wt
 Return
-
-^Backspace::WinClose A

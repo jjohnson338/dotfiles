@@ -119,3 +119,6 @@ include ~/.bashrc.extend
 
 include ~/.config/fzf/key-bindings.bash
 include ~/.config/fzf/completion.bash
+
+export FZF_CTRL_T_COMMAND="fd -I -H . $HOME"
+export FZF_ALT_C_COMMAND="fd -t d -I -H . $HOME"
