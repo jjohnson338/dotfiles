@@ -3,11 +3,17 @@ set nocompatible
 
 let mapleader=" "
 set background=dark       "make sure vim knows bg is dark
-set cc=80
+set clipboard+=unnamedplus
+set colorcolumn=80
+set cursorline
+set exrc                  "enable folder by folder .nvimrc files. useful for project specific settings
+set incsearch
 set list
 set listchars=eol:↵,tab:⇒·,trail:·,nbsp:·
+set mouse=a
 set nobackup              "backups are for wimps
-set cursorline
+set noerrorbells
+set nosecure              "allow autocommands in folder .nvimrc files
 set noswapfile            "turn off swap files
 set noundofile            "same as the line above says
 set nowrap                "dont wrap long lines
@@ -21,18 +27,14 @@ set showmatch             "highlight matching brackets
 set showmode              "display current mode
 set showtabline=2         "always show tab bar
 set sidescroll=0          "big horizontal jumps
+set signcolumn=auto
+set termguicolors
+set timeoutlen=300
 set title
 set updatetime=250
 set visualbell
-set signcolumn=auto
-set mouse=a
 set wildmenu
 set wildmode=list:longest,full
-set timeoutlen=300
-set exrc                  "enable folder by folder .nvimrc files. useful for project specific settings
-set nosecure              "allow autocommands in folder .nvimrc files
-set clipboard+=unnamedplus
-set termguicolors
 
 "search settings
 set ignorecase
