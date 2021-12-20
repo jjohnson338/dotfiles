@@ -1,21 +1,13 @@
 /*
-!/.Xresources
 !/.bashrc
-!/.eslintrc.json
 !/.gitignore
-!/.minttyrc
 !/.nvimrc.example
 !/.shared_aliases
-!/.xinitrc
-!/.xprofile
-!/windows-setup-steps.md
 !/taskopen
+!/windows-setup-steps.md
 
 !/.config
 /.config/*
-!/.config/alacritty
-/.config/alacritty/*
-!/.config/alacritty/alacritty.yml
 !/.config/fzf
 /.config/fzf/*
 !/.config/fzf/completion.bash
@@ -40,13 +32,10 @@
 !/.config/nvim/autoload/plug.vim
 !/.config/nvim/commands.vim
 !/.config/nvim/filetypes.vim
-!/.config/nvim/fvim.vim
-!/.config/nvim/ginit.vim
 !/.config/nvim/init.vim
 !/.config/nvim/keybinds.vim
 !/.config/nvim/modules
 /.config/nvim/modules/*
-!/.config/nvim/modules/editorconfig.vim
 !/.config/nvim/modules/f-term.lua
 !/.config/nvim/modules/lsp-saga.lua
 !/.config/nvim/modules/lualine.lua
