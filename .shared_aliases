@@ -9,6 +9,8 @@ alias gp='git pull'
 alias gpre='git pull --rebase'
 alias gs='git status'
 alias gsupercheckout='git ls-files -z | xargs -0 rm ; git checkout -- .'
+alias gss'git stash save'
+alias gsp'git stash pop'
 #editor alias
 alias v='nvim'
 alias t='task'
