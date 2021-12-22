@@ -19,16 +19,16 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
-    { name = 'buffer' },
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
     { name = 'path' },
+    { name = 'vsnip' },
+    { name = 'buffer', keyword_length = 4 },
   })
 })
 
 cmp.setup.cmdline(':', {
   sources = {
-    { name = 'cmdline' }
+    { name = 'cmdline', keyword_length = 3 }
   }
 })
 
