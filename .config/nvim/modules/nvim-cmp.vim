@@ -23,7 +23,11 @@ cmp.setup({
     { name = 'path' },
     { name = 'vsnip' },
     { name = 'buffer', keyword_length = 4 },
-  })
+  }),
+  experimental = {
+    native_menu = false,
+    ghost_text = true,
+  }
 })
 
 cmp.setup.cmdline(':', {
