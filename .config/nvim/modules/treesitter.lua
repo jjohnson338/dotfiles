@@ -1,26 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {
-        'bash',
-        'c_sharp',
-        'comment',
-        'css',
-        'dockerfile',
-        'graphql',
-        'html',
-        'java',
-        'javascript',
-        'json',
-        'json5',
-        'lua',
-        'markdown',
-        'python',
-        'regex',
-        'rust',
-        'scss',
-        'tsx',
-        'typescript',
-        'yaml'
-    },
+    ensure_installed = "maintained",
     highlight = {
         enable = true,
     },

@@ -15,7 +15,10 @@ require('telescope').setup{
                 prompt_position = "top"
             },
         },
-        sorting_strategy = "ascending"
+        sorting_strategy = "ascending",
+        preview = {
+            filesize_limit = 1
+        }
     },
     extensions = {
         fzf = {
