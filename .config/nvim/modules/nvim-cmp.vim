@@ -25,24 +25,26 @@ cmp.setup({
     { name = 'buffer', keyword_length = 4 },
   }),
   experimental = {
-    native_menu = false,
     ghost_text = true,
   }
 })
 
 cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'cmdline', keyword_length = 3 }
   }
 })
 
 cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
 })
 
 cmp.setup.cmdline(':%s/', {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = 'buffer' }
   }
