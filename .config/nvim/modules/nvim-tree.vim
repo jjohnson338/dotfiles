@@ -1,5 +1,4 @@
 let g:nvim_tree_respect_buf_cwd = 1
-let g:nvim_tree_quit_on_open = 1
 lua <<EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require'nvim-tree'.setup {
@@ -22,6 +21,11 @@ require'nvim-tree'.setup {
         { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
       }
     }
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    },
   },
   git = {
     ignore = false
