@@ -85,7 +85,7 @@ case $(uname | tr '[:upper:]' '[:lower:]') in
 esac
 
 export EDITOR=nvim
-if [ ! $OS_NAME = "windows" ]; then
+if [ $OS_NAME = "linux" ]; then
   # ssh-agent configuration
   if [ -z "$(pgrep ssh-agent)" ]; then
     rm -rf /tmp/ssh-*
@@ -95,12 +95,16 @@ if [ ! $OS_NAME = "windows" ]; then
     export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
   fi
 
-
   #optional... potentially annoying
   if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
     ssh-add 2>/dev/null
   fi
 fi
+
+if [ $OS_NAME = "osx" ]; then
+    ssh-add --apple-load-keychain
+fi
+
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
