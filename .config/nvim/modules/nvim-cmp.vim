@@ -51,5 +51,4 @@ cmp.setup.cmdline(':%s/', {
     { name = 'buffer' }
   }
 })
-
 EOF
