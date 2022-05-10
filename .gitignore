@@ -41,11 +41,10 @@
 !/.config/nvim/modules/lsp-saga.lua
 !/.config/nvim/modules/lualine.lua
 !/.config/nvim/modules/nvim-biscuits.lua
-!/.config/nvim/modules/nvim-cmp.vim
+!/.config/nvim/modules/nvim-cmp.lua
 !/.config/nvim/modules/nvim-colorizer.lua
 !/.config/nvim/modules/nvim-lightbulb.vim
 !/.config/nvim/modules/nvim-tree.vim
-!/.config/nvim/modules/startify.vim
 !/.config/nvim/modules/telescope.lua
 !/.config/nvim/modules/treesitter.lua
 !/.config/nvim/modules/projects.lua

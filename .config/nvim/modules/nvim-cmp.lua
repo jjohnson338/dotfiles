@@ -1,8 +1,7 @@
-set completeopt=menu,menuone,noselect
-
-lua <<EOF
--- Setup nvim-cmp.
 local cmp = require'cmp'
+
+--set completeopt
+vim.opt.completeopt = "menu,menuone,noselect"
 
 cmp.setup({
   snippet = {
@@ -51,4 +50,10 @@ cmp.setup.cmdline(':%s/', {
     { name = 'buffer' }
   }
 })
-EOF
+
+cmp.setup.cmdline(":'<,'>s/", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
