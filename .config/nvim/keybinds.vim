@@ -106,17 +106,16 @@ imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 " LSP
-function GoToDefinition()
-    v:lua.vim.lsp.buf.definition()
-endfunction
-
 nnoremap <silent> <leader>la :Lspsaga code_action<CR>
 nnoremap <silent> K :Lspsaga hover_doc<CR>
+nnoremap <silent> I :Lspsaga show_line_diagnostics<CR>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <leader>lR :Lspsaga rename<CR>
 nnoremap <silent> <Leader>ld :Lspsaga lsp_finder<CR>
 nnoremap <silent> <Leader>lr <cmd>Telescope lsp_references<CR>
 nnoremap <silent> <Leader>ls <cmd>Telescope lsp_document_symbols<CR>
-nnoremap <silent> <Leader>ln <cmd>Telescope lsp_document_diagnostics<CR>
+nnoremap <silent> <Leader>ln <cmd>Telescope diagnostics bufnr=0<CR>
 
 
 let g:which_key_map.l = {
@@ -126,7 +125,7 @@ let g:which_key_map.l = {
     \ 'd': [':Lspsaga lsp_finder', 'def-and-refs'],
     \ 'r': [':Telescope lsp_references', 'references'],
     \ 's': [':Telescope lsp_document_symbols', 'symbols'],
-    \ 'n': [':Telescope lsp_document_diagnostics', 'diagnostics'],
+    \ 'n': [':Telescope diagnostics bufnr=0', 'diagnostics'],
     \ }
 
 " Wiki
