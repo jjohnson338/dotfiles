@@ -13,6 +13,8 @@ alias gss='git stash save'
 alias gsp='git stash pop'
 #editor alias
 alias v='nvim'
+alias vv='nvim .'
+alias vp='nvim $(ls -Ad $SOURCE_DIR/* | fzf --height=40% --reverse)'
 alias t='task'
 alias to='~/taskopen'
 alias cat='bat'
