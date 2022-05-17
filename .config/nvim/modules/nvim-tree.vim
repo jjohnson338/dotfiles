@@ -2,11 +2,11 @@ let g:nvim_tree_respect_buf_cwd = 1
 lua <<EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require'nvim-tree'.setup {
-  ignore_ft_on_setup= { 'startify','dashboard' },
-  update_cwd=         true,
+  ignore_ft_on_setup = { 'startify','dashboard' },
+  update_cwd = true,
   view = {
     mappings = {
-      custom_only = false,
+      custom_only = true,
       list = {
         { key = "A",                            cb = tree_cb("create") },
         { key = "C",                            cb = tree_cb("copy") },

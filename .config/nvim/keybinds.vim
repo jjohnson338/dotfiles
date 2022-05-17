@@ -63,7 +63,7 @@ map <Leader>d :NvimTreeToggle<CR>
 " === Telescope shorcuts === "
 nnoremap <Leader>pd <cmd>Telescope projects<cr>
 nnoremap <Leader>pp <cmd>Telescope find_files<cr>
-nnoremap <Leader>po <cmd>Telescope oldfiles<cr>
+nnoremap <Leader>po <cmd>Telescope oldfiles only_cwd=true<cr>
 nnoremap <Leader>ph <cmd>Telescope help_tags<cr>
 nnoremap <Leader>p/ <cmd>Telescope live_grep<cr>
 nnoremap <Leader>p; <cmd>Telescope buffers<cr>
@@ -73,7 +73,7 @@ let g:which_key_map.p = {
     \ 'name' : '+search',
     \ 'd': [':Telescope projects', 'search-projects'],
     \ 'p': [':Telescope find_files', 'search-files'],
-    \ 'o': [':Telescope oldfiles', 'recent-files'],
+    \ 'o': [':Telescope oldfiles only_cwd=true', 'recent-files'],
     \ 'h': [':Telescope help_tags', 'help_tags'],
     \ '/': [':Telescope live_grep', 'search-text'],
     \ ';': [':Telescope buffers', 'search-buffers'],
