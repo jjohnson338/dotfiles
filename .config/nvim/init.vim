@@ -13,16 +13,16 @@ luafile $HOME/.config/nvim/modules/lualine.lua
 luafile $HOME/.config/nvim/modules/nvim-biscuits.lua
 luafile $HOME/.config/nvim/modules/nvim-cmp.lua
 luafile $HOME/.config/nvim/modules/nvim-colorizer.lua
+luafile $HOME/.config/nvim/modules/nvim-tree.lua
 luafile $HOME/.config/nvim/modules/projects.lua
 luafile $HOME/.config/nvim/modules/telescope.lua
 luafile $HOME/.config/nvim/modules/treesitter.lua
 source $HOME/.config/nvim/modules/nvim-lightbulb.vim
-source $HOME/.config/nvim/modules/nvim-tree.vim
 source $HOME/.config/nvim/modules/vim-wiki.vim
 
 " LSP
 luafile $HOME/.config/nvim/modules/lsp-saga.lua
-" luafile $HOME/.config/nvim/modules/lsp/csharp-server.lua
+luafile $HOME/.config/nvim/modules/lsp/csharp-server.lua
 luafile $HOME/.config/nvim/modules/lsp/lsp-base.lua
 luafile $HOME/.config/nvim/modules/lsp/eslint-server.lua
 luafile $HOME/.config/nvim/modules/lsp/html-server.lua

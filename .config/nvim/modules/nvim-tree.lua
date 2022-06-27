@@ -1,7 +1,6 @@
-let g:nvim_tree_respect_buf_cwd = 1
-lua <<EOF
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 require'nvim-tree'.setup {
+  respect_buf_cwd = true,
   ignore_ft_on_setup = { 'startify','dashboard' },
   update_cwd = true,
   view = {
@@ -31,4 +30,3 @@ require'nvim-tree'.setup {
     ignore = false
   }
 }
-EOF

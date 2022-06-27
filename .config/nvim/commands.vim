@@ -6,3 +6,6 @@ com! Gs Git
 com! Gp Git push
 com! Gd Gdiff
 com! Gc Git commit
+
+" Format json
+com! FormatJSON %!jq .

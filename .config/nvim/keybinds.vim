@@ -69,6 +69,7 @@ nnoremap <Leader>p/ <cmd>Telescope live_grep<cr>
 nnoremap <Leader>p; <cmd>Telescope buffers<cr>
 nnoremap <Leader>p8 <cmd>Telescope grep_string<cr>
 nnoremap <Leader>pt <cmd>Telescope treesitter<cr>
+nnoremap <Leader>pr <cmd>Telescope resume<cr>
 let g:which_key_map.p = {
     \ 'name' : '+search',
     \ 'd': [':Telescope projects', 'search-projects'],
@@ -79,6 +80,7 @@ let g:which_key_map.p = {
     \ ';': [':Telescope buffers', 'search-buffers'],
     \ '8': [':Telescope grep_string', 'search-cursor-word'],
     \ 't': [':Telescope treesitter', 'search-funcs-and-vars'],
+    \ 'r': [':Telescope resume', 'resume'],
     \ }
 
 " Telescope Git

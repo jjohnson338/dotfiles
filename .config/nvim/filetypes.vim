@@ -6,9 +6,10 @@ augroup end
 autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi set filetype=fsharp
 
 " Markdown
-autocmd BufNewFile,BufRead *.md set wrap
+autocmd BufNewFile,BufRead *.md setlocal wrap linebreak
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown syntax=markdown
 autocmd FileType vimwiki setlocal syntax=markdown
+autocmd FileType vimwiki setlocal linebreak
 
 " For commentary
 autocmd FileType fsharp setlocal commentstring=//%s
