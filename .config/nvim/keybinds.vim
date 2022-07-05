@@ -134,6 +134,19 @@ let g:which_key_map.l = {
 map <Leader>c :VimwikiToggleListItem<CR>
 let g:which_key_map['w'] = { 'name': '+wiki' }
 
+" Diary
+nnoremap <silent> <leader>vd :VimwikiMakeDiaryNote<CR>
+nnoremap <silent> <leader>vt :VimwikiTabMakeDiaryNote<CR>
+nnoremap <silent> <leader>vl :VimwikiDiaryGenerateLinks<CR>
+nnoremap <silent> <leader>vi :VimwikiDiaryIndex<CR>
+let g:which_key_map['v'] = {
+  \ 'name': '+diary',
+  \ 'd': [':VimwikiMakeDiaryNote', 'todays-diary'],
+  \ 't': [':VimwikiTabMakeDiaryNote', 'tab-todays-diary'],
+  \ 'l': [':VimwikiDiaryGenerateLinks', 'gen-diary-links'],
+  \ 'i': [':VimwikiDiaryIndex', 'index'],
+  \ }
+
 " Vim-test
 nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
