@@ -40,6 +40,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'ahmedkhalf/project.nvim', { 'branch': 'main' }
   Plug 'sbdchd/neoformat' " Autoformatting (prettier)
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'ckipp01/nvim-jenkinsfile-linter'
+  Plug 'nvimtools/none-ls.nvim'
 
   " Source control
   Plug 'airblade/vim-gitgutter'

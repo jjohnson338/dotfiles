@@ -21,3 +21,5 @@ alias cat='bat'
 alias vconf='nvim ~/.config/nvim'
 #nav
 alias cds='cd $SOURCE_DIR'
+#taskfile
+alias run=./Taskfile

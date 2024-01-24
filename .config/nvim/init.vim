@@ -23,10 +23,11 @@ source $HOME/.config/nvim/modules/vim-wiki.vim
 " LSP
 luafile $HOME/.config/nvim/modules/lsp-saga.lua
 luafile $HOME/.config/nvim/modules/lsp/csharp-server.lua
-luafile $HOME/.config/nvim/modules/lsp/lsp-base.lua
 luafile $HOME/.config/nvim/modules/lsp/eslint-server.lua
 luafile $HOME/.config/nvim/modules/lsp/html-server.lua
-luafile $HOME/.config/nvim/modules/lsp/ts-server.lua
+luafile $HOME/.config/nvim/modules/lsp/lsp-base.lua
+luafile $HOME/.config/nvim/modules/lsp/null-ls.lua
 luafile $HOME/.config/nvim/modules/lsp/python-server.lua
+luafile $HOME/.config/nvim/modules/lsp/ts-server.lua
 
 silent! source $HOME/.vimrc.local
