@@ -51,10 +51,11 @@
 !/.config/nvim/modules/vim-wiki.vim
 !/.config/nvim/modules/lsp
 /.config/nvim/modules/lsp/*
-!/.config/nvim/modules/lsp/lsp-base.lua
 !/.config/nvim/modules/lsp/csharp-server.lua
 !/.config/nvim/modules/lsp/eslint-server.lua
 !/.config/nvim/modules/lsp/html-server.lua
+!/.config/nvim/modules/lsp/lsp-base.lua
+!/.config/nvim/modules/lsp/null-ls.lua
 !/.config/nvim/modules/lsp/python-server.lua
 !/.config/nvim/modules/lsp/ts-server.lua
 
